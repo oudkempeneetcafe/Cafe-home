@@ -1,0 +1,20 @@
+# aged-mountain-afcf — the Worker that serves www.oudkempeneetcafe.nl and oudkempeneetcafe.nl
+# (both are Worker custom domains on the client's own Cloudflare account).
+#
+# Committed so Cloudflare Workers Builds can deploy this repo on push to main, replacing the
+# by-hand `wrangler deploy` from a staging copy (DEPLOY.md). The assets directory is the repo
+# root; `.assetsignore` decides what is NOT published on the client's live domain — read it.
+#
+# NO secrets in this file, ever. The MultiSafepay key and any mail key go into Workers Secrets
+# (`wrangler secret put` / the dashboard), never here.
+#
+# When the ordering backend arrives (a Worker script + D1) this gains `main = "src/…"` and a
+# `[[d1_databases]]` binding. That is a different kind of deploy from every one before it and is
+# gated (questions Q20) — do not add them here ahead of that ruling.
+
+name = "aged-mountain-afcf"
+compatibility_date = "2026-08-01"
+
+[assets]
+directory = "."
+not_found_handling = "404-page"

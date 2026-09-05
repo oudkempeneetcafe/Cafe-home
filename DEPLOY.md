@@ -48,6 +48,12 @@ curl -s -o /dev/null -w '%{http_code}\n' https://www.oudkempeneetcafe.nl/DEPLOY.
 
 ## To publish
 
+> **2026-09-03:** `wrangler.toml` is now committed at the repo root (for Cloudflare Workers
+> Builds, which deploys the client-owned `oudkempeneetcafe/cafe-home` repo on push to `main` —
+> Schyler connects it in the dashboard). Until that connection is live, the by-hand procedure
+> below still works and is still the way a deploy actually happens. The inline TOML below must
+> stay identical to the committed file.
+
 ```sh
 set -a; . ~/.config/shmorganism/secrets.env; set +a
 export CLOUDFLARE_API_TOKEN="$DAVE_CF_TOKEN" CLOUDFLARE_ACCOUNT_ID="$DAVE_CF_ACCOUNT"
@@ -61,7 +67,8 @@ directory = "./site"
 not_found_handling = "404-page"
 TOML
 cd /tmp/cafe && rm -f /tmp/cafe/site/DEPLOY.md                      # never ship internal docs
-printf 'DEPLOY.md\n*.md\n' > /tmp/cafe/site/.assetsignore
+# Do NOT overwrite site/.assetsignore here: the committed one is the wider guard (*.md, *.json,
+# wrangler.toml, .git/, src/ …). Overwriting it with a two-line version re-opened the leak.
 npx --yes wrangler@latest deploy
 ```
 

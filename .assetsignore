@@ -14,3 +14,14 @@
 .assetsignore
 .gitignore
 .github/
+# Deploy configuration and anything that is source, not site. wrangler.toml names the Worker
+# and would otherwise be served at /wrangler.toml the moment it is committed at the root.
+wrangler.toml
+*.toml
+.git/
+# Forward guard for the ordering backend: a Worker script, D1 migrations, tools and tests must
+# never ship as public assets even when they live alongside the site.
+src/
+migrations/
+tools/
+tests/
