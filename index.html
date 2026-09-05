@@ -1,0 +1,2259 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js');</script>
+<title>Oud-Kempen Eetcafé — Stavenisse, Zeeland</title>
+<meta name="description" content="Oud-Kempen Eetcafé in Stavenisse, Zeeland. Verse gerechten, kaasfondue, verse vis en authentieke Indonesische specialiteiten, 7 dagen per week open. Reserveer een tafel, huur een fiets, boek de jacuzzi of het vakantiehuis.">
+<meta property="og:title" content="Oud-Kempen Eetcafé — Stavenisse, Zeeland">
+<meta property="og:description" content="Verse gerechten, kaasfondue en authentieke Indonesische specialiteiten, 7 dagen per week open, met een ruim terras aan de rand van Stavenisse.">
+<meta property="og:type" content="restaurant">
+<meta property="og:image" content="assets/plate.webp">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23241813'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' fill='%23E7C079' text-anchor='middle'%3EOK%3C/text%3E%3C/svg%3E">
+<style>
+/* ============================================================
+   OUD-KEMPEN EETCAFÉ — the golden-hour nameplate plate
+   Design language extracted from the client's logo (law 6):
+   framed golden-hour photo-plates on a parchment field,
+   espresso serif nameplate, brass foil, filigree flourish.
+   Single-file build (code); optimized photo assets in /assets.
+   ============================================================ */
+:root{
+  --field:#F1EADC;        /* parchment ground (logo field) */
+  --field-2:#EBE2D0;      /* slightly deeper parchment */
+  --field-deep:#241813;   /* espresso band + footer */
+  --field-deep-2:#1B120D;
+  --line:#C6B497;         /* warm taupe engraving tint on field */
+  --line-dk:#7A6A57;      /* line on dark */
+  --accent-1:#E7C079;     /* brass, light */
+  --accent-2:#C08A3E;     /* brass, mid */
+  --accent-3:#8A5A22;     /* brass, deep (on paper) */
+  --paper:#FBF7EF;        /* booking / info window */
+  --ink:#2E2016;          /* text on paper/field */
+  --ink-dim:#6B5A48;      /* secondary */
+  --muted:#75634E;        /* tertiary / labels (AA on white) */
+  --paper-on-dark:#F3EADB;/* text on espresso */
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:var(--sans);
+  /* page-wide wash: white at the very top easing into the existing cream */
+  background:linear-gradient(180deg,#FFFFFF 0,#FBF6EC 360px,var(--field) 1250px) no-repeat var(--field);
+  font-size:16px;line-height:1.6;overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+section{padding:64px 0;position:relative;overflow:clip}
+h1,h2,h3{font-family:var(--serif);font-weight:700;margin:0}
+p{margin:0 0 14px}
+.serif{font-family:var(--serif)}
+.gold{color:var(--accent-1)}
+
+/* ---------- engraving / flourish ornament (§3.4) ---------- */
+.engraving{position:absolute;pointer-events:none;color:var(--line);z-index:1}
+.engraving svg{display:block}
+.flourish{display:block;margin:0 auto;color:var(--accent-2)}
+.z2{position:relative;z-index:2}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-family:var(--sans);font-size:13px;letter-spacing:.12em;text-transform:uppercase;
+  padding:14px 26px;min-height:46px;border-radius:2px;text-decoration:none;cursor:pointer;
+  border:1px solid transparent;transition:transform .18s cubic-bezier(.22,.61,.36,1),
+  box-shadow .18s,background-position .4s,color .18s;background-size:200% 100%}
+.btn-gold{color:#28190C;font-weight:650;border-color:#b98a3f;
+  background-image:linear-gradient(120deg,var(--accent-1),var(--accent-2) 55%,var(--accent-1));
+  box-shadow:none}
+.btn-gold:hover,.btn-gold:focus-visible{background-position:100% 0;transform:translateY(-2px);
+  box-shadow:none}
+.btn-line{color:var(--ink);border-color:var(--accent-3);background:transparent}
+.btn-line:hover,.btn-line:focus-visible{transform:translateY(-2px);
+  background:rgba(192,138,62,.1);border-color:var(--accent-2)}
+.btn-line.on-dark{color:var(--paper-on-dark);border-color:var(--line-dk)}
+.btn-line.on-dark:hover,.btn-line.on-dark:focus-visible{background:rgba(231,192,121,.12);border-color:var(--accent-1)}
+
+/* ============================== NAV ============================== */
+.nav{position:sticky;top:0;z-index:50;background:rgba(251,248,242,.82);
+  backdrop-filter:saturate(1.1) blur(10px);border-bottom:1px solid rgba(122,106,87,.18)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:12px 22px;max-width:1080px;margin:0 auto}
+.brand{display:inline-flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;color:var(--ink);line-height:1}
+.nb-name{font-family:var(--serif);font-weight:700;font-size:clamp(15px,3.4vw,19px);letter-spacing:.01em;
+  text-transform:uppercase;color:#2A1B10;line-height:1}
+.nb-eet{display:flex;align-items:center;gap:6px;font-family:var(--serif);font-weight:600;
+  font-size:8px;letter-spacing:.3em;text-indent:.3em;text-transform:uppercase;color:#3B2A1E;line-height:1}
+.nb-fl{display:inline-block;width:13px;height:1px;background:var(--accent-2)}
+.nav-links{display:flex;align-items:center;gap:22px}
+.nav-links a{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;
+  color:var(--ink-dim);transition:color .16s;position:relative}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--ink)}
+.nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:-6px;height:1px;
+  background:var(--accent-2);transition:right .22s cubic-bezier(.22,.61,.36,1)}
+.nav-links a:hover::after,.nav-links a:focus-visible::after{right:0}
+.nav-right{display:flex;align-items:center;gap:14px}
+.lang{display:inline-flex;border:1px solid rgba(122,106,87,.4);border-radius:2px;overflow:hidden}
+.lang button{font-family:var(--sans);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  padding:7px 9px;min-width:38px;min-height:34px;background:transparent;border:0;cursor:pointer;
+  color:var(--ink-dim);border-right:1px solid rgba(122,106,87,.28)}
+.lang button:last-child{border-right:0}
+.lang button[aria-pressed="true"]{background:var(--accent-2);color:#241300;font-weight:600}
+@media(max-width:960px){.nav-right .btn-gold{display:none}} /* keep the text links; hero carries the CTA */
+@media(max-width:820px){.nav-links{display:none}}
+@media(max-width:560px){
+  .brand .bs{display:none}
+  .lang button{min-width:34px;padding:7px 7px}
+  .nav-in{padding:10px 16px}
+}
+
+/* ============================== HERO ============================== */
+header.hero{position:relative;overflow:clip;padding:0;background:transparent}
+.hero-in{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:70px 22px 78px;text-align:center}
+.crest{width:78px;height:78px;margin:0 auto 20px;position:relative}
+.kicker{font-size:12px;letter-spacing:.34em;text-indent:.34em;text-transform:uppercase;color:var(--accent-3)}
+.hero h1{font-size:clamp(38px,8.5vw,72px);letter-spacing:.06em;text-indent:.06em;line-height:1.02;
+  margin:14px 0 4px;color:#2A1B10}
+.hero .sub{font-size:clamp(13px,2.7vw,15.5px);letter-spacing:.03em;text-indent:.03em;
+  color:var(--accent-3);margin-top:10px;font-family:var(--serif);font-style:italic}
+.hero .lede{max-width:52ch;margin:22px auto 0;color:var(--ink-dim);font-size:clamp(15px,2.4vw,17px)}
+
+/* ---------- the nameplate lockup (extracted from the client's logo) ---------- */
+.lockup{position:relative;z-index:2;margin:0}
+.lk-top{display:block;width:min(560px,88%);height:2px;margin:0 auto 16px;
+  background:linear-gradient(90deg,transparent,#2A1B10 12%,#2A1B10 88%,transparent)}
+.lk-name{display:block;font-family:var(--serif);font-weight:700;color:#2A1B10;
+  text-transform:uppercase;font-size:clamp(38px,9vw,76px);letter-spacing:.005em;line-height:.98}
+.lk-eet{display:flex;align-items:center;justify-content:center;gap:clamp(10px,2.4vw,18px);margin-top:11px}
+.lk-eet .txt{font-family:var(--serif);font-weight:600;color:#2A1B10;text-transform:uppercase;
+  font-size:clamp(15px,3.3vw,26px);letter-spacing:.5em;text-indent:.5em}
+.lk-eet .fl{color:var(--accent-2);flex:none;width:clamp(34px,9vw,54px);height:auto}
+.lk-eet .fl.flip{transform:scaleX(-1)}
+.lk-place{display:block;font-family:var(--serif);color:#3B2A1E;margin-top:10px;text-transform:uppercase;
+  font-size:clamp(10px,2.2vw,14px);letter-spacing:.34em;text-indent:.34em}
+.lk-knot{display:block;margin:13px auto 0;color:var(--accent-2);width:clamp(120px,30vw,168px);height:auto}
+.hero-rule{width:130px;height:1px;margin:24px auto 6px;
+  background:linear-gradient(90deg,transparent,var(--accent-2),transparent)}
+.hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+
+/* hero photo plate */
+.plate{position:relative;background:var(--paper);padding:12px;border-radius:3px;
+  box-shadow:0 30px 70px -34px rgba(36,24,19,.6)}
+.plate .pic{overflow:clip;border-radius:2px;position:relative}
+.plate .pic img{width:100%;height:100%;object-fit:cover}
+.hero-plate{margin:40px auto 0;max-width:940px}
+.hero-plate .pic{aspect-ratio:16/8}
+.hero-plate .cap{position:absolute;left:22px;bottom:20px;z-index:3;text-align:left;color:#fff;
+  text-shadow:0 2px 18px rgba(0,0,0,.6)}
+.hero-plate .cap .k{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#F3D9A6}
+.hero-plate .cap .t{font-family:var(--serif);font-size:clamp(18px,3.4vw,26px);margin-top:4px}
+.hero-plate .pic::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(20,12,6,.55));z-index:2}
+
+/* ---------- live window (§3.2) ---------- */
+.live{max-width:560px;margin:34px auto 0;padding:20px 24px 16px;text-align:center}
+.live .label{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent-3)}
+.live .row{display:flex;justify-content:center;gap:min(12vw,72px);flex-wrap:wrap;margin-top:12px}
+.live .cell .fig{font-family:var(--serif);font-size:clamp(28px,7vw,40px);font-weight:700;line-height:1;
+  color:#8A5A22}
+.live .cell .u{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim);margin-top:6px}
+.live .cell .fig.open{color:#276B3E}
+.live .cell .fig.shut{color:#8A4A28}
+.live .status{margin-top:14px;font-size:12.5px;letter-spacing:.04em;color:var(--ink-dim)}
+.live .status .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#D9A441;
+  margin-right:7px;vertical-align:middle}
+
+/* ============================== SECTION HEAD ============================== */
+.sec-head{text-align:center;margin-bottom:38px;position:relative;z-index:2}
+.sec-head h2{font-size:clamp(26px,5.2vw,38px);letter-spacing:.05em;text-indent:.05em;margin-top:8px;color:#2A1B10}
+.sec-head p{max-width:56ch;margin:14px auto 0;color:var(--ink-dim);font-size:16px}
+
+/* ============================== RESTAURANT ============================== */
+.restaurant{background:transparent}   /* show the page wash */
+.rest-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center;position:relative;z-index:2}
+@media(max-width:840px){.rest-grid{grid-template-columns:1fr;gap:26px}}
+.rest-copy h3{font-size:clamp(22px,4vw,30px);letter-spacing:.02em;margin-bottom:12px;color:#2A1B10}
+.rest-copy .assure{list-style:none;padding:0;margin:18px 0 24px}
+.rest-copy .assure li{position:relative;padding-left:26px;margin-bottom:9px;color:var(--ink-dim);font-size:15.5px}
+.rest-copy .assure li::before{content:"—";position:absolute;left:0;color:var(--accent-2);font-weight:700}
+.rest-plate .pic{aspect-ratio:4/5}
+.rest-thumbs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.rest-thumbs .plate{padding:8px}
+.rest-thumbs .pic{aspect-ratio:5/4}
+
+/* ============================== SERVICES ============================== */
+.services{background:transparent}
+.cards{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;position:relative;z-index:2}
+.card{flex:0 1 330px;padding:28px 24px 24px;text-align:center;text-decoration:none;color:var(--ink);
+  display:flex;flex-direction:column;align-items:center;transition:transform .2s cubic-bezier(.22,.61,.36,1),box-shadow .2s}
+@media(max-width:719px){.card{flex-basis:100%}}   /* single full-width column on phones */
+.card:hover,.card:focus-visible{transform:translateY(-5px);
+  box-shadow:0 34px 60px -30px rgba(36,24,19,.55)}
+.card .ic{width:52px;height:52px;margin-bottom:14px}
+.card .ic svg{width:52px;height:52px;stroke:var(--accent-3);fill:none;stroke-width:1.4;
+  stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:20px;letter-spacing:.01em;margin-bottom:6px;color:#2A1B10;text-transform:capitalize}
+.card p{font-size:14px;color:var(--ink-dim);margin:0}
+.card .tag{margin-top:16px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-3);
+  border-top:1px solid #E2D6BF;padding-top:11px;width:100%}
+
+/* ============================== FEATURE BAND (full-bleed photo) ============================== */
+.feature-band{position:relative;overflow:clip;padding:64px 22px;
+  min-height:clamp(360px,56vh,540px);display:flex;align-items:center;justify-content:center;text-align:center;
+  border-top:1px solid rgba(122,90,34,.22);border-bottom:1px solid rgba(122,90,34,.22)}
+.fb-media{position:absolute;inset:0;z-index:0}
+.fb-media img{width:100%;height:100%;object-fit:cover}
+/* legibility scrim — kept light so the band reads as imagery, not a dark slab */
+.feature-band::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(26,15,8,.30),rgba(26,15,8,.10) 42%,rgba(26,15,8,.40))}
+.fb-inner{position:relative;z-index:2;max-width:600px;margin:0 auto;color:#fff;
+  background:#241813;padding:30px 28px;border-radius:4px}
+.fb-inner .kicker{color:#F1D9A8}
+.fb-title{font-family:var(--serif);font-weight:700;color:#fff;margin-top:8px;
+  font-size:clamp(26px,5.2vw,42px);letter-spacing:.04em;text-indent:.04em;line-height:1.08}
+.fb-p{margin:0 auto;max-width:52ch;color:#F3ECE0;font-size:clamp(14px,2.4vw,17px)}
+
+/* ============================== RESERVATION BAND ============================== */
+.reserve{background:linear-gradient(180deg,var(--field-deep) 0%,var(--field-deep-2) 100%);
+  color:var(--paper-on-dark);border-top:1px solid rgba(122,106,87,.3);border-bottom:1px solid rgba(122,106,87,.3)}
+.reserve{padding:60px 0}
+.reserve .sec-head h2{color:#F6ECDA}
+.reserve .sec-head p{color:#C9B79C}
+.res-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:stretch;position:relative;z-index:2}
+@media(max-width:840px){.res-grid{grid-template-columns:1fr}}
+.res-persuade h3{font-size:clamp(24px,4.4vw,34px);color:#F6ECDA;line-height:1.14;margin-bottom:14px}
+.res-persuade p{color:#CBB99E}
+.res-persuade .assure{list-style:none;padding:0;margin:20px 0 0}
+.res-persuade .assure li{position:relative;padding-left:24px;margin-bottom:10px;color:#D8C7AC;font-size:15px}
+.res-persuade .assure li::before{content:"—";position:absolute;left:0;color:var(--accent-1)}
+.res-persuade .contact-line{margin-top:24px;font-size:14px;color:#C9B79C}
+.res-persuade .contact-line a{color:var(--accent-1);text-decoration:none}
+.form-window{background:var(--paper);color:var(--ink);border-radius:3px;padding:26px 24px;
+  box-shadow:0 34px 70px -32px rgba(0,0,0,.7)}
+.form-window .fk{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent-3);text-align:center}
+.form-window h3{text-align:center;font-size:23px;margin:6px 0 18px;color:#2A1B10}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:460px){.frow{grid-template-columns:1fr}}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.field input,.field select,.field textarea{width:100%;font-family:var(--sans);font-size:15px;color:var(--ink);
+  background:#fff;border:1px solid #D8CBB3;border-radius:2px;padding:11px 12px;min-height:44px}
+.field textarea{min-height:70px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent-2);
+  box-shadow:0 0 0 3px rgba(192,138,62,.16)}
+/* multi-select service list — one clean grouped list, uniform rows */
+.choose{display:flex;flex-direction:column;border:1px solid #E1D4BC;border-radius:4px;
+  overflow:hidden;background:#fff}
+.chip{position:relative;display:flex;align-items:center;gap:11px;padding:0 14px;min-height:48px;
+  cursor:pointer;color:var(--ink-dim);border-top:1px solid #EFE7D6;
+  transition:background .15s,color .15s;user-select:none}
+.chip:first-child{border-top:0}
+.chip:hover{background:rgba(192,138,62,.05)}
+.chip input{position:absolute;opacity:0;width:0;height:0}
+.chip .dot{width:18px;height:18px;border:1.5px solid #C7B79B;border-radius:4px;flex:none;
+  display:inline-flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s}
+.chip .dot::after{content:"";width:9px;height:5px;border-left:2px solid #fff;border-bottom:2px solid #fff;
+  transform:rotate(-45deg) translateY(-1px) scale(0);transition:transform .15s}
+.chip input:checked~.dot{background:var(--accent-2);border-color:var(--accent-2)}
+.chip input:checked~.dot::after{transform:rotate(-45deg) translateY(-1px) scale(1)}
+.chip:has(input:checked){background:rgba(192,138,62,.1);color:var(--ink)}
+.chip input:focus-visible~.dot{box-shadow:0 0 0 3px rgba(192,138,62,.28)}
+.chip-t{font-size:14.5px;letter-spacing:.005em}
+.form-window .btn-gold{width:100%;margin-top:14px}
+/* ===== per-category reservation: prompt panel + flip-card modal ===== */
+.res-prompt{display:flex;flex-direction:column}
+.res-prompt h3{margin-bottom:4px}
+.res-prompt .rp-lead{text-align:center;color:var(--ink-dim);font-size:14px;margin:2px 0 16px}
+.prompt-btns{display:flex;flex-direction:column;gap:8px}
+.pbtn{font-family:var(--sans);text-align:left;font-size:15px;color:var(--ink);background:#fff;
+  border:1px solid #E1D4BC;border-radius:3px;padding:13px 15px;min-height:46px;cursor:pointer;
+  display:flex;align-items:center;gap:11px;transition:border-color .15s,background .15s,transform .15s}
+.pbtn::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent-2);flex:none}
+.pbtn:hover,.pbtn:focus-visible{border-color:var(--accent-2);background:rgba(192,138,62,.08);transform:translateX(2px);outline:none}
+.fondue-field{margin-top:2px}
+.field label.fondue-opt{position:relative;display:flex;align-items:center;gap:11px;min-height:44px;cursor:pointer;
+  text-transform:none;letter-spacing:0;margin-bottom:0;
+  border:1px solid #E1D4BC;border-radius:3px;padding:0 14px;background:#fff;color:var(--ink-dim);
+  transition:background .15s,border-color .15s,color .15s;user-select:none}
+.fondue-opt:hover{border-color:var(--accent-2)}
+.fondue-opt input{position:absolute;opacity:0;width:0;height:0}
+.fondue-opt .dot{width:18px;height:18px;border:1.5px solid #C7B79B;border-radius:4px;flex:none;
+  display:inline-flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s}
+.fondue-opt .dot::after{content:"";width:9px;height:5px;border-left:2px solid #fff;border-bottom:2px solid #fff;
+  transform:rotate(-45deg) translateY(-1px) scale(0);transition:transform .15s}
+.fondue-opt input:checked~.dot{background:var(--accent-2);border-color:var(--accent-2)}
+.fondue-opt input:checked~.dot::after{transform:rotate(-45deg) translateY(-1px) scale(1)}
+.fondue-opt:has(input:checked){background:rgba(192,138,62,.1);color:var(--ink);border-color:var(--accent-2)}
+.fondue-opt input:focus-visible~.dot{box-shadow:0 0 0 3px rgba(192,138,62,.28)}
+.fondue-t{font-size:14.5px}
+.fondue-note{margin:8px 0 0;font-size:12.5px;color:var(--accent-3);line-height:1.45}
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+.res-dim{position:fixed;inset:0;z-index:88;background:rgba(20,12,6,.55);opacity:0;
+  transition:opacity .28s ease;pointer-events:none}
+.res-dim.on{opacity:1;pointer-events:auto}
+.res-modal-wrap{position:fixed;inset:0;z-index:90;display:flex;align-items:flex-start;justify-content:center;
+  padding:max(4vh,14px) 14px 48px;pointer-events:auto;visibility:hidden;overflow-y:auto;perspective:1600px;
+  -webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.res-modal-wrap.open{visibility:visible}
+.res-flip{position:relative;width:min(560px,94vw);transform-style:preserve-3d;pointer-events:auto;
+  transition:transform .32s cubic-bezier(.4,.02,.2,1);will-change:transform}
+.res-face{backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:4px;
+  background:var(--paper);color:var(--ink);box-shadow:0 40px 80px -30px rgba(0,0,0,.65)}
+.res-front{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:28px}
+.res-front .ic svg{width:54px;height:54px;stroke:var(--accent-3);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.rf-front-title{font-family:var(--serif);font-size:24px;color:#2A1B10;margin-top:14px}
+.res-back{position:relative;transform:rotateY(180deg)}
+.res-x{position:absolute;top:9px;right:9px;z-index:4;width:38px;height:38px;border-radius:50%;
+  border:1px solid #E1D4BC;background:#fff;color:var(--ink-dim);font-size:22px;line-height:1;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:color .15s,border-color .15s}
+.res-x:hover,.res-x:focus-visible{color:var(--ink);border-color:var(--accent-2);outline:none}
+.res-form{padding:34px 24px 24px}
+.form-status{text-align:center;font-size:13.5px;margin-top:10px}
+.form-status.sending{color:var(--ink-dim)}
+.form-status.ok{color:#2E7D46}
+.form-status.err{color:#A6603A}
+@media (prefers-reduced-motion: reduce){.res-flip{transition:none}.res-dim{transition:none}}
+.form-note{text-align:center;font-size:12px;color:var(--muted);margin:12px 0 0;letter-spacing:.02em}
+
+/* ============================== GALLERY ============================== */
+.gallery{background:transparent}
+.gal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;
+  align-items:start;position:relative;z-index:2}
+.gal-grid .plate{padding:9px;align-self:start}
+.gal-grid .pic{aspect-ratio:1/1}
+.gal-grid .plate.wide{grid-column:span 2}
+.gal-grid .plate.wide .pic{aspect-ratio:16/10}
+@media(max-width:520px){.gal-grid .plate.wide{grid-column:span 1}}
+.gal-grid .pic img{transition:transform .5s cubic-bezier(.22,.61,.36,1)}
+.gal-grid .plate:hover .pic img{transform:scale(1.06)}
+
+/* ============================== VISIT ============================== */
+.visit{background:transparent}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch;position:relative;z-index:2}
+@media(max-width:840px){.visit-grid{grid-template-columns:1fr}}
+.info-window{background:var(--paper);border-radius:3px;padding:28px 26px;
+  box-shadow:0 26px 56px -30px rgba(36,24,19,.5)}
+.info-window h3{font-size:24px;margin-bottom:6px;color:#2A1B10}
+.info-window .addr{color:var(--ink-dim);font-size:15px;margin-bottom:20px}
+.hours{list-style:none;padding:0;margin:0 0 20px;border-top:1px solid #E4D8C1}
+.hours li{display:flex;justify-content:space-between;padding:8px 2px;border-bottom:1px solid #E4D8C1;font-size:14px}
+.hours li .d{color:var(--ink)}
+.hours li .h{color:var(--ink-dim);font-variant-numeric:tabular-nums}
+.hours li.closed .h{color:#A6603A}
+.hours li.today{background:linear-gradient(90deg,rgba(231,192,121,.22),transparent);
+  margin:0 -8px;padding:8px 10px;border-radius:2px;font-weight:600}
+.hours li.today .d::before{content:"● ";color:var(--accent-2);font-size:9px;vertical-align:middle}
+.contact-rows{display:flex;flex-direction:column;gap:9px;font-size:14px}
+.contact-rows a{color:var(--accent-3);text-decoration:none;display:inline-flex;align-items:center;gap:9px;
+  min-height:44px}                                  /* tap target (law 2) */
+a[href^="tel:"]{display:inline-block;min-height:44px;padding:11px 0;line-height:1.45;text-decoration:none}  /* tap-to-call target (law 2) */
+.contact-rows a.call{font-size:16.5px;font-weight:600;color:#7A4E1C}
+.contact-rows a:hover{color:var(--accent-2)}
+.contact-rows svg{width:17px;height:17px;stroke:var(--accent-3);fill:none;stroke-width:1.5;flex:none}
+.map-window{background:var(--paper);border-radius:3px;padding:9px;
+  box-shadow:0 26px 56px -30px rgba(36,24,19,.5);min-height:320px;display:flex}
+.map-window iframe{width:100%;border:0;border-radius:2px;filter:saturate(.82) sepia(.12);min-height:320px;flex:1}
+
+/* ============================== FOOTER ============================== */
+footer{background:linear-gradient(180deg,var(--field-deep) 0%,var(--field-deep-2) 100%);
+  color:var(--paper-on-dark);padding:56px 0 34px;position:relative;overflow:clip;text-align:center}
+/* footer nameplate — the header lockup, recoloured for the dark field + scaled down */
+.foot-lockup{margin:0 auto 4px}
+.foot-lockup .lk-top{width:min(300px,64%);margin-bottom:13px;
+  background:linear-gradient(90deg,transparent,rgba(231,192,121,.55) 14%,rgba(231,192,121,.55) 86%,transparent)}
+.foot-lockup .lk-name{font-size:clamp(27px,6vw,36px);color:#F6ECDA}
+.foot-lockup .lk-eet{gap:clamp(9px,2.2vw,14px);margin-top:9px}
+.foot-lockup .lk-eet .txt{font-size:clamp(12px,3vw,16px);color:#F6ECDA}
+.foot-lockup .lk-eet .fl{width:clamp(26px,7vw,40px)}
+.foot-lockup .lk-place{font-size:clamp(9px,2vw,12px);color:#D8C7AC;margin-top:9px}
+.foot-lockup .lk-knot{margin-top:12px;width:clamp(112px,26vw,150px)}
+.hallmarks{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:26px 0 22px}
+.hallmark{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#CDB99C;
+  border:1px solid rgba(122,106,87,.55);border-radius:3px;padding:9px 14px}
+footer .fine{font-size:12px;color:#B3A184;letter-spacing:.02em}
+footer .fine a{color:#D8C7AC;text-decoration:none}
+.provenance{margin-top:16px;font-size:12px;letter-spacing:.04em;color:#B3A184}
+
+/* ---------- scroll reveal (§5.1) — content drifts up from the bottom as it
+   enters view. JS/IntersectionObserver-driven (works in every browser incl.
+   Safari). The hidden start-state is gated behind `.js`, so with JS off (or if
+   the script errors) all content is simply visible — motion never gates content.
+   opacity:0 keeps the element's box, so nothing reflows: CLS stays flat. */
+.js .reveal{opacity:0;transform:translateY(46px);
+  transition:opacity .5s ease, transform .6s cubic-bezier(.22,.61,.36,1)}
+.js .reveal.in{opacity:1;transform:none}
+/* gentle cascade across a row of cards / gallery tiles */
+.js .cards .card.reveal:nth-child(2),
+.js .gal-grid .plate.reveal:nth-child(2){transition-delay:.06s}
+.js .cards .card.reveal:nth-child(3),
+.js .gal-grid .plate.reveal:nth-child(3){transition-delay:.12s}
+.js .cards .card.reveal:nth-child(4),
+.js .gal-grid .plate.reveal:nth-child(4){transition-delay:.06s}
+.js .cards .card.reveal:nth-child(5),
+.js .gal-grid .plate.reveal:nth-child(5){transition-delay:.12s}
+@media (prefers-reduced-motion: reduce){
+  .js .reveal{opacity:1;transform:none;transition:none}
+}
+
+/* ---------- parallax drift (JS-driven — see the script; cross-browser) ----------
+   Framed photos and engraving ornaments scroll slower than the page (the
+   Hotel-Arena feel). Driven by a tiny rAF loop that sets the individual
+   `translate` property (composes with hover transforms); compositor-only, no
+   layout thrash. Base cover-scale + drift are applied by JS only when motion is
+   allowed, so reduced-motion users and no-JS both get static images — motion
+   never gates content. The `.pic { overflow:clip }` frames clip the drift, so
+   nothing widens the page and CLS stays flat. */
+.parallax-on .hero-plate .pic img,
+.parallax-on .rest-plate .pic img{ will-change:translate }
+/* ============================================================
+   GRAND OPENING — 5 September 2026. Auto-expiring; see the
+   "GRAND OPENING" script block at the foot of this file.
+   Built from the printed invitation (assets in the studio tenant folder).
+   Generated from shared sources by tools/gen.py — edit those, not this.
+   ============================================================ */
+[hidden]{display:none!important}          /* the splash sets display:flex — hidden must still win */
+:root{
+  --float-gutter:60px;    /* reserved column the language control lives in — see below */
+  --night:#07090B;        /* the invitation's ground: the poster is near-black edge to edge */
+  --night-2:#0B0E11;
+  --crest:clamp(74px,12.5vw,124px);
+  --script:"OK Script","Snell Roundhand","Apple Chancery","Segoe Script",cursive;
+}
+/* One display face, for the two calligraphic lines only. Self-hosted and subset to
+   120 glyphs (English + every Dutch/German diacritic) so it stays ~23KB and so the
+   client's visitors are never handed to a third-party font CDN. SIL Open Font
+   License 1.1 — see assets/script-font-OFL.txt. */
+@font-face{
+  font-family:"OK Script";
+  src:url("assets/script.woff2") format("woff2");
+  font-weight:400;font-style:normal;font-display:swap;
+  unicode-range:U+0020-007E,U+00A0-00FF,U+2013-2014,U+2018-2019,U+201C-201D,U+2026;
+}
+
+/* ---------- ribbon (stays after the splash is dismissed) ---------- */
+.open-ribbon{background:linear-gradient(180deg,var(--night-2),var(--night));
+  border-bottom:1px solid rgba(212,168,94,.3);color:var(--paper-on-dark)}
+.open-ribbon-in{max-width:1080px;margin:0 auto;padding:11px 22px;display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:center;gap:8px 16px;text-align:center}
+.open-ribbon .orb-t{font-family:var(--serif);font-size:clamp(14px,3vw,17px);letter-spacing:.03em;color:#F3E7CE}
+.open-ribbon .orb-a{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-1);
+  text-decoration:none;border-bottom:1px solid rgba(231,192,121,.5);padding:4px 0;min-height:24px}
+.open-ribbon .orb-a:hover,.open-ribbon .orb-a:focus-visible{color:#F6DFAF;border-bottom-color:var(--accent-1)}
+
+/* ---------- splash overlay: near-black, edge to edge, like the poster ---------- */
+.open-splash{position:fixed;inset:0;z-index:80;display:flex;align-items:flex-start;justify-content:center;
+  overflow-y:auto;-webkit-overflow-scrolling:touch;background:var(--night);
+  padding:clamp(10px,2.2vh,26px) 0 34px;opacity:0;transition:opacity .32s ease}
+.open-splash.on{opacity:1}
+@media (prefers-reduced-motion: reduce){.open-splash{transition:none}}
+@media(min-width:900px){.open-x{position:fixed;right:8px}}
+.open-splash::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(120% 62% at 50% 4%,rgba(150,110,50,.2),rgba(7,9,11,0) 62%)}
+.open-panel{--pad:clamp(12px,2vw,20px);position:relative;z-index:2;width:min(980px,100%);margin:auto;padding:0 var(--pad)}
+/* Same rule here: the language control only floats where the panel has a gutter for
+   it. Narrower than that it sits in the flow at the top of the invitation and again
+   beside "Continue to the website", so it is reachable at both ends without ever
+   being laid over the words. */
+.open-lang{position:absolute;top:10px;left:10px;z-index:6;border-color:rgba(231,192,121,.45);
+  background:rgba(7,9,11,.88);backdrop-filter:blur(6px)}
+.open-lang button{color:#E4D3B4;border-right-color:rgba(231,192,121,.32);min-height:44px;min-width:44px}
+.open-lang button:not([aria-pressed="true"]):hover{color:#F6DFAF}
+.open-lang button[aria-pressed="true"]{background:var(--accent-2);color:#241300;font-weight:600}
+.open-lang-foot{display:inline-flex;margin:2px auto 0}
+.lang.open-lang-foot button{min-width:48px;min-height:46px;padding:8px;color:#E4D3B4}
+.lang.open-lang-foot button[aria-pressed="true"]{background:var(--accent-2);color:#241300;font-weight:600}
+.lang.open-lang-foot button:focus-visible{outline:2px solid var(--accent-1);outline-offset:-2px}
+@media(min-width:900px){
+  .open-panel{width:min(980px,calc(100vw - 2*var(--float-gutter)))}
+  .open-lang{position:fixed;left:8px;top:50%;transform:translateY(-50%);flex-direction:column;width:44px}
+  .open-lang button{border-right:0;border-bottom:1px solid rgba(231,192,121,.32)}
+  .open-lang button:last-child{border-bottom:0}
+  .open-lang-foot{display:none}
+}
+.open-x{position:absolute;top:10px;right:10px;z-index:6;width:40px;height:40px;border-radius:50%;
+  border:1px solid rgba(231,192,121,.45);background:rgba(7,9,11,.88);color:var(--accent-1);
+  font-size:22px;line-height:1;cursor:pointer;backdrop-filter:blur(4px)}
+.open-x:hover,.open-x:focus-visible{color:#F6DFAF;border-color:var(--accent-1);outline:none}
+.open-skip{display:block;width:100%;margin:14px auto 0;background:none;border:0;cursor:pointer;
+  font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+  color:#9A8D77;padding:14px 8px;min-height:46px}
+.open-skip:hover,.open-skip:focus-visible{color:var(--accent-1);outline:none}
+
+/* ---------- the invitation (shared by the homepage splash and opening.html) ----------
+   Gold on near-black, matching the printed invitation Zach had made: string lights
+   across the top, the crest straddling the photo edge, the terrace shot dissolving
+   into the ground, hairline rules with a diamond, and a tight two/three-column grid. */
+.inv{position:relative;z-index:2;background:transparent;color:var(--paper-on-dark)}
+/* overflow-x:clip contains the string lights, which are deliberately wider than the
+   column; without it they widen the document and break the three-viewport law */
+.inv-top{position:relative;padding-top:calc(var(--crest) * .52);overflow-x:clip}
+/* The string lights used to be an SVG band across the top of the photo, so they
+   scrolled away and the rest of the page was confetti on black. They now live in the
+   shared .gold-field canvas, swagging the whole way down behind the content. */
+.inv-photo{position:relative;aspect-ratio:16/8;overflow:hidden;z-index:1}
+@media(max-width:560px){.inv-photo{aspect-ratio:16/10}}
+.inv-photo img{width:100%;height:100%;object-fit:cover}
+/* The photo dissolves into the ground on every edge. This has to be a MASK, not a
+   black overlay: the ground carries a warm radial wash and the confetti sits behind,
+   so painting flat black over the photo edges left a visible seam where the two
+   blacks met. Masking makes the photo genuinely transparent at the edges, and the
+   flecks drift through it the way they do on the printed invitation. */
+.inv-photo{
+  /* Two linear masks intersected, rather than one radial: a radial fades the corners
+     hard but leaves the long left and right edges at a constant partial alpha, and a
+     constant alpha down a straight edge still reads as a cut line. Intersecting a
+     vertical and a horizontal fade gives independent control of each edge. */
+  --vigY:linear-gradient(180deg,transparent 0,#000 17%,#000 63%,transparent 100%);
+  --vigX:linear-gradient(90deg,transparent 0,#000 14%,#000 86%,transparent 100%);
+  -webkit-mask-image:var(--vigY),var(--vigX);-webkit-mask-composite:source-in;
+  mask-image:var(--vigY),var(--vigX);mask-composite:intersect}
+/* bleed to the edge of the wrapper, as the poster bleeds to the edge of the page.
+   Each surface sets --pad to its own gutter so the bleed can never exceed it. */
+.inv-top{margin-inline:calc(-1 * var(--pad,0px))}
+@supports not ((-webkit-mask-image:radial-gradient(#000,#000)) or (mask-image:radial-gradient(#000,#000))){
+  .inv-photo::after{content:"";position:absolute;inset:-1px;pointer-events:none;
+    background:linear-gradient(180deg,var(--night) 0,rgba(7,9,11,0) 26%,rgba(7,9,11,0) 60%,var(--night) 100%)}}
+.inv-crest{position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:3;
+  width:var(--crest);height:var(--crest);border-radius:50%;
+  filter:drop-shadow(0 6px 16px rgba(0,0,0,.6))}
+
+.inv-body{position:relative;z-index:2;margin-top:-2px;text-align:center;
+  padding:0 clamp(18px,3vw,26px) clamp(20px,3vw,30px)}
+.inv-kicker{display:block;font-family:var(--serif);font-weight:700;color:var(--accent-1);
+  font-size:clamp(31px,8.4vw,64px);letter-spacing:.15em;text-indent:.15em;text-transform:uppercase;line-height:1.02}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .inv-kicker{background-image:linear-gradient(178deg,#FBEAC0 4%,#E7C079 40%,#C08A3E 78%,#F2D79E 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}}
+.inv-script{display:block;font-family:var(--script);color:#F0D6A2;line-height:1.3;
+  font-size:clamp(23px,5.6vw,44px);margin-top:2px;padding:0 4px}
+.inv-h{font-size:clamp(19px,3.9vw,31px);color:var(--accent-1);line-height:1.16;letter-spacing:.01em;
+  margin-top:12px;font-weight:400}
+.inv-lede{max-width:56ch;margin:10px auto 0;color:#C7BCA9;font-size:clamp(13.5px,2.3vw,16px);line-height:1.5}
+
+/* ---------- hairline rule with a centred diamond ---------- */
+.inv-rule{display:flex;align-items:center;justify-content:center;gap:9px;margin:13px auto 0;
+  width:min(320px,72%)}
+.inv-rule.sm{width:min(170px,66%);margin:11px auto}
+.inv-rule.wide{width:min(430px,86%);margin:14px auto 0}
+.inv-rule i{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(212,168,94,.72))}
+.inv-rule s + i{background:linear-gradient(90deg,rgba(212,168,94,.72),transparent)}
+.inv-rule s{width:5px;height:5px;transform:rotate(45deg);background:var(--accent-2);flex:none}
+
+/* ---------- the grid ---------- */
+.inv-grid3,.inv-grid2{display:grid;gap:12px;margin-top:18px;text-align:left}
+.inv-grid2{align-items:start}
+.inv-grid3{grid-template-columns:1fr}
+.inv-grid2{grid-template-columns:1fr}
+@media(min-width:660px){
+  .inv-grid3{grid-template-columns:1fr 1fr}
+  .inv-grid3>:last-child{grid-column:1/-1}
+  .inv-grid2{grid-template-columns:1fr 1fr}
+}
+/* the poster reads as three columns across the top half — date, bullets, token system.
+   Held back to 800px so the three do not crush each other on small tablets. */
+@media(min-width:800px){
+  .inv-grid3{grid-template-columns:.92fr 1.06fr .92fr}
+  .inv-grid3>:last-child{grid-column:auto}
+}
+.inv-box{border:1px solid rgba(212,168,94,.3);border-radius:5px;padding:16px 17px;
+  /* opaque enough that the gold field never drifts through the words inside a panel;
+     on the poster the boxes read as solid dark plates, a touch lifted off the ground */
+  background:rgba(16,19,23,.88)}
+.inv-box h3{display:flex;align-items:center;gap:9px;font-size:14.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--accent-1);margin-bottom:8px;font-weight:700}
+.inv-box h3 .bh{width:24px;height:24px;flex:none;stroke:var(--accent-1);fill:none;stroke-width:1.3;
+  stroke-linecap:round;stroke-linejoin:round}
+.inv-box p{margin:0 0 7px;color:#C0B4A0;font-size:13.8px;line-height:1.46}
+.inv-box p:last-child{margin-bottom:0}
+
+.inv-when{display:flex;flex-direction:column;justify-content:center;text-align:center;padding:20px 16px}
+.inv-day{font-family:var(--serif);font-weight:700;color:var(--accent-1);
+  font-size:clamp(21px,4.4vw,30px);letter-spacing:.09em;text-indent:.09em;text-transform:uppercase;line-height:1.06}
+.inv-date{font-family:var(--serif);font-weight:700;color:#F3E7CE;font-size:clamp(16px,3.2vw,21px);margin-top:3px}
+.inv-time{font-family:var(--serif);font-weight:700;color:var(--accent-1);
+  font-size:clamp(15.5px,3vw,20px);letter-spacing:.03em}
+
+/* the bullets carry no box on the poster — dividers and a rule against the date panel */
+.inv-what{list-style:none;margin:0;padding:2px 4px;display:flex;flex-direction:column;justify-content:center}
+@media(min-width:800px){.inv-what{padding-left:18px;border-left:1px solid rgba(212,168,94,.26)}}
+.inv-what li{display:flex;align-items:flex-start;gap:11px;padding:8px 0;
+  border-bottom:1px solid rgba(212,168,94,.16)}
+.inv-what li:last-child{border-bottom:0}
+.inv-what svg{width:21px;height:21px;flex:none;margin-top:1px;stroke:var(--accent-1);fill:none;
+  stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.inv-what .t{display:block;color:#EFE6D6;font-size:13.8px;line-height:1.32}
+.inv-what .s{display:block;color:#9A8D77;font-size:12px;margin-top:2px;line-height:1.3}
+
+/* ---------- the registration form, dark like every other panel ----------
+   A cream form in the middle of a black invitation is the one thing that reads as a
+   web form bolted onto a poster. On the printed piece the PLEASE REGISTER panel is
+   dark with a thin gold outline, exactly like TOKEN SYSTEM and A GIFT? — so the form
+   sits directly on the panel with no inner card of its own. */
+.inv-form{margin-top:14px;text-align:left;color-scheme:dark}
+.inv-form .frow{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+@media(max-width:520px){.inv-form .frow{grid-template-columns:1fr}}
+.inv-form .field{margin-bottom:11px}
+.inv-form .field label{display:block;font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--accent-1);margin-bottom:5px}
+.inv-form input,.inv-form textarea{width:100%;font-family:var(--sans);font-size:15px;
+  color:#F6ECDA;background:rgba(255,255,255,.05);border:1px solid rgba(212,168,94,.34);
+  border-radius:3px;padding:11px 12px;min-height:44px}
+.inv-form textarea{min-height:66px;resize:vertical}
+.inv-form input::placeholder,.inv-form textarea::placeholder{color:#9B8D76}
+.inv-form input:focus,.inv-form textarea:focus{outline:none;border-color:var(--accent-1);
+  background:rgba(255,255,255,.085);box-shadow:0 0 0 3px rgba(231,192,121,.26)}
+/* browsers repaint autofilled fields near-white, which would put the cream panel
+   straight back the moment a visitor uses a saved address */
+.inv-form input:-webkit-autofill,.inv-form input:-webkit-autofill:focus{
+  -webkit-box-shadow:0 0 0 60px #12161B inset;-webkit-text-fill-color:#F6ECDA;caret-color:#F6ECDA}
+.inv-form .btn-gold{width:100%;margin-top:3px}
+.inv-form .form-note{text-align:center;font-size:12.5px;color:#9A8D77;margin:11px 0 0}
+.inv-form .form-status{text-align:center;font-size:13.5px;margin-top:9px;min-height:1px}
+.inv-form .form-status.sending{color:#B3A184}
+.inv-form .form-status.ok{color:#8FD3A6}
+.inv-form .form-status.err{color:#E9A177}
+.inv-reg{text-align:center}
+.inv-reg h3{justify-content:center}
+.inv-reg p{max-width:42ch;margin-left:auto;margin-right:auto}
+.inv-reg .inv-cta{margin-top:13px}
+
+.inv-sign{margin-top:20px}
+.inv-close{font-family:var(--script);color:var(--accent-1);line-height:1.3;
+  font-size:clamp(22px,5vw,40px);margin:0 auto;max-width:22ch}
+.inv-team{font-family:var(--serif);color:#F3E7CE;font-size:clamp(15px,2.9vw,20px);margin-top:6px}
+.inv-place{font-size:11px;letter-spacing:.28em;text-indent:.28em;text-transform:uppercase;
+  color:#9A8D77;margin-top:11px}
+
+/* the confetti layer: never interactive, never above the content */
+.gold-field{position:fixed;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;display:block}
+
+/* The splash hands off to the site's shared flip-card modal. That modal is paper for
+   the five reservation services and must stay that way; only the opening form takes
+   the invitation's dark treatment, so the flow from a black invitation does not flip
+   into a cream card. Scoped by .res-dark, set on open for service "opening" only. */
+.res-modal-wrap.res-dark .res-face{background:#12161B linear-gradient(180deg,#12161B,var(--night-2));
+  color:var(--paper-on-dark);border:1px solid rgba(212,168,94,.34)}
+.res-modal-wrap.res-dark .rf-front-title{color:#F3E7CE}
+.res-modal-wrap.res-dark .res-front .rf-ic svg{stroke:var(--accent-1)}
+.res-modal-wrap.res-dark .res-x{background:rgba(7,9,11,.72);border-color:rgba(231,192,121,.45);color:var(--accent-1)}
+.res-modal-wrap.res-dark .res-x:hover,.res-modal-wrap.res-dark .res-x:focus-visible{color:#F6DFAF;border-color:var(--accent-1)}
+.res-modal-wrap.res-dark .fk{color:var(--accent-1)}
+.res-modal-wrap.res-dark h3{color:#F3E7CE}
+.res-modal-wrap.res-dark .open-when{color:var(--accent-1)}
+.res-modal-wrap.res-dark .res-form{color-scheme:dark}
+.res-modal-wrap.res-dark .field label{color:var(--accent-1);letter-spacing:.15em}
+.res-modal-wrap.res-dark .field input,.res-modal-wrap.res-dark .field textarea{
+  color:#F6ECDA;background:rgba(255,255,255,.05);border-color:rgba(212,168,94,.34);border-radius:3px}
+.res-modal-wrap.res-dark .field input::placeholder,.res-modal-wrap.res-dark .field textarea::placeholder{color:#9B8D76}
+.res-modal-wrap.res-dark .field input:focus,.res-modal-wrap.res-dark .field textarea:focus{
+  border-color:var(--accent-1);background:rgba(255,255,255,.085);box-shadow:0 0 0 3px rgba(231,192,121,.26)}
+.res-modal-wrap.res-dark .field input:-webkit-autofill,.res-modal-wrap.res-dark .field input:-webkit-autofill:focus{
+  -webkit-box-shadow:0 0 0 60px #12161B inset;-webkit-text-fill-color:#F6ECDA;caret-color:#F6ECDA}
+.res-modal-wrap.res-dark .form-note{color:#9A8D77}
+.res-modal-wrap.res-dark .form-status.sending{color:#B3A184}
+.res-modal-wrap.res-dark .form-status.ok{color:#8FD3A6}
+.res-modal-wrap.res-dark .form-status.err{color:#E9A177}
+
+/* the opening's own reservation form (reuses the site's form machinery) */
+.res-front .rf-ic{display:block;margin-bottom:12px}
+/* the modal clones this icon out of the card; without an intrinsic size it rendered
+   512px and solid black on the live site. Size + fill pinned here AND as svg attrs. */
+.rf-ic{width:52px;height:52px;display:block}
+.rf-ic svg{width:44px;height:44px;fill:none;stroke:var(--accent-3);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.open-when{text-align:center;font-family:var(--serif);color:var(--accent-3);
+  font-size:15px;margin:-8px 0 16px}
+</style>
+<link rel="canonical" href="https://www.oudkempeneetcafe.nl/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant",
+"name":"Oud-Kempen Eetcaf\u00e9",
+"url":"https://www.oudkempeneetcafe.nl/",
+"image":"https://www.oudkempeneetcafe.nl/assets/hero.webp",
+"telephone":"+31627894034",
+"email":"reservationsoke@gmail.com",
+"servesCuisine":["Dutch","Indonesian"],
+"priceRange":"$$",
+"address":{"@type":"PostalAddress","streetAddress":"Buurtweg 5","postalCode":"4696 RT","addressLocality":"Stavenisse","addressRegion":"Zeeland","addressCountry":"NL"},
+"hasMenu":"https://www.oudkempeneetcafe.nl/menu",
+"acceptsReservations":"True",
+"sameAs":["https://www.instagram.com/oudkempen_zeeland"],
+"openingHoursSpecification":[
+ {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"15:00","closes":"21:00"},
+ {"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday","Sunday"],"opens":"12:30","closes":"21:00"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Event",
+"name":"Grand opening \u2014 Eetcaf\u00e9 Oud Kempen",
+"startDate":"2026-09-05T17:00+02:00",
+"endDate":"2026-09-05T23:00+02:00",
+"eventStatus":"https://schema.org/EventScheduled",
+"eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
+"url":"https://www.oudkempeneetcafe.nl/opening",
+"description":"Eetcaf\u00e9 Oud Kempen officially opens its doors. Live music, bites, one free low-alcoholic drink per guest.",
+"location":{"@type":"Place","name":"Oud-Kempen Eetcaf\u00e9","address":{"@type":"PostalAddress","streetAddress":"Buurtweg 5","postalCode":"4696 RT","addressLocality":"Stavenisse","addressRegion":"Zeeland","addressCountry":"NL"}},
+"organizer":{"@type":"Organization","name":"Eetcaf\u00e9 Oud Kempen","url":"https://www.oudkempeneetcafe.nl/"},
+"isAccessibleForFree":true}
+</script>
+</head>
+<body>
+
+<!-- ============================== NAV ============================== -->
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="Oud-Kempen Eetcafé — home">
+      <span class="nb-name">Oud-Kempen</span>
+      <span class="nb-eet" aria-hidden="true"><i class="nb-fl"></i>Eetcafé<i class="nb-fl"></i></span>
+    </a>
+    <div class="nav-links">
+      <a href="#restaurant" data-i18n="nav.restaurant">Restaurant</a>
+      <a href="menu.html" data-i18n="nav.menu">Menu</a>
+      <a href="#services" data-i18n="nav.services">Reserveren</a>
+      <a href="#gallery" data-i18n="nav.gallery">Galerij</a>
+      <a href="#visit" data-i18n="nav.visit">Bezoek</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="nl" aria-pressed="true">NL</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="de" aria-pressed="false">DE</button>
+      </div>
+      <a class="btn btn-gold" href="#services" data-i18n="nav.cta">Reserveer</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== GRAND OPENING ribbon — revealed by the opening script only while the event is ahead ===== -->
+<div class="open-ribbon" id="openRibbon" hidden>
+  <div class="open-ribbon-in">
+    <span class="orb-t" data-i18n="open.ribbon">Grand opening · Saturday 5 September</span>
+    <a class="orb-a" href="opening.html" data-i18n="open.ribbon.cta">View invitation</a>
+  </div>
+</div>
+
+<!-- ============================== HERO ============================== -->
+<header class="hero" id="top">
+  <!-- flourish bleed -->
+  <div class="engraving" style="right:-120px;top:20px;opacity:.16" aria-hidden="true">
+    <svg width="420" height="460" viewBox="0 0 420 460">
+      <g stroke="currentColor" fill="none" stroke-width="1">
+        <path d="M210 40 C120 90 120 200 210 250 C300 200 300 90 210 40 Z"/>
+        <path d="M210 90 C160 120 160 190 210 220 C260 190 260 120 210 90 Z"/>
+        <path d="M60 300 C110 280 150 320 130 370 C90 360 60 340 60 300 Z"/>
+        <path d="M360 300 C310 280 270 320 290 370 C330 360 360 340 360 300 Z"/>
+        <circle cx="210" cy="150" r="8"/>
+      </g>
+    </svg>
+  </div>
+  <div class="hero-in">
+    <h1 class="lockup" aria-label="Oud-Kempen Eetcafé — Stavenisse, Zeeland">
+      <span class="lk-top" aria-hidden="true"></span>
+      <span class="lk-name">Oud-Kempen</span>
+      <span class="lk-eet" aria-hidden="true">
+        <svg class="fl flip" viewBox="0 0 54 14"><path d="M52 7 H15 c-4.5 0 -7.5 -2 -9.5 -5.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <span class="txt">Eetcafé</span>
+        <svg class="fl" viewBox="0 0 54 14"><path d="M52 7 H15 c-4.5 0 -7.5 -2 -9.5 -5.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </span>
+      <span class="lk-place" aria-hidden="true">Stavenisse · Zeeland</span>
+      <svg class="lk-knot" viewBox="0 0 168 16" aria-hidden="true">
+        <g stroke="currentColor" fill="none" stroke-width="1.3" stroke-linecap="round">
+          <path d="M16 8 H66"/><path d="M102 8 H152"/>
+          <path d="M84 8 c-10 -7 -20 -7 -20 0 c0 7 10 7 20 0"/>
+          <path d="M84 8 c10 -7 20 -7 20 0 c0 7 -10 7 -20 0"/>
+        </g>
+        <circle cx="84" cy="8" r="2.3" fill="currentColor"/>
+      </svg>
+    </h1>
+    <div class="sub" data-i18n="hero.sub">Verse smaken, warme gastvrijheid en voor ieder wat wils</div>
+    <p class="lede" data-i18n="hero.lede">Geniet van verse gerechten, heerlijke kaasfondue, verse vis, hartige snacks en authentieke Indonesische specialiteiten in een warm en gastvrij restaurant. Of u nu komt voor de lunch, het diner of een borrel: u geniet van echte Zeeuwse gastvrijheid, vriendelijke service en een ontspannen sfeer. Ontspan in ons restaurant met volledige airconditioning of op ons ruime terras, omgeven door natuur.</p>
+    <div class="hero-rule"></div>
+    <div class="hero-cta">
+      <a class="btn btn-gold" href="#services" data-i18n="hero.cta1">Reserveer een tafel</a>
+      <a class="btn btn-line" href="#restaurant" data-i18n="hero.cta2">Bekijk het restaurant</a>
+    </div>
+
+    <!-- hero photo plate -->
+    <figure class="plate hero-plate reveal">
+      <div class="pic">
+        <img src="assets/hero.webp" width="1500" height="800" alt="Zeeuws landschap bij zonsondergang nabij Stavenisse" fetchpriority="high">
+        <figcaption class="cap">
+          <span class="k" data-i18n="hero.capk">Aan de rand van het dorp</span>
+          <span class="t" data-i18n="hero.capt">Stavenisse, Zeeland</span>
+        </figcaption>
+      </div>
+    </figure>
+
+    <!-- LIVE window -->
+    <div class="plate live" role="status" aria-live="polite">
+      <div class="label" data-i18n="live.label">Terrasweer · Stavenisse</div>
+      <div class="row">
+        <div class="cell"><div class="fig" id="wx-temp">17°</div><div class="u" id="wx-desc" data-i18n="live.clear">Helder</div></div>
+        <div class="cell"><div class="fig open" id="oc-fig" data-i18n="live.open">Open</div><div class="u" id="oc-u" data-i18n="live.until">tot 21:00</div></div>
+      </div>
+      <div class="status" id="live-status"><span class="dot"></span><span data-i18n="live.seed">indicatief; live gegevens laden…</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============================== RESTAURANT ============================== -->
+<section class="restaurant" id="restaurant">
+  <div class="engraving" style="left:-130px;bottom:-40px;opacity:.1;transform:scaleX(-1)" aria-hidden="true">
+    <svg width="360" height="400" viewBox="0 0 420 460"><g stroke="currentColor" fill="none" stroke-width="1">
+      <path d="M210 40 C120 90 120 200 210 250 C300 200 300 90 210 40 Z"/>
+      <path d="M60 300 C110 280 150 320 130 370 C90 360 60 340 60 300 Z"/>
+      <circle cx="210" cy="150" r="8"/></g></svg>
+  </div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker" data-i18n="rest.kicker">Het restaurant</div>
+      <h2 data-i18n="rest.title">Verse smaken en Zeeuwse gastvrijheid</h2>
+      <p data-i18n="rest.dek">Of u nu komt voor de lunch, het diner of een borrel: u geniet van een afwisselende kaart met verse gerechten, heerlijke kaasfondue en authentieke Indonesische specialiteiten, in een warme en ontspannen sfeer.</p>
+    </div>
+    <div class="rest-grid">
+      <div class="rest-copy reveal">
+        <h3 data-i18n="rest.h3">Van lunch en diner tot borrel en dessert</h3>
+        <p data-i18n="rest.p1">Ontdek verse gerechten, onze populaire kaasfondue, verse vis, hartige snacks en authentieke Indonesische specialiteiten, geserveerd in een warme, comfortabele setting. Gezellig binnen aan tafel of buiten op het ruime terras, omgeven door natuur.</p>
+        <ul class="assure">
+          <li data-i18n="rest.a1">Verse gerechten voor iedereen</li>
+          <li data-i18n="rest.a2">Kaasfondue (op reservering)</li>
+          <li data-i18n="rest.a3">Authentieke Indonesische specialiteiten</li>
+          <li data-i18n="rest.a4">Restaurant met volledige airconditioning</li>
+          <li data-i18n="rest.a5">Ruim terras, omgeven door natuur</li>
+          <li data-i18n="rest.a6">Speeltuin voor kinderen</li>
+          <li data-i18n="rest.a7">7 dagen per week open</li>
+        </ul>
+        <div class="hero-cta" style="justify-content:flex-start;margin-top:22px">
+          <a class="btn btn-gold" href="#services" data-i18n="rest.cta1">Reserveer een tafel</a>
+          <a class="btn btn-line" href="menu.html" data-i18n="rest.cta2">Bekijk het menu</a>
+        </div>
+      </div>
+      <div class="reveal">
+        <figure class="plate rest-plate">
+          <div class="pic"><img src="assets/food.webp" width="1000" height="667" loading="lazy" alt="Vers bereid gerecht op tafel bij Oud-Kempen Eetcafé"></div>
+        </figure>
+        <div class="rest-thumbs">
+          <figure class="plate"><div class="pic"><img src="assets/dining.webp" width="1000" height="800" loading="lazy" alt="Gedekte tafel met wijn"></div></figure>
+          <figure class="plate"><div class="pic"><img src="assets/terrace.webp" width="1200" height="653" loading="lazy" alt="Het zonnige terras van Oud-Kempen Eetcafé"></div></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FEATURE BAND (full-bleed photo) ============================== -->
+<section class="feature-band" aria-label="Ons terras">
+  <div class="fb-media"><img src="assets/terrace.webp" width="1200" height="653" loading="lazy" alt="Het terras van Oud-Kempen op een zonnige dag"></div>
+  <div class="fb-inner reveal">
+    <h2 class="fb-title" data-i18n="fb.title">Een terras omgeven door natuur</h2>
+    <svg class="flourish" width="150" height="20" viewBox="0 0 150 20" style="margin:16px auto 14px" aria-hidden="true">
+      <g stroke="#E7C079" fill="none" stroke-width="1.1">
+        <path d="M18 10 H62"/><path d="M88 10 H132"/>
+        <path d="M75 10 c-8 -6 -16 -6 -16 0 c0 6 8 6 16 0"/>
+        <path d="M75 10 c8 -6 16 -6 16 0 c0 6 -8 6 -16 0"/>
+      </g><circle cx="75" cy="10" r="2.1" fill="#E7C079"/>
+    </svg>
+    <p class="fb-p" data-i18n="fb.p">Zonnige middagen en lange zomeravonden op ons ruime terras, aan de rand van het dorp, met de Zeeuwse natuur als uitzicht.</p>
+  </div>
+</section>
+
+<!-- ============================== SERVICES ============================== -->
+<section class="services" id="services">
+  <div class="engraving" style="right:-150px;top:40px;opacity:.09" aria-hidden="true">
+    <svg width="440" height="480" viewBox="0 0 420 460"><g stroke="currentColor" fill="none" stroke-width="1">
+      <path d="M210 40 C120 90 120 200 210 250 C300 200 300 90 210 40 Z"/>
+      <path d="M210 90 C160 120 160 190 210 220 C260 190 260 120 210 90 Z"/>
+      <path d="M360 300 C310 280 270 320 290 370 C330 360 360 340 360 300 Z"/>
+      <circle cx="210" cy="150" r="8"/></g></svg>
+  </div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker" data-i18n="svc.kicker">Alles bij Oud-Kempen</div>
+      <h2 data-i18n="svc.title">Meer dan alleen eten</h2>
+      <p data-i18n="svc.dek">Reserveer direct wat u zoekt: een tafel, een fiets, de jacuzzi, het vakantiehuis of uw eigen feest. Kies en wij nemen contact op ter bevestiging.</p>
+    </div>
+    <div class="cards">
+      <a class="card reveal" href="#reserveform" data-service="table">
+        <span class="ic"><svg viewBox="0 0 44 44"><path d="M14 8v12M11 8v7a3 3 0 006 0V8M30 8c-2.5 0-4 3-4 8s1.5 6 4 6M30 22v14M14 20v16"/></svg></span>
+        <h3 data-i18n="svc.table.t">Reserveer een tafel</h3>
+        <p data-i18n="svc.table.d">Lunch, diner of borrel, binnen of op het terras.</p>
+        <span class="tag" data-i18n="svc.table.tag">Direct reserveren</span>
+      </a>
+      <a class="card reveal" href="#reserveform" data-service="bike">
+        <span class="ic"><svg viewBox="0 0 44 44"><circle cx="12" cy="30" r="7"/><circle cx="32" cy="30" r="7"/><path d="M12 30l7-13h8M19 17l6 13M25 17h5M17 30h9"/></svg></span>
+        <h3 data-i18n="svc.bike.t">Fietsverhuur</h3>
+        <p data-i18n="svc.bike.d">Ontdek Zeeland op de fiets, zo van het terras af.</p>
+        <span class="tag" data-i18n="svc.bike.tag">Per dag te huur</span>
+      </a>
+      <a class="card reveal" href="#reserveform" data-service="jacuzzi">
+        <span class="ic"><svg viewBox="0 0 44 44"><path d="M8 22h28v6a6 6 0 01-6 6H14a6 6 0 01-6-6zM12 22v-7a3 3 0 013-3 3 3 0 013 3M24 16c0-2 1-3 2-3M28 13c0-2 1-3 2-3M20 13c0-2 1-3 2-3"/></svg></span>
+        <h3 data-i18n="svc.jac.t">Jacuzzi huren</h3>
+        <p data-i18n="svc.jac.d">Ontspan onder de Zeeuwse hemel na een dag uit.</p>
+        <span class="tag" data-i18n="svc.jac.tag">Op reservering</span>
+      </a>
+      <a class="card reveal" href="#reserveform" data-service="house">
+        <span class="ic"><svg viewBox="0 0 44 44"><path d="M8 21L22 9l14 12M11 19v15h22V19M19 34v-8h6v8"/></svg></span>
+        <h3 data-i18n="svc.house.t">Vakantiehuis</h3>
+        <p data-i18n="svc.house.d">Vraag vrijblijvend naar beschikbaarheid en tarieven.</p>
+        <span class="tag" data-i18n="svc.house.tag">Aanvraag</span>
+      </a>
+      <a class="card reveal" href="#reserveform" data-service="event">
+        <span class="ic"><svg viewBox="0 0 44 44"><path d="M15 10l3 12M29 10l-3 12M18 22h8l-1 6h-6zM22 28v6M17 34h10M13 8l2 3M31 8l-2 3M22 6v4"/></svg></span>
+        <h3 data-i18n="svc.event.t">Vier uw feest</h3>
+        <p data-i18n="svc.event.d">Verjaardag, bruiloft of borrel; wij regelen het.</p>
+        <span class="tag" data-i18n="svc.event.tag">Op maat</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- reservation band, still under #services -->
+  <div class="reserve" style="margin-top:56px" id="reserveform">
+    <div class="engraving" style="right:-140px;top:-30px;opacity:.09;color:#7A6A57" aria-hidden="true">
+      <svg width="380" height="420" viewBox="0 0 420 460"><g stroke="currentColor" fill="none" stroke-width="1">
+        <path d="M210 40 C120 90 120 200 210 250 C300 200 300 90 210 40 Z"/>
+        <path d="M360 300 C310 280 270 320 290 370 C330 360 360 340 360 300 Z"/>
+        <circle cx="210" cy="150" r="8"/></g></svg>
+    </div>
+    <div class="wrap">
+      <div class="res-grid">
+        <div class="res-persuade reveal">
+          <div class="kicker" style="color:var(--accent-1)" data-i18n="res.kicker">Reserveren</div>
+          <h3 data-i18n="res.h3">Uw tafel bij Oud-Kempen is zo geregeld</h3>
+          <p data-i18n="res.p">Kies een dienst en vul het korte formulier in. Elke dienst heeft z'n eigen formulier. Wij bevestigen persoonlijk. Geen account, geen gedoe.</p>
+          <ul class="assure">
+            <li data-i18n="res.a1">Tafel, fiets, jacuzzi, vakantiehuis of feest</li>
+            <li data-i18n="res.a2">Persoonlijke bevestiging per e-mail</li>
+            <li data-i18n="res.a3">Groepen en gelegenheden welkom</li>
+          </ul>
+          <p class="contact-line"><span data-i18n="res.call">Of bel ons: </span><a href="tel:+31627894034">+31 6 27 89 40 34</a></p>
+        </div>
+        <div class="form-window res-prompt reveal">
+          <h3 data-i18n="res.picktitle">Kies uw dienst</h3>
+          <p class="rp-lead" data-i18n="res.pick">Elke dienst heeft een eigen snel formulier. Klik hieronder of op een kaart hierboven om te openen.</p>
+          <div class="prompt-btns">
+            <button type="button" class="pbtn" data-open="table"><span data-i18n="svc.table.t">Reserveer een tafel</span></button>
+            <button type="button" class="pbtn" data-open="bike"><span data-i18n="svc.bike.t">Fietsverhuur</span></button>
+            <button type="button" class="pbtn" data-open="jacuzzi"><span data-i18n="svc.jac.t">Jacuzzi huren</span></button>
+            <button type="button" class="pbtn" data-open="house"><span data-i18n="svc.house.t">Vakantiehuis</span></button>
+            <button type="button" class="pbtn" data-open="event"><span data-i18n="svc.event.t">Vier uw feest</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== GALLERY ============================== -->
+<section class="gallery" id="gallery">
+  <div class="engraving" style="left:-150px;bottom:20px;opacity:.08;transform:scaleX(-1)" aria-hidden="true">
+    <svg width="420" height="460" viewBox="0 0 420 460"><g stroke="currentColor" fill="none" stroke-width="1">
+      <path d="M210 40 C120 90 120 200 210 250 C300 200 300 90 210 40 Z"/>
+      <path d="M60 300 C110 280 150 320 130 370 C90 360 60 340 60 300 Z"/>
+      <circle cx="210" cy="150" r="8"/></g></svg>
+  </div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker" data-i18n="gal.kicker">Galerij</div>
+      <h2 data-i18n="gal.title">Sfeer proeven</h2>
+      <p data-i18n="gal.dek">Een indruk van het restaurant, het terras en de tafel, van zonnige middagen tot gezellige avonden.</p>
+    </div>
+    <div class="gal-grid">
+      <figure class="plate wide reveal"><div class="pic"><img src="assets/terrace.webp" width="1200" height="653" loading="lazy" alt="Terras van Oud-Kempen op een zonnige dag"></div></figure>
+      <figure class="plate reveal"><div class="pic"><img src="assets/food.webp" width="1000" height="1000" loading="lazy" alt="Gerecht bij Oud-Kempen"></div></figure>
+      <figure class="plate reveal"><div class="pic"><img src="assets/event.webp" width="1000" height="1000" loading="lazy" alt="Feest en gezelligheid"></div></figure>
+      <figure class="plate reveal"><div class="pic"><img src="assets/dining.webp" width="1000" height="1000" loading="lazy" alt="Gedekte tafel met wijn"></div></figure>
+      <figure class="plate wide reveal"><div class="pic"><img src="assets/plate.webp" width="900" height="600" loading="lazy" alt="Oud-Kempen Eetcafé in het gouden avondlicht"></div></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== VISIT ============================== -->
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker" data-i18n="visit.kicker">Bezoek ons</div>
+      <h2 data-i18n="visit.title">Openingstijden & route</h2>
+      <p data-i18n="visit.dek">U vindt ons aan de Buurtweg 5 in Stavenisse, aan de rand van het dorp in het hart van Zeeland. We zijn 7 dagen per week open.</p>
+    </div>
+    <div class="visit-grid">
+      <div class="info-window reveal">
+        <h3 data-i18n="visit.h3">Oud-Kempen Eetcafé</h3>
+        <div class="addr">Buurtweg 5, 4696 RT Stavenisse<br>Zeeland, Nederland</div>
+        <ul class="hours" id="hours-list">
+          <li data-day="1"><span class="d" data-i18n="day.mon">Maandag</span><span class="h">15:00 – 21:00</span></li>
+          <li data-day="2"><span class="d" data-i18n="day.tue">Dinsdag</span><span class="h">15:00 – 21:00</span></li>
+          <li data-day="3"><span class="d" data-i18n="day.wed">Woensdag</span><span class="h">15:00 – 21:00</span></li>
+          <li data-day="4"><span class="d" data-i18n="day.thu">Donderdag</span><span class="h">15:00 – 21:00</span></li>
+          <li data-day="5"><span class="d" data-i18n="day.fri">Vrijdag</span><span class="h">12:30 – 21:00</span></li>
+          <li data-day="6"><span class="d" data-i18n="day.sat">Zaterdag</span><span class="h">12:30 – 21:00</span></li>
+          <li data-day="0"><span class="d" data-i18n="day.sun">Zondag</span><span class="h">12:30 – 21:00</span></li>
+        </ul>
+        <div class="contact-rows">
+          <a class="call" href="tel:+31627894034" aria-label="Bel Oud-Kempen Eetcafé"><svg viewBox="0 0 24 24"><path d="M6.5 3h3l1.5 4-2 1.5a11 11 0 005.5 5.5L16 12l4 1.5v3a2 2 0 01-2.2 2A15.5 15.5 0 014.5 5.2A2 2 0 016.5 3z"/></svg>+31 6 27 89 40 34</a>
+          <a href="mailto:reservationsoke@gmail.com"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>reservationsoke@gmail.com</a>
+          <a href="https://www.instagram.com/oudkempen_zeeland" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>@oudkempen_zeeland</a>
+          <a href="https://www.openstreetmap.org/?mlat=51.5906&mlon=4.0128#map=16/51.5906/4.0128" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-11a7 7 0 10-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="visit.route">Routebeschrijving</span></a>
+        </div>
+      </div>
+      <div class="map-window reveal">
+        <iframe title="Kaart — Oud-Kempen Eetcafé, Stavenisse" loading="lazy"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=3.97%2C51.573%2C4.055%2C51.608&layer=mapnik&marker=51.5906%2C4.0128"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============================== GRAND OPENING SPLASH ==============================
+     Shown on "/" (where the printed poster's QR code lands) only while the event is
+     ahead of us. `hidden` in source: the script must actively decide to reveal it, so
+     any failure of the date logic leaves it invisible. Dismissible — it never blocks
+     the rest of the site.                                                            -->
+<div class="open-splash" id="openSplash" role="dialog" aria-modal="true" aria-labelledby="openSplashT" hidden>
+  <canvas class="gold-field" id="openField" aria-hidden="true"></canvas>
+  <div class="open-panel">
+    <div class="lang open-lang" role="group" aria-label="Language">
+      <button type="button" data-lang="nl" aria-pressed="true">NL</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="de" aria-pressed="false">DE</button>
+    </div>
+    <button type="button" class="open-x" id="openX" aria-label="Sluiten">&times;</button>
+    <div class="inv">
+      <div class="inv-top">
+        <div class="inv-photo">
+          <img src="assets/terrace.webp" width="1200" height="653" alt="Het terras van Oud-Kempen op een zonnige dag" loading="lazy">
+        </div>
+        <img class="inv-crest" src="assets/crest.webp" width="320" height="320" loading="lazy"
+             alt="Eetcafé Oud Kempen — Stavenisse, Zeeland">
+      </div>
+      <div class="inv-body">
+        <span class="inv-kicker" data-i18n="open.kicker">Uitnodiging</span>
+        <span class="inv-script" data-i18n="open.script">voor ons knallende openingsfeest!</span>
+        <div class="inv-rule"><i></i><s></s><i></i></div>
+        <h2 class="inv-h" id="openSplashT" data-i18n="open.h">Eetcafé Oud Kempen opent feestelijk zijn deuren!</h2>
+        <p class="inv-lede" data-i18n="open.body">Na alle voorbereidingen is het eindelijk zover – en dat willen we heel graag samen met jullie vieren! Wij nodigen familie, vrienden, kennissen en natuurlijk onze nieuwe dorps- en eilandbewoners van harte uit.</p>
+
+        <div class="inv-grid3">
+          <div class="inv-box inv-when">
+            <div class="inv-day" data-i18n="open.day">Zaterdag</div>
+            <div class="inv-date" data-i18n="open.date">5 september 2026</div>
+            <div class="inv-rule sm"><i></i><s></s><i></i></div>
+            <div class="inv-time" data-i18n="open.time">17.00 – 23.00 uur</div>
+          </div>
+          <!-- The bullet list is NOT the same in every language. The Dutch poster gives
+               "Alcoholvrij alternatief mogelijk" its own bullet instead of a sub-line, and
+               has no munten bullet at all — munten appear only in the box. data-langs says
+               which languages each row belongs to; applyLang() does the rest. Defaults are
+               Dutch, matching <html lang="nl">, so the no-JS render is coherent. -->
+          <ul class="inv-what">
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10l-1.6 6.2a4 4 0 01-3.4 3H12a4 4 0 01-3.4-3zM12 13.2V20M9 20h6"/></svg>
+              <span><span class="t" data-i18n="open.b1">1 gratis zwak alcoholisch drankje per persoon</span><span class="s" data-langs="en de" data-i18n="open.b1s" hidden>Non-alcoholic alternative available</span></span>
+            </li>
+            <li data-langs="nl">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15h16a8 8 0 00-16 0zM3 18h18M9 15c0-3 1.5-5 3-5"/></svg>
+              <span class="t" data-i18n="open.b1s">Alcoholvrij alternatief mogelijk</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15h16a8 8 0 00-16 0zM3 18h18M9 15c0-3 1.5-5 3-5"/></svg>
+              <span class="t" data-i18n="open.b2">Lekkere hapjes</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="16" r="2"/></svg>
+              <span class="t" data-i18n="open.b3">Live muziek</span>
+            </li>
+            <li data-langs="en de" hidden>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="7" rx="7" ry="2.6"/><path d="M5 7v4c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6V7M5 11v4c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6v-4"/></svg>
+              <span class="t" data-i18n="open.b4">Munten-systeem</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4"/></svg>
+              <span class="t" data-i18n="open.b5">Hopelijk mooi weer</span>
+            </li>
+          </ul>
+          <div class="inv-box">
+            <h3><svg class="bh" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="7" rx="7" ry="2.6"/><path d="M5 7v4c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6V7M5 11v4c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6v-4"/></svg><span data-i18n="open.tok.t">Munten-systeem</span></h3>
+            <p data-i18n="open.tok.p">Tijdens het feest werken wij met consumptiemunten, die ter plaatse verkrijgbaar zijn. De munten zijn geldig bij Eetcafé Oud Kempen tot en met 31 oktober 2026.</p>
+          </div>
+        </div>
+
+        <div class="inv-grid2">
+          <div class="inv-box inv-reg">
+            <h3><svg class="bh" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span data-i18n="open.reg.t">Aanmelden graag!</span></h3>
+            <p data-i18n="open.reg.p">Om ons goed voor te bereiden, horen wij graag of jullie erbij zijn.</p>
+          <button type="button" class="btn btn-gold inv-cta" data-open="opening" data-i18n="open.cta">Register</button>
+          </div>
+          <div class="inv-box">
+            <h3><svg class="bh" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20v4H2zM12 9v12M12 9S9.5 3.5 7 5.5 9 9 12 9zM12 9s2.5-5.5 5-3.5S15 9 12 9z"/></svg><span data-i18n="open.gift.t">Een cadeau?</span></h3>
+            <p data-i18n="open.gift.p1">Niet verplicht! Jullie aanwezigheid is voor ons het mooiste geschenk. Wilt u ons toch iets geven, dan waarderen wij een geldcadeau.</p>
+            <p data-i18n="open.gift.p2">Wij schenken 10% van alle geldcadeaus aan een goed doel in Stavenisse of Tholen en leggen daar zelf nog eens 10% bovenop.</p>
+          </div>
+        </div>
+
+        <div class="inv-sign">
+          <p class="inv-close" data-i18n="open.close">Wij kijken uit naar een onvergetelijke avond met jullie!</p>
+          <div class="inv-team" data-i18n="open.team">Team Eetcafé Oud Kempen</div>
+          <div class="inv-rule wide"><i></i><s></s><i></i></div>
+          <div class="inv-place" data-i18n="open.place">Stavenisse – Zeeland</div>
+        </div>
+      </div>
+    </div>
+    <div class="lang open-lang-foot" role="group" aria-label="Language">
+      <button type="button" data-lang="nl" aria-pressed="true">NL</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="de" aria-pressed="false">DE</button>
+    </div>
+    <button type="button" class="open-skip" id="openSkip" data-i18n="open.continue">Continue to the website</button>
+  </div>
+</div>
+<!-- ============================== RESERVATION FORMS (per category) ============================== -->
+<div id="res-form-store" hidden>
+  <form class="res-form" data-service="table" novalidate>
+    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="fk" data-i18n="res.fk">Reserveringsaanvraag</div>
+    <h3 data-i18n="svc.table.t">Reserveer een tafel</h3>
+    <div class="frow">
+      <div class="field"><label for="f-table-name" data-i18n="res.l.name">Naam</label><input id="f-table-name" name="name" type="text" autocomplete="name" required></div>
+      <div class="field"><label for="f-table-email" data-i18n="res.l.email">E-mailadres</label><input id="f-table-email" name="email" type="email" autocomplete="email" required></div>
+    </div>
+    <div class="field"><label for="f-table-guests" data-i18n="res.l.guests">Aantal personen</label><input id="f-table-guests" name="guests" type="number" min="1" value="2"></div>
+    <div class="field fondue-field">
+      <label class="fondue-opt" for="f-table-fondue">
+        <input type="checkbox" id="f-table-fondue" name="fondue">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="fondue-t" data-i18n="res.fondue">Kaasfondue erbij (€ 25,95 p.p.)</span>
+      </label>
+      <p class="fondue-note" id="f-table-fondue-note" hidden data-i18n="res.fondue.note">Kaasfondue: minimaal 2 personen en minstens 1 dag van tevoren reserveren.</p>
+    </div>
+    <div class="frow">
+      <div class="field"><label for="f-table-date" data-i18n="res.l.date">Datum</label><input id="f-table-date" name="date" type="date"></div>
+      <div class="field"><label for="f-table-time" data-i18n="res.l.time">Tijd</label><input id="f-table-time" name="time" type="time" value="18:00"></div>
+    </div>
+    <div class="field"><label for="f-table-note" data-i18n="res.l.note">Opmerking (optioneel)</label><textarea id="f-table-note" name="note"></textarea></div>
+    <button type="submit" class="btn btn-gold" data-i18n="res.submit">Verstuur aanvraag</button>
+    <p class="form-note" data-i18n="res.note2">Wij bevestigen uw reservering persoonlijk.</p>
+    <div class="form-status" role="status" aria-live="polite"></div>
+  </form>
+  <form class="res-form" data-service="bike" novalidate>
+    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="fk" data-i18n="res.fk">Reserveringsaanvraag</div>
+    <h3 data-i18n="svc.bike.t">Fietsverhuur</h3>
+    <div class="frow">
+      <div class="field"><label for="f-bike-name" data-i18n="res.l.name">Naam</label><input id="f-bike-name" name="name" type="text" autocomplete="name" required></div>
+      <div class="field"><label for="f-bike-email" data-i18n="res.l.email">E-mailadres</label><input id="f-bike-email" name="email" type="email" autocomplete="email" required></div>
+    </div>
+    <div class="frow">
+      <div class="field"><label for="f-bike-std" data-i18n="res.b.std">Aantal gewone fietsen</label><input id="f-bike-std" name="standard_bikes" type="number" min="0" value="0"></div>
+      <div class="field"><label for="f-bike-e" data-i18n="res.b.e">Aantal e-bikes</label><input id="f-bike-e" name="e_bikes" type="number" min="0" value="0"></div>
+    </div>
+    <div class="frow">
+      <div class="field"><label for="f-bike-pud" data-i18n="res.b.pud">Ophaaldatum</label><input id="f-bike-pud" name="pickup_date" type="date"></div>
+      <div class="field"><label for="f-bike-put" data-i18n="res.b.put">Ophaaltijd</label><input id="f-bike-put" name="pickup_time" type="time" value="10:00"></div>
+    </div>
+    <div class="frow">
+      <div class="field"><label for="f-bike-dod" data-i18n="res.b.dod">Inleverdatum</label><input id="f-bike-dod" name="dropoff_date" type="date"></div>
+      <div class="field"><label for="f-bike-dot" data-i18n="res.b.dot">Inlevertijd</label><input id="f-bike-dot" name="dropoff_time" type="time" value="17:00"></div>
+    </div>
+    <div class="field"><label for="f-bike-note" data-i18n="res.l.note">Opmerking (optioneel)</label><textarea id="f-bike-note" name="note"></textarea></div>
+    <button type="submit" class="btn btn-gold" data-i18n="res.submit">Verstuur aanvraag</button>
+    <p class="form-note" data-i18n="res.note2">Wij bevestigen uw reservering persoonlijk.</p>
+    <div class="form-status" role="status" aria-live="polite"></div>
+  </form>
+  <form class="res-form" data-service="jacuzzi" novalidate>
+    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="fk" data-i18n="res.fk">Reserveringsaanvraag</div>
+    <h3 data-i18n="svc.jac.t">Jacuzzi huren</h3>
+    <div class="frow">
+      <div class="field"><label for="f-jac-name" data-i18n="res.l.name">Naam</label><input id="f-jac-name" name="name" type="text" autocomplete="name" required></div>
+      <div class="field"><label for="f-jac-email" data-i18n="res.l.email">E-mailadres</label><input id="f-jac-email" name="email" type="email" autocomplete="email" required></div>
+    </div>
+    <div class="frow">
+      <div class="field"><label for="f-jac-sd" data-i18n="res.l.startdate">Startdatum</label><input id="f-jac-sd" name="start_date" type="date"></div>
+      <div class="field"><label for="f-jac-st" data-i18n="res.l.starttime">Starttijd</label><input id="f-jac-st" name="start_time" type="time" value="19:00"></div>
+    </div>
+    <div class="frow">
+      <div class="field"><label for="f-jac-ed" data-i18n="res.l.enddate">Einddatum</label><input id="f-jac-ed" name="end_date" type="date"></div>
+      <div class="field"><label for="f-jac-et" data-i18n="res.l.endtime">Eindtijd</label><input id="f-jac-et" name="end_time" type="time" value="21:00"></div>
+    </div>
+    <div class="field"><label for="f-jac-room" data-i18n="res.j.room">Villanummer</label><input id="f-jac-room" name="room" type="text"></div>
+    <div class="field"><label for="f-jac-note" data-i18n="res.l.note">Opmerking (optioneel)</label><textarea id="f-jac-note" name="note"></textarea></div>
+    <button type="submit" class="btn btn-gold" data-i18n="res.submit">Verstuur aanvraag</button>
+    <p class="form-note" data-i18n="res.note2">Wij bevestigen uw reservering persoonlijk.</p>
+    <div class="form-status" role="status" aria-live="polite"></div>
+  </form>
+  <form class="res-form" data-service="house" novalidate>
+    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="fk" data-i18n="res.fk">Reserveringsaanvraag</div>
+    <h3 data-i18n="svc.house.t">Vakantiehuis</h3>
+    <div class="frow">
+      <div class="field"><label for="f-house-name" data-i18n="res.l.name">Naam</label><input id="f-house-name" name="name" type="text" autocomplete="name" required></div>
+      <div class="field"><label for="f-house-email" data-i18n="res.l.email">E-mailadres</label><input id="f-house-email" name="email" type="email" autocomplete="email" required></div>
+    </div>
+    <div class="frow">
+      <div class="field"><label for="f-house-ci" data-i18n="res.h.ci">Aankomstdatum</label><input id="f-house-ci" name="checkin" type="date"></div>
+      <div class="field"><label for="f-house-co" data-i18n="res.h.co">Vertrekdatum</label><input id="f-house-co" name="checkout" type="date"></div>
+    </div>
+    <div class="frow">
+      <div class="field"><label for="f-house-adults" data-i18n="res.h.adults">Volwassenen</label><input id="f-house-adults" name="adults" type="number" min="1" value="2"></div>
+      <div class="field"><label for="f-house-children" data-i18n="res.h.children">Kinderen</label><input id="f-house-children" name="children" type="number" min="0" value="0"></div>
+    </div>
+    <div class="field"><label for="f-house-note" data-i18n="res.l.note">Opmerking (optioneel)</label><textarea id="f-house-note" name="note"></textarea></div>
+    <button type="submit" class="btn btn-gold" data-i18n="res.submit">Verstuur aanvraag</button>
+    <p class="form-note" data-i18n="res.note2">Wij bevestigen uw reservering persoonlijk.</p>
+    <div class="form-status" role="status" aria-live="polite"></div>
+  </form>
+  <form class="res-form" data-service="event" novalidate>
+    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="fk" data-i18n="res.fk">Reserveringsaanvraag</div>
+    <h3 data-i18n="svc.event.t">Vier uw feest</h3>
+    <div class="frow">
+      <div class="field"><label for="f-event-name" data-i18n="res.l.name">Naam</label><input id="f-event-name" name="name" type="text" autocomplete="name" required></div>
+      <div class="field"><label for="f-event-email" data-i18n="res.l.email">E-mailadres</label><input id="f-event-email" name="email" type="email" autocomplete="email" required></div>
+    </div>
+    <div class="field"><label for="f-event-type" data-i18n="res.e.type">Type gelegenheid</label><input id="f-event-type" name="event_type" type="text"></div>
+    <div class="field"><label for="f-event-guests" data-i18n="res.e.guests">Verwacht aantal gasten</label><input id="f-event-guests" name="guests" type="number" min="1" value="20"></div>
+    <div class="frow">
+      <div class="field"><label for="f-event-sd" data-i18n="res.l.startdate">Startdatum</label><input id="f-event-sd" name="start_date" type="date"></div>
+      <div class="field"><label for="f-event-st" data-i18n="res.l.starttime">Starttijd</label><input id="f-event-st" name="start_time" type="time" value="18:00"></div>
+    </div>
+    <div class="frow">
+      <div class="field"><label for="f-event-ed" data-i18n="res.l.enddate">Einddatum</label><input id="f-event-ed" name="end_date" type="date"></div>
+      <div class="field"><label for="f-event-et" data-i18n="res.l.endtime">Eindtijd</label><input id="f-event-et" name="end_time" type="time" value="23:00"></div>
+    </div>
+    <button type="submit" class="btn btn-gold" data-i18n="res.submit">Verstuur aanvraag</button>
+    <p class="form-note" data-i18n="res.note2">Wij bevestigen uw reservering persoonlijk.</p>
+    <div class="form-status" role="status" aria-live="polite"></div>
+  </form>
+  <!-- Grand opening registration. Same delivery path as every other request on this
+       site (FormSubmit -> the cafe's reservation inbox); its own service type so Dave
+       can tell an opening sign-up from a table booking at a glance. Removed from the
+       DOM by the opening script once the event has passed. -->
+  <form class="res-form" data-service="opening" novalidate>
+    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <span class="ic rf-ic" aria-hidden="true"><svg width="44" height="44" viewBox="0 0 44 44"><path d="M8 13h28v18H8zM8 14l14 10 14-10"/></svg></span>
+    <div class="fk" data-i18n="open.fk">Aanmelding opening</div>
+    <h3 data-i18n="svc.opening.t">Aanmelden voor de opening</h3>
+    <p class="open-when"><span data-i18n="open.date">5 September 2026</span> · <span data-i18n="open.time">17.00 – 23.00 hrs</span></p>
+    <div class="frow">
+      <div class="field"><label for="f-open-name" data-i18n="res.l.name">Naam</label><input id="f-open-name" name="name" type="text" autocomplete="name" required></div>
+      <div class="field"><label for="f-open-email" data-i18n="res.l.email">E-mailadres</label><input id="f-open-email" name="email" type="email" autocomplete="email" required></div>
+    </div>
+    <div class="field"><label for="f-open-guests" data-i18n="res.l.guests">Aantal personen</label><input id="f-open-guests" name="guests" type="number" min="1" value="2"></div>
+    <div class="field"><label for="f-open-note" data-i18n="res.l.note">Opmerking (optioneel)</label><textarea id="f-open-note" name="note"></textarea></div>
+    <button type="submit" class="btn btn-gold" data-i18n="open.cta">Aanmelden</button>
+    <p class="form-note" data-i18n="open.note2">Wij noteren u op de gastenlijst voor 5 september.</p>
+    <div class="form-status" role="status" aria-live="polite"></div>
+  </form>
+</div>
+
+<div class="res-dim" id="resDim" hidden></div>
+<div class="res-modal-wrap" id="resModal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="res-flip" id="resFlip">
+    <div class="res-face res-front" id="resFront" aria-hidden="true"></div>
+    <div class="res-face res-back">
+      <button type="button" class="res-x" id="resX" aria-label="Sluiten">&times;</button>
+      <div id="resSlot"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================== FOOTER ============================== -->
+<footer>
+  <div class="engraving" style="left:50%;transform:translateX(-50%);top:20px;opacity:.08;color:#C6B497" aria-hidden="true">
+    <svg width="460" height="240" viewBox="0 0 460 240"><g stroke="currentColor" fill="none" stroke-width="1">
+      <path d="M230 20 C160 60 160 150 230 190 C300 150 300 60 230 20 Z"/>
+      <circle cx="230" cy="105" r="7"/></g></svg>
+  </div>
+  <div class="wrap z2">
+    <!-- footer nameplate — same lockup as the header, recoloured for the dark field -->
+    <div class="lockup foot-lockup" aria-label="Oud-Kempen Eetcafé — Stavenisse, Zeeland">
+      <span class="lk-top" aria-hidden="true"></span>
+      <span class="lk-name">Oud-Kempen</span>
+      <span class="lk-eet" aria-hidden="true">
+        <svg class="fl flip" viewBox="0 0 54 14"><path d="M52 7 H15 c-4.5 0 -7.5 -2 -9.5 -5.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <span class="txt">Eetcafé</span>
+        <svg class="fl" viewBox="0 0 54 14"><path d="M52 7 H15 c-4.5 0 -7.5 -2 -9.5 -5.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </span>
+      <span class="lk-place">Stavenisse · Zeeland</span>
+      <svg class="lk-knot" viewBox="0 0 168 16" aria-hidden="true">
+        <g stroke="currentColor" fill="none" stroke-width="1.3" stroke-linecap="round">
+          <path d="M16 8 H66"/><path d="M102 8 H152"/>
+          <path d="M84 8 c-10 -7 -20 -7 -20 0 c0 7 10 7 20 0"/>
+          <path d="M84 8 c10 -7 20 -7 20 0 c0 7 -10 7 -20 0"/>
+        </g>
+        <circle cx="84" cy="8" r="2.3" fill="currentColor"/>
+      </svg>
+    </div>
+    <div class="hallmarks">
+      <span class="hallmark" data-i18n="hall.1">7 dagen per week open</span>
+      <span class="hallmark" data-i18n="hall.2">Terras & speeltuin</span>
+      <span class="hallmark" data-i18n="hall.3">Kaasfondue &amp; Indonesisch</span>
+      <span class="hallmark" data-i18n="hall.4">Hart van Zeeland</span>
+    </div>
+    <div class="fine">© 2026 Oud-Kempen Eetcafé · Buurtweg 5, 4696 RT Stavenisse · <a href="tel:+31627894034">+31 6 27 89 40 34</a> · <a href="mailto:reservationsoke@gmail.com">reservationsoke@gmail.com</a></div>
+    <div class="provenance" data-i18n="prov">Website door Merritt Digital</div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   i18n dictionary — NL (default) / EN / DE
+   ============================================================ */
+const I18N = {
+  nl:{
+    "nav.restaurant":"Restaurant","nav.menu":"Menu","nav.services":"Reserveren","nav.gallery":"Galerij","nav.visit":"Bezoek","nav.cta":"Reserveer",
+    "hero.kicker":"Eetcafé · Stavenisse · Zeeland","hero.sub":"Verse smaken, warme gastvrijheid en voor ieder wat wils",
+    "hero.lede":"Geniet van verse gerechten, heerlijke kaasfondue, verse vis, hartige snacks en authentieke Indonesische specialiteiten in een warm en gastvrij restaurant. Of u nu komt voor de lunch, het diner of een borrel: u geniet van echte Zeeuwse gastvrijheid, vriendelijke service en een ontspannen sfeer. Ontspan in ons restaurant met volledige airconditioning of op ons ruime terras, omgeven door natuur.",
+    "hero.cta1":"Reserveer een tafel","hero.cta2":"Bekijk het restaurant","hero.capk":"Aan de rand van het dorp","hero.capt":"Stavenisse, Zeeland",
+    "live.label":"Terrasweer · Stavenisse","live.clear":"Helder","live.open":"Open","live.until":"tot 21:00","live.seed":"indicatief; live gegevens laden…",
+    "rest.kicker":"Het restaurant","rest.title":"Verse smaken en Zeeuwse gastvrijheid",
+    "rest.dek":"Of u nu komt voor de lunch, het diner of een borrel: u geniet van een afwisselende kaart met verse gerechten, heerlijke kaasfondue en authentieke Indonesische specialiteiten, in een warme en ontspannen sfeer.",
+    "rest.h3":"Van lunch en diner tot borrel en dessert",
+    "rest.p1":"Ontdek verse gerechten, onze populaire kaasfondue, verse vis, hartige snacks en authentieke Indonesische specialiteiten, geserveerd in een warme, comfortabele setting. Gezellig binnen aan tafel of buiten op het ruime terras, omgeven door natuur.",
+    "rest.a1":"Verse gerechten voor iedereen","rest.a2":"Kaasfondue (op reservering)","rest.a3":"Authentieke Indonesische specialiteiten","rest.a4":"Restaurant met volledige airconditioning","rest.a5":"Ruim terras, omgeven door natuur","rest.a6":"Speeltuin voor kinderen","rest.a7":"7 dagen per week open",
+    "rest.cta1":"Reserveer een tafel","rest.cta2":"Bekijk het menu",
+    "svc.kicker":"Alles bij Oud-Kempen","svc.title":"Meer dan alleen eten",
+    "svc.dek":"Reserveer direct wat u zoekt: een tafel, een fiets, de jacuzzi, het vakantiehuis of uw eigen feest. Kies en wij nemen contact op ter bevestiging.",
+    "svc.table.t":"Reserveer een tafel","svc.table.d":"Lunch, diner of borrel, binnen of op het terras.","svc.table.tag":"Direct reserveren",
+    "svc.bike.t":"Fietsverhuur","svc.bike.d":"Ontdek Zeeland op de fiets, zo van het terras af.","svc.bike.tag":"Per dag te huur",
+    "svc.jac.t":"Jacuzzi huren","svc.jac.d":"Ontspan onder de Zeeuwse hemel na een dag uit.","svc.jac.tag":"Op reservering",
+    "svc.house.t":"Vakantiehuis","svc.house.d":"Vraag vrijblijvend naar beschikbaarheid en tarieven.","svc.house.tag":"Aanvraag",
+    "svc.event.t":"Vier uw feest","svc.event.d":"Verjaardag, bruiloft of borrel; wij regelen het.","svc.event.tag":"Op maat",
+    "res.kicker":"Reserveren","res.h3":"Uw tafel bij Oud-Kempen is zo geregeld",
+    "res.p":"Kies een dienst en vul het korte formulier in — elke dienst heeft z'n eigen formulier. Wij bevestigen persoonlijk. Geen account, geen gedoe.",
+    "res.a1":"Tafel, fiets, jacuzzi, vakantiehuis of feest","res.a2":"Persoonlijke bevestiging per e-mail","res.a3":"Groepen en gelegenheden welkom",
+    "res.call":"Of bel ons: ","res.fk":"Reserveringsaanvraag","res.ftitle":"Vertel ons uw wensen",
+    "res.l.service":"Wat wilt u reserveren? (meerdere mogelijk)","res.l.name":"Naam","res.l.guests":"Aantal personen","res.l.date":"Datum","res.l.time":"Tijd","res.l.note":"Opmerking (optioneel)",
+    "res.submit":"Verstuur aanvraag",
+    "res.l.email":"E-mailadres","res.l.startdate":"Startdatum","res.l.starttime":"Starttijd","res.l.enddate":"Einddatum","res.l.endtime":"Eindtijd","res.b.std":"Aantal gewone fietsen","res.b.e":"Aantal e-bikes","res.b.pud":"Ophaaldatum","res.b.put":"Ophaaltijd","res.b.dod":"Inleverdatum","res.b.dot":"Inlevertijd","res.j.room":"Villanummer","res.h.ci":"Aankomstdatum","res.h.co":"Vertrekdatum","res.h.adults":"Volwassenen","res.h.children":"Kinderen","res.e.type":"Type gelegenheid","res.e.guests":"Verwacht aantal gasten","res.note2":"Wij bevestigen uw reservering persoonlijk.","res.fondue":"Kaasfondue erbij (€ 25,95 p.p.)","res.fondue.note":"Kaasfondue: minimaal 2 personen en minstens 1 dag van tevoren reserveren.","res.fondue.err":"Voor kaasfondue: minimaal 2 personen en een datum vanaf morgen.","res.ok":"Bedankt voor uw aanvraag! Wij nemen spoedig contact op.","res.err":"Er ging iets mis. Probeer het opnieuw of mail ons direct.","res.sending":"Versturen…","res.close":"Sluiten","res.picktitle":"Kies uw dienst","res.pick":"Elke dienst heeft een eigen snel formulier. Klik hieronder of op een kaart hierboven om te openen.",
+    "fb.kicker":"Buiten bij Oud-Kempen","fb.title":"Een terras omgeven door natuur","fb.p":"Zonnige middagen en lange zomeravonden op ons ruime terras, aan de rand van het dorp, met de Zeeuwse natuur als uitzicht.",
+    "gal.kicker":"Galerij","gal.title":"Sfeer proeven","gal.dek":"Een indruk van het restaurant, het terras en de tafel, van zonnige middagen tot gezellige avonden.",
+    "visit.kicker":"Bezoek ons","visit.title":"Openingstijden & route","visit.dek":"U vindt ons aan de Buurtweg 5 in Stavenisse, aan de rand van het dorp in het hart van Zeeland. We zijn 7 dagen per week open.",
+    "visit.h3":"Oud-Kempen Eetcafé","visit.closed":"Gesloten","visit.route":"Routebeschrijving",
+    "day.mon":"Maandag","day.tue":"Dinsdag","day.wed":"Woensdag","day.thu":"Donderdag","day.fri":"Vrijdag","day.sat":"Zaterdag","day.sun":"Zondag",
+    "hall.1":"7 dagen per week open","hall.2":"Terras & speeltuin","hall.3":"Kaasfondue & Indonesisch","hall.4":"Hart van Zeeland",
+
+    /* --- GRAND OPENING ------------------------------------------------------
+       PROSE (open.kicker .. open.place) is the client's own invitation text,
+       transcribed verbatim from the printed poster he supplied. That poster
+       exists in ENGLISH only, so all three languages deliberately carry the
+       English wording for now — we do not machine-translate a client's
+       invitation. Zach has been asked for the Dutch and German versions; when
+       they arrive, replace the values in this block for nl and de and nothing
+       else has to change.
+       CHROME (open.cta, open.continue, open.ribbon*, open.fk, open.note2,
+       svc.opening.t, open.past.*) is our own interface wording and IS
+       translated, as is every field label in the form, which reuses the
+       site's existing res.l.* keys.
+       ----------------------------------------------------------------------- */
+    "open.kicker":"Uitnodiging","open.script":"voor ons knallende openingsfeest!","open.h":"Eetcafé Oud Kempen opent feestelijk zijn deuren!","open.body":"Na alle voorbereidingen is het eindelijk zover – en dat willen we heel graag samen met jullie vieren! Wij nodigen familie, vrienden, kennissen en natuurlijk onze nieuwe dorps- en eilandbewoners van harte uit.","open.day":"Zaterdag","open.date":"5 september 2026","open.time":"17.00 – 23.00 uur","open.b1":"1 gratis zwak alcoholisch drankje per persoon","open.b1s":"Alcoholvrij alternatief mogelijk","open.b2":"Lekkere hapjes","open.b3":"Live muziek","open.b4":"Munten-systeem","open.b5":"Hopelijk mooi weer","open.tok.t":"Munten-systeem","open.tok.p":"Tijdens het feest werken wij met consumptiemunten, die ter plaatse verkrijgbaar zijn. De munten zijn geldig bij Eetcafé Oud Kempen tot en met 31 oktober 2026.","open.reg.t":"Aanmelden graag!","open.reg.p":"Om ons goed voor te bereiden, horen wij graag of jullie erbij zijn.","open.gift.t":"Een cadeau?","open.gift.p1":"Niet verplicht! Jullie aanwezigheid is voor ons het mooiste geschenk. Wilt u ons toch iets geven, dan waarderen wij een geldcadeau.","open.gift.p2":"Wij schenken 10% van alle geldcadeaus aan een goed doel in Stavenisse of Tholen en leggen daar zelf nog eens 10% bovenop.","open.close":"Wij kijken uit naar een onvergetelijke avond met jullie!","open.team":"Team Eetcafé Oud Kempen","open.place":"Stavenisse – Zeeland",
+    "open.cta":"Aanmelden","open.continue":"Verder naar de website","open.ribbon":"Grote opening · zaterdag 5 september","open.ribbon.cta":"Bekijk de uitnodiging","open.fk":"Aanmelding opening","svc.opening.t":"Aanmelden voor de opening","open.note2":"Wij noteren u op de gastenlijst voor 5 september.","open.past.t":"De opening heeft plaatsgevonden","open.past.p":"Bedankt aan iedereen die erbij was. Oud-Kempen Eetcafé is 7 dagen per week open.","open.past.cta":"Naar de website","open.title":"Grote opening · zaterdag 5 september 2026",
+    "prov":"Website door Merritt Digital"
+  },
+  en:{
+    "nav.restaurant":"Restaurant","nav.menu":"Menu","nav.services":"Book","nav.gallery":"Gallery","nav.visit":"Visit","nav.cta":"Reserve",
+    "hero.kicker":"Eetcafé · Stavenisse · Zeeland","hero.sub":"Fresh flavours, warm hospitality and something for everyone",
+    "hero.lede":"Enjoy fresh dishes, delicious cheese fondue, fresh fish, tasty snacks and authentic Indonesian specialities in a warm and welcoming restaurant. Whether you join us for lunch, dinner or drinks, you'll enjoy genuine Zeeland hospitality, friendly service and a relaxed atmosphere. Relax in our fully air-conditioned restaurant or on our spacious terrace surrounded by nature.",
+    "hero.cta1":"Reserve a table","hero.cta2":"See the restaurant","hero.capk":"On the edge of the village","hero.capt":"Stavenisse, Zeeland",
+    "live.label":"Terrace weather · Stavenisse","live.clear":"Clear","live.open":"Open","live.until":"until 9:00 pm","live.seed":"indicative; loading live data…",
+    "rest.kicker":"The restaurant","rest.title":"Fresh flavours and Zeeland hospitality",
+    "rest.dek":"Whether you join us for lunch, dinner or drinks, you'll enjoy a varied menu with fresh dishes, delicious cheese fondue and authentic Indonesian specialities, all served in a warm and relaxed atmosphere.",
+    "rest.h3":"From lunch and dinner to drinks and desserts",
+    "rest.p1":"Discover fresh dishes, our popular cheese fondue, fresh fish, savoury snacks and authentic Indonesian specialities, served in a warm, comfortable setting. Cosy at the table indoors, or out on the spacious terrace surrounded by nature.",
+    "rest.a1":"Fresh dishes for everyone","rest.a2":"Cheese fondue (reservation required)","rest.a3":"Authentic Indonesian specialities","rest.a4":"Fully air-conditioned restaurant","rest.a5":"Spacious terrace surrounded by nature","rest.a6":"Children's playground","rest.a7":"Open 7 days a week",
+    "rest.cta1":"Reserve a table","rest.cta2":"View the menu",
+    "svc.kicker":"Everything at Oud-Kempen","svc.title":"More than just dining",
+    "svc.dek":"Book exactly what you need: a table, a bike, the jacuzzi, the holiday home or your own event. Choose and we'll be in touch to confirm.",
+    "svc.table.t":"Reserve a table","svc.table.d":"Lunch, dinner or drinks, indoors or on the terrace.","svc.table.tag":"Book now",
+    "svc.bike.t":"Bike rental","svc.bike.d":"Explore Zeeland by bike, straight from the terrace.","svc.bike.tag":"By the day",
+    "svc.jac.t":"Jacuzzi rental","svc.jac.d":"Unwind under the Zeeland sky after a day out.","svc.jac.tag":"On reservation",
+    "svc.house.t":"Holiday home","svc.house.d":"Enquire about availability and rates, no obligation.","svc.house.tag":"Enquiry",
+    "svc.event.t":"Host your event","svc.event.d":"Birthday, wedding or party: we'll arrange it all.","svc.event.tag":"Tailored",
+    "res.kicker":"Reservations","res.h3":"Your table at Oud-Kempen is quickly booked",
+    "res.p":"Pick a service and fill in the short form. Each one has its own. We confirm personally, with no account and no fuss.",
+    "res.a1":"Table, bike, jacuzzi, holiday home or event","res.a2":"Personal confirmation by email","res.a3":"Groups and occasions welcome",
+    "res.call":"Or call us: ","res.fk":"Reservation request","res.ftitle":"Tell us what you'd like",
+    "res.l.service":"What would you like to book? (select any)","res.l.name":"Name","res.l.guests":"Number of guests","res.l.date":"Date","res.l.time":"Time","res.l.note":"Note (optional)",
+    "res.submit":"Send request",
+    "res.l.email":"Email address","res.l.startdate":"Start date","res.l.starttime":"Start time","res.l.enddate":"End date","res.l.endtime":"End time","res.b.std":"Standard bikes","res.b.e":"E-bikes","res.b.pud":"Pick-up date","res.b.put":"Pick-up time","res.b.dod":"Drop-off date","res.b.dot":"Drop-off time","res.j.room":"Villa number","res.h.ci":"Check-in date","res.h.co":"Check-out date","res.h.adults":"Adults","res.h.children":"Children","res.e.type":"Event type","res.e.guests":"Expected number of guests","res.note2":"We confirm your reservation personally.","res.fondue":"Add cheese fondue (€ 25.95 p.p.)","res.fondue.note":"Cheese fondue: minimum 2 people, and reserved at least 1 day in advance.","res.fondue.err":"For cheese fondue: minimum 2 people and a date from tomorrow onwards.","res.ok":"Thank you for your request! We'll be in touch shortly.","res.err":"Something went wrong. Please try again or email us directly.","res.sending":"Sending…","res.close":"Close","res.picktitle":"Choose your service","res.pick":"Each service has its own short form. Tap one below, or a card above, to open it.",
+    "fb.kicker":"Outdoors at Oud-Kempen","fb.title":"A terrace surrounded by nature","fb.p":"Sunny afternoons and long summer evenings on our spacious terrace, on the edge of the village, with the Zeeland countryside as your view.",
+    "gal.kicker":"Gallery","gal.title":"A taste of the atmosphere","gal.dek":"A glimpse of the restaurant, the terrace and the table, from sunny afternoons to cosy evenings.",
+    "visit.kicker":"Visit us","visit.title":"Opening hours & directions","visit.dek":"Find us at Buurtweg 5 in Stavenisse, on the edge of the village in the heart of Zeeland. We are open 7 days a week.",
+    "visit.h3":"Oud-Kempen Eetcafé","visit.closed":"Closed","visit.route":"Get directions",
+    "day.mon":"Monday","day.tue":"Tuesday","day.wed":"Wednesday","day.thu":"Thursday","day.fri":"Friday","day.sat":"Saturday","day.sun":"Sunday",
+    "hall.1":"Open 7 days a week","hall.2":"Terrace & playground","hall.3":"Cheese fondue & Indonesian","hall.4":"Heart of Zeeland",
+
+    /* --- GRAND OPENING ------------------------------------------------------
+       PROSE (open.kicker .. open.place) is the client's own invitation text,
+       transcribed verbatim from the printed poster he supplied. That poster
+       exists in ENGLISH only, so all three languages deliberately carry the
+       English wording for now — we do not machine-translate a client's
+       invitation. Zach has been asked for the Dutch and German versions; when
+       they arrive, replace the values in this block for nl and de and nothing
+       else has to change.
+       CHROME (open.cta, open.continue, open.ribbon*, open.fk, open.note2,
+       svc.opening.t, open.past.*) is our own interface wording and IS
+       translated, as is every field label in the form, which reuses the
+       site's existing res.l.* keys.
+       ----------------------------------------------------------------------- */
+    "open.kicker":"Invitation","open.script":"to our grand opening celebration!","open.h":"Eetcafé Oud Kempen officially opens its doors!","open.body":"After all the preparations, the time has finally come — and we would love to celebrate together with you! We warmly invite our family, friends, acquaintances and of course our new village and island residents!","open.day":"Saturday","open.date":"5 September 2026","open.time":"17.00 – 23.00 hrs","open.b1":"1 free low-alcoholic drink per person","open.b1s":"Non-alcoholic alternative available","open.b2":"Delicious bites","open.b3":"Live music","open.b4":"Token system","open.b5":"Hopefully nice weather","open.tok.t":"Token system","open.tok.p":"During the party we will be using tokens, which are available on site. The tokens are valid at Eetcafé Oud Kempen until 31 October 2026.","open.reg.t":"Please register","open.reg.p":"So that we can prepare well, please let us know if you will be joining us.","open.gift.t":"A gift?","open.gift.p1":"Not required! Your presence is the most valuable gift to us. If you would still like to give us something, we would appreciate a monetary gift.","open.gift.p2":"We will donate 10% of all monetary gifts to a good cause in Stavenisse or Tholen, and we will add another 10% ourselves.","open.close":"We look forward to an unforgettable evening with you!","open.team":"Team Eetcafé Oud Kempen","open.place":"Stavenisse – Zeeland",
+    "open.cta":"Register","open.continue":"Continue to the website","open.ribbon":"Grand opening · Saturday 5 September","open.ribbon.cta":"View invitation","open.fk":"Opening registration","svc.opening.t":"Register for the opening","open.note2":"We will add you to the guest list for 5 September.","open.past.t":"The grand opening has taken place","open.past.p":"Thank you to everyone who was there. Oud-Kempen Eetcafé is open seven days a week.","open.past.cta":"Go to the website","open.title":"Grand opening · Saturday 5 September 2026",
+    "prov":"Website by Merritt Digital"
+  },
+  de:{
+    "nav.restaurant":"Restaurant","nav.menu":"Menü","nav.services":"Reservieren","nav.gallery":"Galerie","nav.visit":"Besuch","nav.cta":"Reservieren",
+    "hero.kicker":"Eetcafé · Stavenisse · Zeeland","hero.sub":"Frische Aromen, herzliche Gastfreundschaft und für jeden Geschmack etwas",
+    "hero.lede":"Genießen Sie frische Gerichte, köstliches Käsefondue, frischen Fisch, herzhafte Snacks und authentische indonesische Spezialitäten in einem warmen, gastfreundlichen Restaurant. Ob zum Mittagessen, zum Abendessen oder auf ein Getränk: Sie erleben echte zeeländische Gastfreundschaft, freundlichen Service und eine entspannte Atmosphäre. Entspannen Sie in unserem vollklimatisierten Restaurant oder auf unserer weitläufigen Terrasse mitten in der Natur.",
+    "hero.cta1":"Tisch reservieren","hero.cta2":"Zum Restaurant","hero.capk":"Am Rande des Dorfes","hero.capt":"Stavenisse, Zeeland",
+    "live.label":"Terrassenwetter · Stavenisse","live.clear":"Klar","live.open":"Geöffnet","live.until":"bis 21:00","live.seed":"vorläufig; Live-Daten laden…",
+    "rest.kicker":"Das Restaurant","rest.title":"Frische Aromen und zeeländische Gastfreundschaft",
+    "rest.dek":"Ob zum Mittagessen, zum Abendessen oder auf ein Getränk: Sie genießen eine abwechslungsreiche Karte mit frischen Gerichten, köstlichem Käsefondue und authentischen indonesischen Spezialitäten, in warmer und entspannter Atmosphäre.",
+    "rest.h3":"Von Mittag- und Abendessen bis zu Drinks und Desserts",
+    "rest.p1":"Entdecken Sie frische Gerichte, unser beliebtes Käsefondue, frischen Fisch, herzhafte Snacks und authentische indonesische Spezialitäten, serviert in warmem, gemütlichem Ambiente. Gemütlich am Tisch drinnen oder draußen auf der weitläufigen Terrasse mitten in der Natur.",
+    "rest.a1":"Frische Gerichte für jeden Geschmack","rest.a2":"Käsefondue (Reservierung erforderlich)","rest.a3":"Authentische indonesische Spezialitäten","rest.a4":"Vollklimatisiertes Restaurant","rest.a5":"Weitläufige Terrasse mitten in der Natur","rest.a6":"Spielplatz für Kinder","rest.a7":"7 Tage in der Woche geöffnet",
+    "rest.cta1":"Tisch reservieren","rest.cta2":"Zur Speisekarte",
+    "svc.kicker":"Alles bei Oud-Kempen","svc.title":"Mehr als nur Essen",
+    "svc.dek":"Reservieren Sie direkt, was Sie möchten: einen Tisch, ein Fahrrad, den Whirlpool, das Ferienhaus oder Ihre Feier. Wählen Sie aus, wir melden uns zur Bestätigung.",
+    "svc.table.t":"Tisch reservieren","svc.table.d":"Mittagessen, Abendessen oder Drinks, drinnen oder auf der Terrasse.","svc.table.tag":"Direkt reservieren",
+    "svc.bike.t":"Fahrradverleih","svc.bike.d":"Erkunden Sie Zeeland per Rad, direkt von der Terrasse.","svc.bike.tag":"Pro Tag",
+    "svc.jac.t":"Whirlpool mieten","svc.jac.d":"Entspannen Sie unter dem zeeländischen Himmel, nach einem Tag draußen.","svc.jac.tag":"Auf Reservierung",
+    "svc.house.t":"Ferienhaus","svc.house.d":"Fragen Sie unverbindlich nach Verfügbarkeit und Preisen.","svc.house.tag":"Anfrage",
+    "svc.event.t":"Feiern bei uns","svc.event.d":"Geburtstag, Hochzeit oder Feier: wir organisieren alles.","svc.event.tag":"Individuell",
+    "res.kicker":"Reservierung","res.h3":"Ihr Tisch bei Oud-Kempen ist schnell reserviert",
+    "res.p":"Wählen Sie einen Dienst und füllen Sie das kurze Formular aus. Jeder Dienst hat sein eigenes. Wir bestätigen persönlich, ohne Konto und ohne Umwege.",
+    "res.a1":"Tisch, Fahrrad, Whirlpool, Ferienhaus oder Feier","res.a2":"Persönliche Bestätigung per E-Mail","res.a3":"Gruppen und Anlässe willkommen",
+    "res.call":"Oder rufen Sie uns an: ","res.fk":"Reservierungsanfrage","res.ftitle":"Nennen Sie uns Ihre Wünsche",
+    "res.l.service":"Was möchten Sie reservieren? (Mehrfachauswahl)","res.l.name":"Name","res.l.guests":"Anzahl Personen","res.l.date":"Datum","res.l.time":"Uhrzeit","res.l.note":"Anmerkung (optional)",
+    "res.submit":"Anfrage senden",
+    "res.l.email":"E-Mail-Adresse","res.l.startdate":"Startdatum","res.l.starttime":"Startzeit","res.l.enddate":"Enddatum","res.l.endtime":"Endzeit","res.b.std":"Normale Fahrräder","res.b.e":"E-Bikes","res.b.pud":"Abholdatum","res.b.put":"Abholzeit","res.b.dod":"Rückgabedatum","res.b.dot":"Rückgabezeit","res.j.room":"Villa-Nummer","res.h.ci":"Anreisedatum","res.h.co":"Abreisedatum","res.h.adults":"Erwachsene","res.h.children":"Kinder","res.e.type":"Art der Veranstaltung","res.e.guests":"Erwartete Gästezahl","res.note2":"Wir bestätigen Ihre Reservierung persönlich.","res.fondue":"Käsefondue dazu (€ 25,95 p.P.)","res.fondue.note":"Käsefondue: mindestens 2 Personen und mindestens 1 Tag im Voraus reservieren.","res.fondue.err":"Für Käsefondue: mindestens 2 Personen und ein Datum ab morgen.","res.ok":"Danke für Ihre Anfrage! Wir melden uns in Kürze.","res.err":"Da ist etwas schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt.","res.sending":"Senden…","res.close":"Schließen","res.picktitle":"Wählen Sie Ihren Dienst","res.pick":"Jeder Dienst hat ein eigenes Kurzformular. Klicken Sie unten oder auf eine Karte oben.",
+    "fb.kicker":"Draußen bei Oud-Kempen","fb.title":"Eine Terrasse inmitten der Natur","fb.p":"Sonnige Nachmittage und lange Sommerabende auf unserer weitläufigen Terrasse, am Rande des Dorfes, mit der zeeländischen Natur als Aussicht.",
+    "gal.kicker":"Galerie","gal.title":"Atmosphäre schnuppern","gal.dek":"Ein Eindruck vom Restaurant, der Terrasse und dem Tisch, von sonnigen Nachmittagen bis zu gemütlichen Abenden.",
+    "visit.kicker":"Besuchen Sie uns","visit.title":"Öffnungszeiten & Anfahrt","visit.dek":"Sie finden uns in der Buurtweg 5 in Stavenisse, am Rande des Dorfes im Herzen von Zeeland. Wir sind 7 Tage in der Woche geöffnet.",
+    "visit.h3":"Oud-Kempen Eetcafé","visit.closed":"Geschlossen","visit.route":"Route anzeigen",
+    "day.mon":"Montag","day.tue":"Dienstag","day.wed":"Mittwoch","day.thu":"Donnerstag","day.fri":"Freitag","day.sat":"Samstag","day.sun":"Sonntag",
+    "hall.1":"7 Tage geöffnet","hall.2":"Terrasse & Spielplatz","hall.3":"Käsefondue & indonesisch","hall.4":"Herz von Zeeland",
+
+    /* --- GRAND OPENING ------------------------------------------------------
+       PROSE (open.kicker .. open.place) is the client's own invitation text,
+       transcribed verbatim from the printed poster he supplied. That poster
+       exists in ENGLISH only, so all three languages deliberately carry the
+       English wording for now — we do not machine-translate a client's
+       invitation. Zach has been asked for the Dutch and German versions; when
+       they arrive, replace the values in this block for nl and de and nothing
+       else has to change.
+       CHROME (open.cta, open.continue, open.ribbon*, open.fk, open.note2,
+       svc.opening.t, open.past.*) is our own interface wording and IS
+       translated, as is every field label in the form, which reuses the
+       site's existing res.l.* keys.
+       ----------------------------------------------------------------------- */
+    "open.kicker":"Einladung","open.script":"zur großen Eröffnungsfeier!","open.h":"Eetcafé Oud Kempen öffnet feierlich seine Türen!","open.body":"Nach all den Vorbereitungen ist es endlich so weit – und das möchten wir sehr gerne gemeinsam mit euch feiern! Wir laden herzlich ein: Familie, Freunde, Bekannte und natürlich unsere neuen Dorf- und Inselbewohner!","open.day":"Samstag","open.date":"5. September 2026","open.time":"17.00 – 23.00 Uhr","open.b1":"1 gratis schwach alkoholisches Getränk pro Person","open.b1s":"Alkoholfreie Alternative möglich","open.b2":"Leckere Häppchen","open.b3":"Live-Musik","open.b4":"Münzen-System","open.b5":"Hoffentlich schönes Wetter","open.tok.t":"Münzen-System","open.tok.p":"Während der Feier arbeiten wir mit Verzehrmünzen, die vor Ort erhältlich sind. Die Münzen sind im Eetcafé Oud Kempen gültig bis 31. Oktober 2026.","open.reg.t":"Bitte anmelden","open.reg.p":"Damit wir uns gut vorbereiten können, gebt uns bitte Bescheid, ob ihr dabei seid.","open.gift.t":"Ein Geschenk?","open.gift.p1":"Nicht verpflichtet! Eure Anwesenheit ist das schönste Geschenk. Wenn ihr uns dennoch etwas schenken möchtet, freuen wir uns über ein Geldgeschenk.","open.gift.p2":"Wir spenden 10% aller Geldgeschenke an einen guten Zweck in Stavenisse oder Tholen und legen selbst noch einmal 10% oben drauf.","open.close":"Wir freuen uns auf einen unvergesslichen Abend mit euch!","open.team":"Team Eetcafé Oud Kempen","open.place":"Stavenisse – Zeeland",
+    "open.cta":"Anmelden","open.continue":"Weiter zur Website","open.ribbon":"Große Eröffnung · Samstag, 5. September","open.ribbon.cta":"Einladung ansehen","open.fk":"Anmeldung Eröffnung","svc.opening.t":"Für die Eröffnung anmelden","open.note2":"Wir setzen Sie auf die Gästeliste für den 5. September.","open.past.t":"Die Eröffnung hat stattgefunden","open.past.p":"Danke an alle, die dabei waren. Oud-Kempen Eetcafé ist 7 Tage die Woche geöffnet.","open.past.cta":"Zur Website","open.title":"Große Eröffnung · Samstag, 5. September 2026",
+    "prov":"Website von Merritt Digital"
+  }
+};
+const HTML_LANG = {nl:"nl",en:"en",de:"de"};
+
+function applyLang(lang){
+  const dict = I18N[lang] || I18N.nl;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k = el.getAttribute('data-i18n');
+    if(dict[k]!=null) el.textContent = dict[k];
+  });
+  /* Rows that belong to particular languages only. The client's Dutch invitation has a
+     structurally different bullet list from his English and German ones: the alcohol-free
+     alternative is its own bullet rather than a sub-line, and there is no munten bullet.
+     We render each language's list as printed rather than forcing one shared shape. */
+  document.querySelectorAll('[data-langs]').forEach(el=>{
+    el.hidden = el.getAttribute('data-langs').split(/\s+/).indexOf(lang) === -1;
+  });
+  document.documentElement.lang = HTML_LANG[lang] || 'nl';
+  document.querySelectorAll('.lang button').forEach(b=>{
+    b.setAttribute('aria-pressed', String(b.dataset.lang===lang));
+  });
+  try{localStorage.setItem('ok-lang',lang);}catch(e){}
+  updateOpenState(lang);
+}
+document.querySelectorAll('.lang button').forEach(b=>{
+  b.addEventListener('click',()=>applyLang(b.dataset.lang));
+});
+
+/* ============================================================
+   Per-category reservation: flip-card modal (open/close/submit).
+   Card click -> the card flies to top-centre, flips + expands to reveal that
+   category's form; page dims behind. X or submit reverses the sequence.
+   On submit the form is delivered server-side to the cafe's inbox via
+   deliverReservation() (FormSubmit), then the reverse sequence runs.
+   ============================================================ */
+(function(){
+  var wrap=document.getElementById('resModal'),dim=document.getElementById('resDim'),
+      flip=document.getElementById('resFlip'),front=document.getElementById('resFront'),
+      slot=document.getElementById('resSlot'),xbtn=document.getElementById('resX'),
+      store=document.getElementById('res-form-store');
+  if(!wrap||!store||!flip){return;}
+  var back=wrap.querySelector('.res-back');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var curSrc=null,busy=false;
+  function lang(){return document.documentElement.lang||'nl';}
+  function t(k){var d=(typeof I18N!=='undefined'&&(I18N[lang()]||I18N.nl))||{};return d[k]||'';}
+  var SVCKEY={table:'table',bike:'bike',jacuzzi:'jac',house:'house',event:'event',opening:'opening'};
+  /* The cafe always receives the inquiry in Dutch, whatever language the customer
+     browsed in — FormSubmit uses the JSON keys as the email's field labels. */
+  var NLCAT={table:'Reserveer een tafel',bike:'Fietsverhuur',jacuzzi:'Jacuzzi huren',house:'Vakantiehuis',event:'Vier uw feest',
+    opening:'Aanmelding opening 5 september 2026'};
+  var NLLABEL={name:'Naam',email:'E-mailadres',guests:'Aantal personen',date:'Datum',time:'Tijd',note:'Opmerking',
+    standard_bikes:'Aantal gewone fietsen',e_bikes:'Aantal e-bikes',pickup_date:'Ophaaldatum',pickup_time:'Ophaaltijd',
+    dropoff_date:'Inleverdatum',dropoff_time:'Inlevertijd',start_date:'Startdatum',start_time:'Starttijd',
+    end_date:'Einddatum',end_time:'Eindtijd',room:'Villanummer',checkin:'Aankomstdatum',checkout:'Vertrekdatum',
+    adults:'Volwassenen',children:'Kinderen',event_type:'Type gelegenheid'};
+
+  function onceEnd(cb){
+    var done=false;
+    function fire(e){ if(e&&(e.target!==flip||e.propertyName!=='transform'))return; if(done)return; done=true; flip.removeEventListener('transitionend',fire); clearTimeout(to); cb(); }
+    var to=setTimeout(fire,460);
+    flip.addEventListener('transitionend',fire);
+  }
+  function startTransform(src){
+    var box=flip.getBoundingClientRect();
+    var r=(src&&src.getBoundingClientRect)?src.getBoundingClientRect():box;
+    var sc=Math.max(0.12,r.width/box.width);
+    var dx=(r.left+r.width/2)-(box.left+box.width/2);
+    var dy=(r.top+r.height/2)-(box.top+box.height/2);
+    return 'translate('+dx+'px,'+dy+'px) scale('+sc+') rotateY(0deg)';
+  }
+  function focusFirst(){var f=slot.querySelector('input:not(.hp):not([type=hidden]),select,textarea');if(f){try{f.focus({preventScroll:true});}catch(e){}}}
+  /* Once the flip finishes, drop the 3D transform/backface so the form fields are
+     natively interactive. Some browsers (notably Safari) mis-hit-test inputs sitting
+     on a rotateY(180) backface, making them appear unclickable. The settled flat
+     state is visually identical to the finished flip, so there is no jump. */
+  function settle2D(){front.style.display='none';flip.style.transition='none';flip.style.transform='none';if(back)back.style.transform='none';
+    wrap.style.perspective='none';flip.style.transformStyle='flat';   // drop 3D context so iOS can momentum-scroll the form
+    flip.getBoundingClientRect();flip.style.transition='';}
+  function unsettle3D(){front.style.display='';if(back)back.style.transform='';
+    wrap.style.perspective='';flip.style.transformStyle='';           // restore 3D for the closing flip
+    flip.style.transition='none';flip.style.transform='rotateY(180deg)';flip.getBoundingClientRect();flip.style.transition='';}
+
+  function openForm(service,src){
+    if(busy||wrap.classList.contains('open'))return;
+    var form=store.querySelector('.res-form[data-service="'+service+'"]');
+    if(!form)return;
+    curSrc=src;
+    slot.appendChild(form);
+    wrap.classList.toggle('res-dark', service==='opening');
+    var card=document.querySelector('.card[data-service="'+service+'"]');
+    var ic=(card&&card.querySelector('.ic'))||form.querySelector('.rf-ic');
+    var h=(card&&card.querySelector('h3'))||form.querySelector('h3');
+    front.innerHTML=(ic?ic.outerHTML:'')+'<div class="rf-front-title">'+(h?h.textContent:'')+'</div>';
+    if(typeof applyLang==='function')applyLang(lang());
+    xbtn.setAttribute('aria-label',t('res.close')||'Sluiten');
+    wrap.classList.add('open');wrap.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+    wrap.scrollTop=0;fitViewport();
+    if(src&&src.classList&&src.classList.contains('card'))src.style.visibility='hidden';
+    if(reduce){settle2D();dim.hidden=false;requestAnimationFrame(function(){dim.classList.add('on');});focusFirst();return;}
+    front.style.display='';if(back)back.style.transform='';   // 3D faces ready for the flip
+    flip.style.transition='none';flip.style.transform='rotateY(0deg)';
+    flip.style.transform=startTransform(src);
+    flip.getBoundingClientRect();            // reflow so the start state paints
+    flip.style.transition='';
+    onceEnd(function(){settle2D();dim.hidden=false;requestAnimationFrame(function(){dim.classList.add('on');});focusFirst();});
+    requestAnimationFrame(function(){flip.style.transform='rotateY(180deg)';});
+  }
+
+  function closeForm(){
+    if(busy||!wrap.classList.contains('open'))return;
+    var form=slot.querySelector('.res-form');
+    dim.classList.remove('on');                        // 1) un-dim first
+    function finish(){
+      wrap.classList.remove('open');wrap.setAttribute('aria-hidden','true');dim.hidden=true;
+      document.body.style.overflow='';
+      if(form){var st=form.querySelector('.form-status');if(st){st.className='form-status';st.textContent='';}store.appendChild(form);}
+      if(curSrc&&curSrc.classList&&curSrc.classList.contains('card'))curSrc.style.visibility='';
+      front.style.display='';if(back)back.style.transform='';   // reset faces for next open
+      flip.style.transition='none';flip.style.transform='rotateY(0deg)';flip.getBoundingClientRect();flip.style.transition='';
+      resetViewport();
+      curSrc=null;
+    }
+    if(reduce){finish();return;}
+    unsettle3D();                                       // restore 3D (visually identical) so it can flip back
+    setTimeout(function(){                              // 2) un-expand + flip back + return
+      onceEnd(finish);
+      requestAnimationFrame(function(){flip.style.transform=startTransform(curSrc);});
+    },130);
+  }
+
+  /* --- server-side delivery via FormSubmit (keyless, no backend) -----------
+     Delivers each reservation straight to the caf&eacute;'s inbox; the customer never
+     opens a mail client. Reservations are delivered straight to the client's
+     reservation inbox, so we never hold customer data. */
+  /* INTERIM: the address is assembled at runtime so it is not a harvestable literal
+     in page source (address harvesters regex the raw HTML for user@host). This is a
+     partial mitigation, NOT the real fix. The real fix is FormSubmit's random-string
+     alias — issued to the cafe inbox when the form was activated — which keeps the
+     address out of the source entirely. When that alias is to hand, delete the two
+     lines below and replace with:
+         var RES_ENDPOINT='https://formsubmit.co/ajax/<alias>';           */
+  var RES_BOX=['reservationsoke','gmail.com'];
+  var RES_ENDPOINT='https://formsubmit.co/ajax/'+RES_BOX[0]+String.fromCharCode(64)+RES_BOX[1];
+  function deliverReservation(service,data){
+    return fetch(RES_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
+      body:JSON.stringify(data)}).then(function(r){if(!r.ok)throw r.status;return r.json().catch(function(){return{};});});
+  }
+
+  function onSubmit(e){
+    e.preventDefault();if(busy)return;
+    var form=e.currentTarget;
+    var hp=form.querySelector('input[name="_honey"]');if(hp&&hp.value){closeForm();return;}
+    var status=form.querySelector('.form-status'),btn=form.querySelector('button[type=submit]');
+    var svc=form.getAttribute('data-service'),svcName=t('svc.'+SVCKEY[svc]+'.t')||svc;
+    var raw={};new FormData(form).forEach(function(v,k){if(k!=='_honey')raw[k]=v;});
+    var wantsFondue = svc==='table' && !!raw.fondue; delete raw.fondue;
+    if(wantsFondue){
+      var gN=parseInt(raw.guests,10)||0, dOK=raw.date && raw.date>=tomorrowISO();
+      if(gN<2 || !dOK){
+        if(status){status.className='form-status err';status.textContent=t('res.fondue.err')||'';}
+        var bad=(gN<2)?document.getElementById('f-table-guests'):document.getElementById('f-table-date');
+        if(bad){try{bad.focus();}catch(e){}}
+        return;
+      }
+    }
+    if(!form.checkValidity()){form.reportValidity();return;}
+    var custEmail=raw.email||'';
+    var data={};
+    data['Categorie']=NLCAT[svc]||svcName;                 // Dutch labels for the cafe's email
+    Object.keys(raw).forEach(function(k){
+      var lbl=(svc==='event'&&k==='guests')?'Verwacht aantal gasten':(NLLABEL[k]||k);
+      data[lbl]=raw[k];
+    });
+    data['Website-taal']=({nl:'Nederlands',en:'Engels',de:'Duits'}[lang()]||'Nederlands');
+    // scannable at a glance in the cafe's inbox: what was booked, and by whom
+    if(wantsFondue) data['Kaasfondue']='JA — € 25,95 p.p. (min. 2 personen, 1 dag vooraf)';
+    data._subject=(svc==='opening'
+      ? 'Aanmelding opening 5 september 2026'
+      : 'Reservering — '+(wantsFondue?'Kaasfondue':(NLCAT[svc]||svcName)))+(raw.name?' — '+raw.name:'');
+    data._replyto=custEmail;                               // reply goes straight to the guest
+    data._template='table';data._captcha='false';
+    busy=true;if(btn)btn.disabled=true;
+    if(status){status.className='form-status sending';status.textContent=t('res.sending')||'…';}
+    deliverReservation(svc,data).then(function(){
+      busy=false;if(btn)btn.disabled=false;
+      if(status){status.className='form-status ok';status.textContent=t('res.ok')||'Bedankt';}
+      form.reset();
+      setTimeout(closeForm,1200);            // on submit -> reverse the sequence
+    }).catch(function(){
+      busy=false;if(btn)btn.disabled=false;
+      if(status){status.className='form-status err';status.textContent=t('res.err')||'Er ging iets mis.';}
+    });
+  }
+
+  /* ---- keep the focused field visible above the on-screen keyboard (mobile) ----
+     The modal is position:fixed, so an opening keyboard overlays it. Use the
+     VisualViewport API to clamp the scrollable modal to the *visible* area above
+     the keyboard, then scroll the focused field into that area. Falls back to
+     innerHeight where VisualViewport is unavailable; harmless on desktop. */
+  var vvp=window.visualViewport;
+  function fitViewport(){
+    if(!wrap.classList.contains('open')||!vvp)return;
+    // shrink the scroller to end exactly at the top of the keyboard (bottom = keyboard height),
+    // so its content overflows and can be scrolled to reach fields the keyboard would cover.
+    var kb=Math.max(0,(window.innerHeight-vvp.height-vvp.offsetTop));
+    wrap.style.top=vvp.offsetTop+'px';
+    wrap.style.bottom=kb+'px';
+    wrap.style.height='auto';
+  }
+  function resetViewport(){ wrap.style.top='';wrap.style.bottom='';wrap.style.height='';wrap.scrollTop=0; }
+  function keepVisible(el){
+    if(!el||!wrap.classList.contains('open'))return;
+    var visTop=vvp?vvp.offsetTop:0, visBottom=vvp?(vvp.offsetTop+vvp.height):window.innerHeight, pad=24;
+    var r=el.getBoundingClientRect();
+    if(r.bottom>visBottom-pad){ wrap.scrollTop+=(r.bottom-(visBottom-pad)); }
+    else if(r.top<visTop+pad){ wrap.scrollTop-=((visTop+pad)-r.top); }
+  }
+  wrap.addEventListener('focusin',function(e){
+    var el=e.target;
+    if(el&&el.matches&&el.matches('input,select,textarea')){
+      setTimeout(function(){ fitViewport(); keepVisible(el); },300);  // wait out the keyboard animation
+    }
+  });
+  if(vvp){
+    vvp.addEventListener('resize',function(){ fitViewport();
+      var a=document.activeElement; if(a&&a.matches&&a.matches('input,select,textarea')) keepVisible(a); });
+    vvp.addEventListener('scroll',fitViewport);
+  }
+
+  /* Cheese fondue rides on a table booking. Dave's real rule (from his menu) is minimum
+     2 people and at least 1 day in advance — shown the moment it is ticked, and enforced. */
+  function tomorrowISO(){var d=new Date();d.setDate(d.getDate()+1);return d.toISOString().slice(0,10);}
+  var fondue=document.getElementById('f-table-fondue');
+  if(fondue){
+    var fnote=document.getElementById('f-table-fondue-note'),
+        fg=document.getElementById('f-table-guests'), fd=document.getElementById('f-table-date');
+    fondue.addEventListener('change',function(){
+      var on=fondue.checked;
+      fnote.hidden=!on;
+      if(on){
+        fg.min='2'; if((parseInt(fg.value,10)||0)<2) fg.value='2';
+        fd.min=tomorrowISO(); if(fd.value && fd.value<fd.min) fd.value=fd.min;
+      } else { fg.min='1'; fd.removeAttribute('min'); }
+    });
+  }
+
+  store.querySelectorAll('.res-form').forEach(function(f){f.addEventListener('submit',onSubmit);});
+  document.querySelectorAll('.card[data-service]').forEach(function(card){
+    card.addEventListener('click',function(e){e.preventDefault();openForm(card.getAttribute('data-service'),card);});
+  });
+  document.querySelectorAll('[data-open]').forEach(function(bn){
+    bn.addEventListener('click',function(){openForm(bn.getAttribute('data-open'),bn);});
+  });
+  xbtn.addEventListener('click',closeForm);
+  dim.addEventListener('click',closeForm);
+  wrap.addEventListener('click',function(e){if(e.target===wrap)closeForm();});  // tap backdrop (wrap now catches events)
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeForm();});
+})();
+
+/* ============================================================
+   LIVE — open/closed (real hours, Europe/Amsterdam) + weather
+   ============================================================ */
+const CLOSE_H=21;                       // 21:00 every day, 7 days a week
+/* Mon-Thu open 15:00 · Fri-Sun open 12:30 (minutes matter, hence *_MINS) */
+function openMinsFor(wd){ return (wd>=1&&wd<=4) ? 15*60 : 12*60+30; }
+function fmtTime(mins,lang){var h=Math.floor(mins/60),m=mins%60;
+  if(lang==='en'){var ap=h>=12?'pm':'am',h12=h%12||12;return h12+':'+String(m).padStart(2,'0')+' '+ap;}
+  return h+':'+String(m).padStart(2,'0');}
+function nowInAmsterdam(){
+  const p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Amsterdam',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+  const wd={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[p.find(x=>x.type==='weekday').value];
+  const hh=parseInt(p.find(x=>x.type==='hour').value,10);
+  const mm=parseInt(p.find(x=>x.type==='minute').value,10);
+  return {wd,hh,mm};
+}
+function updateOpenState(lang){
+  lang=lang||document.documentElement.lang||'nl';
+  const dict=I18N[lang]||I18N.nl;
+  const {wd,hh,mm}=nowInAmsterdam();
+  const fig=document.getElementById('oc-fig'), u=document.getElementById('oc-u');
+  if(!fig) return;
+  const nowMins=hh*60+mm, openMins=openMinsFor(wd), closeMins=CLOSE_H*60;
+  const open = nowMins>=openMins && nowMins<closeMins;
+  const opensSoon = nowMins<openMins;                       // opens later today
+  const openAt=fmtTime(openMins,lang), closeAt=fmtTime(closeMins,lang);
+  const untilBy={nl:'tot '+closeAt,en:'until '+closeAt,de:'bis '+closeAt};
+  const fromBy={nl:'vanaf '+openAt,en:'from '+openAt,de:'ab '+openAt};
+  const closedBy={nl:'nu gesloten',en:'closed now',de:'jetzt geschlossen'};
+  const openWord=dict['live.open'];
+  const shutWord={nl:'Gesloten',en:'Closed',de:'Geschlossen'}[lang]||'Gesloten';
+  if(open){fig.textContent=openWord;fig.className='fig open';u.textContent=untilBy[lang]||untilBy.nl;}
+  else if(opensSoon){fig.textContent=openWord;fig.className='fig open';u.textContent=fromBy[lang]||fromBy.nl;}
+  else{fig.textContent=shutWord;fig.className='fig shut';u.textContent=closedBy[lang]||closedBy.nl;}
+  document.querySelectorAll('#hours-list li').forEach(li=>{
+    li.classList.toggle('today', parseInt(li.dataset.day,10)===wd);
+  });
+}
+
+/* weather codes → short label per lang */
+const WX={0:['Helder','Clear','Klar'],1:['Overwegend helder','Mostly clear','Meist klar'],2:['Half bewolkt','Partly cloudy','Teils bewölkt'],
+  3:['Bewolkt','Overcast','Bedeckt'],45:['Mistig','Foggy','Neblig'],48:['Mistig','Foggy','Neblig'],
+  51:['Motregen','Light drizzle','Nieselregen'],53:['Motregen','Drizzle','Nieselregen'],55:['Motregen','Drizzle','Nieselregen'],
+  61:['Lichte regen','Light rain','Leichter Regen'],63:['Regen','Rain','Regen'],65:['Zware regen','Heavy rain','Starker Regen'],
+  71:['Sneeuw','Snow','Schnee'],73:['Sneeuw','Snow','Schnee'],75:['Sneeuw','Snow','Schnee'],
+  80:['Buien','Showers','Schauer'],81:['Buien','Showers','Schauer'],82:['Zware buien','Heavy showers','Starke Schauer'],
+  95:['Onweer','Thunderstorm','Gewitter'],96:['Onweer','Thunderstorm','Gewitter'],99:['Onweer','Thunderstorm','Gewitter']};
+function langIdx(){return {nl:0,en:1,de:2}[document.documentElement.lang||'nl'];}
+
+async function loadWeather(){
+  const st=document.getElementById('live-status');
+  const liveBy={nl:'live · Stavenisse',en:'live · Stavenisse',de:'live · Stavenisse'};
+  const failBy={nl:'indicatief — live weer verbindt op het productiedomein',
+                en:'indicative — live weather connects on the production domain',
+                de:'vorläufig — Live-Wetter verbindet auf der Produktionsdomain'};
+  const lang=document.documentElement.lang||'nl';
+  try{
+    const r=await fetch('https://api.open-meteo.com/v1/forecast?latitude=51.59&longitude=4.01&current=temperature_2m,weather_code&timezone=Europe%2FAmsterdam',{cache:'no-store'});
+    const j=await r.json();
+    if(j&&j.current&&typeof j.current.temperature_2m==='number'){
+      document.getElementById('wx-temp').textContent=Math.round(j.current.temperature_2m)+'°';
+      const wc=j.current.weather_code, lbl=WX[wc];
+      if(lbl) document.getElementById('wx-desc').textContent=lbl[langIdx()];
+      const t=new Intl.DateTimeFormat(lang==='en'?'en-GB':lang,{timeZone:'Europe/Amsterdam',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date());
+      st.innerHTML='<span class="dot" style="background:#3F8F5C"></span>'+(liveBy[lang])+' · '+t;
+    } else { throw new Error('shape'); }
+  }catch(e){
+    st.innerHTML='<span class="dot" style="background:#D9A441"></span>'+(failBy[lang]||failBy.nl);
+  }
+}
+
+/* ---------- boot ---------- */
+(function(){
+  let saved='nl'; try{saved=localStorage.getItem('ok-lang')||'nl';}catch(e){}
+  if(!I18N[saved]) saved='nl';
+  applyLang(saved);       // also calls updateOpenState
+  loadWeather();
+  setInterval(function(){updateOpenState();},60000);
+})();
+
+/* ============================================================
+   Scroll reveal — pictures & copy drift up from the bottom as they enter view.
+   IntersectionObserver-driven (all browsers). Failsafe: any error, no IO, or
+   reduced-motion => everything is shown immediately (content never gated).
+   ============================================================ */
+(function(){
+  var els=[].slice.call(document.querySelectorAll('.reveal'));
+  if(!els.length) return;
+  var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function showAll(){ els.forEach(function(e){ e.classList.add('in'); }); }
+  if(reduce || !('IntersectionObserver' in window)){ showAll(); return; }
+  try{
+    var io=new IntersectionObserver(function(ents){
+      ents.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){ io.observe(e); });
+    // backstop: nothing should stay hidden longer than this
+    setTimeout(function(){ els.forEach(function(e){ if(!e.classList.contains('in')){ var r=e.getBoundingClientRect(); if(r.top<window.innerHeight) e.classList.add('in'); } }); }, 2500);
+  }catch(err){ showAll(); }
+})();
+
+/* ============================================================
+   Parallax drift — cross-browser (Safari included), rAF-driven.
+   Photos + engraving ornaments scroll slower than the page. Sets the individual
+   `translate` property (composes with hover transforms); compositor-only, never
+   touches layout, so CLS stays flat. Off entirely for prefers-reduced-motion.
+   ============================================================ */
+(function(){
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  // [selector, coverScale (0 = none, for ornaments), strength as fraction of own height]
+  var GROUPS=[
+    ['.hero-plate .pic img', 1.26, 0.11],   // large feature photos only
+    ['.rest-plate .pic img', 1.26, 0.11],
+    ['.feature-band .fb-media img', 1.22, 0.09],
+    ['header .engraving',    0,    0.22],    // ornaments (not pictures)
+    ['#restaurant .engraving',0,   0.22],
+    ['.services .engraving', 0,    0.20],
+    ['.gallery .engraving',  0,    0.20],
+    ['#reserveform .engraving',0,  0.20]
+  ];
+  var items=[];
+  GROUPS.forEach(function(g){
+    document.querySelectorAll(g[0]).forEach(function(el){
+      if(g[1]) el.style.scale=String(g[1]);          // cover-margin so drift never reveals an edge
+      items.push({el:el, strength:g[2], active:true});
+    });
+  });
+  if(!items.length) return;
+  document.documentElement.classList.add('parallax-on');
+
+  // only animate what's near the viewport (perf)
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(ents){
+      ents.forEach(function(e){ for(var i=0;i<items.length;i++) if(items[i].el===e.target) items[i].active=e.isIntersecting; });
+    }, {rootMargin:'20% 0px 20% 0px'});
+    items.forEach(function(it){ io.observe(it.el); });
+  }
+
+  var ticking=false;
+  function update(){
+    ticking=false;
+    var vh=window.innerHeight, mid=vh/2;
+    for(var i=0;i<items.length;i++){
+      var it=items[i]; if(!it.active) continue;
+      var r=it.el.getBoundingClientRect();
+      var center=r.top + r.height/2;
+      // -1 (below viewport) .. +1 (above); 0 at centre
+      var p=(mid-center)/(mid + r.height/2);
+      if(p> 1)p=1; if(p<-1)p=-1;
+      var px=Math.round(p * r.height * it.strength);
+      it.el.style.translate='0 '+px+'px';
+    }
+  }
+  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll, {passive:true});
+  update();
+})();
+/* >>> GOLDFIELD — generated, do not edit in place >>> */
+/* ============================================================
+   Gold confetti + bokeh — the poster's atmosphere, cheaply.
+
+   One canvas, sprites pre-rendered ONCE, then nothing per frame but
+   drawImage. No DOM, no layout reads, no filters, no shadows in the loop.
+   Particle count scales with viewport area and is hard-capped (lower on
+   phones). Device pixel ratio is capped at 1.5 — this is blurred gold, and
+   halving the fill cost matters more than sharpness.
+
+   It measures itself on the device it actually landed on: if frames run
+   long it sheds particles, and if it is still slow it freezes to a single
+   static frame rather than keep costing paint. Under prefers-reduced-motion
+   it never animates at all — one frame, then done. Pauses when the tab is
+   hidden or the canvas scrolls out of view.
+   ============================================================ */
+function goldField(canvas){
+  if(!canvas || !canvas.getContext) return;
+  var ctx;
+  try{ ctx = canvas.getContext('2d'); }catch(e){ return; }
+  if(!ctx) return;
+
+  var reduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var W=0, H=0, DPR=1, parts=[], sprites=null, raf=0, last=0, running=false;
+  var lastW=0, lastH=0, lights=null, clock=0;
+  var slowFrames=0, tier=0;            // 0 full, 1 reduced, 2 frozen
+
+  function makeSprite(draw, size){
+    var c=document.createElement('canvas'); c.width=c.height=size;
+    draw(c.getContext('2d'), size); return c;
+  }
+  function buildSprites(){
+    function bokeh(r){
+      return makeSprite(function(g,s){
+        var h=s/2, gr=g.createRadialGradient(h,h,0,h,h,h);
+        gr.addColorStop(0,   'rgba(255,228,170,.55)');
+        gr.addColorStop(.35, 'rgba(232,184,99,.28)');
+        gr.addColorStop(.75, 'rgba(212,160,80,.08)');
+        gr.addColorStop(1,   'rgba(212,160,80,0)');
+        g.fillStyle=gr; g.fillRect(0,0,s,s);
+      }, r*2);
+    }
+    function fleck(w,h){
+      return makeSprite(function(g,s){
+        var gr=g.createLinearGradient(0,0,s,s);
+        gr.addColorStop(0,'#FFF6DC'); gr.addColorStop(.42,'#EFC576'); gr.addColorStop(1,'#B98B3C');
+        g.fillStyle=gr;
+        var x=(s-w)/2, y=(s-h)/2, r=Math.min(w,h)/2;
+        g.beginPath();
+        if(g.roundRect) g.roundRect(x,y,w,h,r); else g.rect(x,y,w,h);
+        g.fill();
+      }, Math.ceil(Math.max(w,h)*1.5));
+    }
+    return {b:[bokeh(11),bokeh(19),bokeh(29)], f:[fleck(5,12),fleck(7,17),fleck(4,9)]};
+  }
+
+  /* The reading column sits in the middle, so spawn toward the sides — the printed
+     invitation keeps its flecks clear of the words too. Purely arithmetic: no element
+     rects, no scroll listeners, nothing that would cost a layout read per frame. */
+  function quiet(){ return Math.min(W*0.5, 470); }
+  function edgeBias(){
+    var side = Math.random()<0.5 ? -1 : 1;
+    return W*0.5 + side*Math.pow(Math.random(),0.55)*W*0.5;
+  }
+  /* ...and fade whatever still crosses the column. Legibility wins over sparkle, but
+     it never drops to zero, or phones — where the column is the whole screen — would
+     lose the atmosphere entirely. */
+  function legible(x){
+    var e = Math.min(1, Math.abs(x - W*0.5)/quiet());
+    return 0.34 + 0.66*Math.pow(e,1.25);
+  }
+  /* ---------------------------------------------------------------------------
+     Festoon lights. They belong in this layer, not the DOM: one canvas, one loop,
+     one perf budget, and they persist the whole way down the page instead of
+     scrolling away with the photo.
+
+     The wire is STATIC, so a whole row of it is pre-rendered once into a tile and
+     stamped with drawImage; only the bulbs are dynamic, and a bulb is a choice
+     between three pre-rendered brightness sprites plus a cheap alpha. No per-frame
+     shadows, filters or path building.
+     --------------------------------------------------------------------------- */
+  function buildLights(){
+    var rowH   = W<560 ? 200 : (W<900 ? 240 : 270);
+    var perRow = W<560 ? 6   : (W<900 ? 8   : 10);
+    function bulbSprite(r,glow,core){
+      return makeSprite(function(g,sz){
+        var h=sz/2, gr=g.createRadialGradient(h,h,0,h,h,h);
+        gr.addColorStop(0,'rgba(255,244,214,'+core+')');
+        gr.addColorStop(.22,'rgba(255,224,164,'+(glow*0.8)+')');
+        gr.addColorStop(.55,'rgba(232,184,99,'+(glow*0.28)+')');
+        gr.addColorStop(1,'rgba(212,160,80,0)');
+        g.fillStyle=gr; g.fillRect(0,0,sz,sz);
+      }, r*2);
+    }
+    /* two sag shapes, alternated by row, so the repeat never reads as a pattern */
+    function shape(v){
+      return v===0 ? [[-0.04,0.10],[0.30,0.86],[0.62,0.34],[1.04,0.72]]
+                   : [[-0.04,0.56],[0.26,0.96],[0.58,0.20],[1.04,0.44]];
+    }
+    function qy(p0,p1,p2,t){ return (1-t)*(1-t)*p0+2*(1-t)*t*p1+t*t*p2; }
+    var tiles=[], bulbs=[];
+    for(var v=0; v<2; v++){
+      var pts=shape(v), th=rowH*0.9;
+      var tile=document.createElement('canvas');
+      tile.width=Math.max(1,Math.round(W*DPR)); tile.height=Math.max(1,Math.round(th*DPR));
+      var g=tile.getContext('2d'); g.setTransform(DPR,0,0,DPR,0,0);
+      g.strokeStyle='rgba(150,132,94,.55)'; g.lineWidth=1.1; g.beginPath();
+      var i,t,x,y;
+      for(i=0;i<pts.length-1;i++){
+        var a=pts[i], b=pts[i+1], mx=(a[0]+b[0])/2;
+        if(i===0) g.moveTo(a[0]*W, a[1]*th*0.7+th*0.08);
+        g.quadraticCurveTo(mx*W, (a[1]+ (b[1]-a[1])*1.35)*th*0.7+th*0.08, b[0]*W, b[1]*th*0.7+th*0.08);
+      }
+      g.stroke();
+      /* Fade the wire across the reading column, baked into the tile so it costs
+         nothing at runtime. A hairline running through the headline and the closing
+         script lines was the one place the strings crowded the words. */
+      g.globalCompositeOperation='destination-in';
+      var lg=g.createLinearGradient(0,0,W,0);
+      lg.addColorStop(0,'rgba(0,0,0,1)'); lg.addColorStop(.28,'rgba(0,0,0,.20)');
+      lg.addColorStop(.72,'rgba(0,0,0,.20)'); lg.addColorStop(1,'rgba(0,0,0,1)');
+      g.fillStyle=lg; g.fillRect(0,0,W,th);
+      g.globalCompositeOperation='source-over';
+      tiles.push(tile);
+      var row=[];
+      for(i=0;i<perRow;i++){
+        t=(i+0.5)/perRow;
+        var seg=Math.min(pts.length-2, Math.floor(t*(pts.length-1)));
+        var lt=(t*(pts.length-1))-seg;
+        var p0=pts[seg], p2=pts[seg+1];
+        var p1y=(p0[1]+(p2[1]-p0[1])*1.35);
+        x=p0[0]*W + (p2[0]-p0[0])*W*lt;
+        y=qy(p0[1],p1y,p2[1],lt)*th*0.7+th*0.08 + 7;
+        row.push({x:x, y:y, ph:Math.random()*Math.PI*2, sp:0.22+Math.random()*0.5,
+                  sz:(i%3===0?1:0)});
+      }
+      bulbs.push(row);
+    }
+    lights={rowH:rowH, th:rowH*0.9, tiles:tiles, bulbs:bulbs,
+            sp:[bulbSprite(9,.55,.75), bulbSprite(12,.8,.95), bulbSprite(16,1,1)]};
+  }
+
+  function drawLights(t, moving){
+    if(!lights) return;
+    var rowH=lights.rowH;
+    var drift = ((window.pageYOffset||0)*0.12) % rowH;      /* a slow parallax as you scroll */
+    var rows = Math.ceil(H/rowH)+2;
+    var r,i,b,row,y,ph,lit,lvl;
+    ctx.globalAlpha=0.85;
+    for(r=-1;r<rows;r++) ctx.drawImage(lights.tiles[(r%2+2)%2], 0, r*rowH - drift, W, lights.th);
+    var step = (tier===1) ? 2 : 1;                          /* struggling: fewer bulbs */
+    for(r=-1;r<rows;r++){
+      row=lights.bulbs[(r%2+2)%2];
+      for(i=0;i<row.length;i+=step){
+        b=row[i];
+        y = r*rowH - drift + b.y;
+        if(y<-30 || y>H+30) continue;
+        /* out of phase per bulb AND per row, so nothing reads as a chase or a blink */
+        lit = moving ? (0.5+0.5*Math.sin(t*b.sp + b.ph + r*1.7)) : 0.72;
+        lvl = lit<0.34 ? 0 : (lit<0.72 ? 1 : 2);
+        ctx.globalAlpha = (0.30+0.62*lit) * legible(b.x);
+        var img=lights.sp[lvl];
+        ctx.drawImage(img, b.x-img.width/2, y-img.height/2);
+      }
+    }
+    ctx.globalAlpha=1;
+  }
+
+  function count(){
+    var base = Math.round((W*H)/15000);
+    var cap  = W<560 ? 30 : (W<900 ? 52 : 78);
+    if(tier===1) cap = Math.round(cap*0.55);
+    return Math.max(6, Math.min(cap, base));
+  }
+  function seed(){
+    /* observable so a test can prove scrolling never re-scatters the field */
+    try{ canvas.dataset.seeds = (parseInt(canvas.dataset.seeds,10)||0)+1; }catch(e){}
+    var n=count(); parts=[];
+    for(var i=0;i<n;i++){
+      var isFleck = i%4 !== 0;                 /* 3 flecks to every soft bokeh */
+      parts.push({
+        f: isFleck,
+        s: (Math.random()*3)|0,
+        x: edgeBias(),
+        y: Math.pow(Math.random(),1.45)*H,   /* denser toward the top, as on the poster */
+        vy: (isFleck? 5+Math.random()*11 : 2+Math.random()*5),   // px per second
+        vx: (Math.random()-0.5)*7,
+        a: (isFleck? 0.42+Math.random()*0.55 : 0.22+Math.random()*0.4),
+        r: Math.random()*Math.PI*2,
+        vr: (Math.random()-0.5)*0.5,
+        p: Math.random()*Math.PI*2,          // sway phase
+        ps: 0.25+Math.random()*0.5,
+        g: Math.random()*Math.PI*2,          // glimmer phase
+        gs: 0.7+Math.random()*1.5            // glimmer speed
+      });
+    }
+  }
+  function measure(){
+    var r=canvas.getBoundingClientRect();
+    return {w:Math.max(1,Math.round(r.width)), h:Math.max(1,Math.round(r.height))};
+  }
+  /* Re-fit the canvas. reseed=false KEEPS the existing particles and rescales them into
+     the new box: setting canvas.width wipes the bitmap, so we redraw in the same tick
+     and nothing blank is ever shown. */
+  function commit(reseed){
+    var m=measure(), oldW=W, oldH=H;
+    W=m.w; H=m.h;
+    DPR=Math.min(window.devicePixelRatio||1, 1.5);
+    canvas.width=Math.round(W*DPR); canvas.height=Math.round(H*DPR);   /* clears the bitmap */
+    ctx.setTransform(DPR,0,0,DPR,0,0);
+    if(!sprites) sprites=buildSprites();
+    buildLights();
+    if(reseed || !parts.length){ seed(); }
+    else if(oldW>0 && oldH>0){
+      var sx=W/oldW, sy=H/oldH;
+      for(var i=0;i<parts.length;i++){ parts[i].x*=sx; parts[i].y*=sy; }
+    }
+    draw(0);
+    lastW=W; lastH=H;
+  }
+  /* On a phone, scrolling collapses and expands the URL bar and that fires 'resize'.
+     Re-seeding there wiped and re-scattered the whole field on every scroll. Only a
+     width change or a big height change (an orientation flip) is a real layout change
+     worth starting over for; anything else keeps its particles. */
+  function onResize(){
+    var m=measure();
+    if(m.w===lastW && m.h===lastH) return;                 /* nothing actually moved */
+    var chrome = (m.w===lastW && Math.abs(m.h-lastH)<=150); /* the URL bar, not a resize */
+    commit(!chrome);
+  }
+  function draw(dt){
+    ctx.clearRect(0,0,W,H);
+    /* behind the confetti, and the whole layer is already behind the content */
+    drawLights(clock, !reduce && tier<2);
+    for(var i=0;i<parts.length;i++){
+      var p=parts[i];
+      if(dt){
+        p.y += p.vy*dt;
+        p.x += (p.vx + Math.sin(p.p += p.ps*dt)*6)*dt;
+        p.r += p.vr*dt;
+        p.g += p.gs*dt;
+        if(p.y > H+30){ p.y=-30; p.x=edgeBias(); }
+        if(p.x < -30) p.x=W+30; else if(p.x > W+30) p.x=-30;
+      }
+      var img = p.f ? sprites.f[p.s] : sprites.b[p.s];
+      /* a small periodic glint per fleck — brighter catches of the light rather than
+         more particles crowding the text */
+      ctx.globalAlpha = p.a * legible(p.x) * (p.f ? (1 + 0.22*Math.sin(p.g)) : 1);
+      if(p.f){
+        ctx.translate(p.x,p.y); ctx.rotate(p.r);
+        ctx.drawImage(img, -img.width/2, -img.height/2);
+        ctx.setTransform(DPR,0,0,DPR,0,0);
+      } else {
+        ctx.drawImage(img, p.x-img.width/2, p.y-img.height/2);
+      }
+    }
+    ctx.globalAlpha=1;
+  }
+  function frame(now){
+    raf=0;
+    var dt=last? Math.min((now-last)/1000, 0.05) : 0.016;
+    clock = now/1000;
+    if(last && (now-last) > 34){ if(++slowFrames > 45) downshift(); } else if(slowFrames) slowFrames--;
+    last=now;
+    draw(dt);
+    if(running) raf=requestAnimationFrame(frame);
+  }
+  /* the device told us it is struggling: shed particles once, and if that was
+     not enough, stop animating and leave the static field in place */
+  function downshift(){
+    slowFrames=0;
+    if(tier===0){ tier=1; seed(); }
+    else { tier=2; stop(); draw(0); }
+  }
+  function start(){ if(running||reduce||tier===2) return; running=true; last=0; raf=requestAnimationFrame(frame); }
+  function stop(){ running=false; if(raf) cancelAnimationFrame(raf); raf=0; }
+
+  try{
+    commit(true);
+    if(reduce) return;                                  // one static frame, no loop, ever
+    var rt, onRz=function(){ clearTimeout(rt); rt=setTimeout(onResize,140); };
+    window.addEventListener('resize', onRz, {passive:true});
+    /* visualViewport is the one that actually tracks the URL bar; both route through
+       the same guard, so neither can re-scatter the field on its own. */
+    if(window.visualViewport) window.visualViewport.addEventListener('resize', onRz, {passive:true});
+    document.addEventListener('visibilitychange',function(){ document.hidden? stop() : start(); });
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){ es[0].isIntersecting? start() : stop(); },{rootMargin:'80px'}).observe(canvas);
+    } else start();
+  }catch(e){ stop(); }                                  // atmosphere is never worth an exception
+}
+/* <<< GOLDFIELD <<< */
+
+/* ============================================================
+   GRAND OPENING — Saturday 5 September 2026, 17.00–23.00 (Europe/Amsterdam).
+   The printed invitation's QR code points at "/", so the splash lives here, on
+   the homepage, and not only on opening.html.
+
+   It takes itself down. Nobody has to remember to remove it:
+     - every opening element is `hidden` in the source, so the page's resting
+       state is "no splash"; this script has to actively decide to show it;
+     - past the window the elements are removed from the DOM entirely;
+     - FAIL SAFE: any error, any missing Intl support, any result that does not
+       look like a timestamp => treated as expired => nothing is shown. The
+       failure mode is an invisible splash, never a permanent one.
+
+   It never blocks the site: X, "Continue to the website", Escape and a click on
+   the backdrop all dismiss it, the choice is remembered, and it stays out of the
+   way of anyone who arrived with a #hash target in mind.
+   ============================================================ */
+(function(){
+  var OPENING_ENDS = 202609060000;   /* YYYYMMDDHHMM Amsterdam wall clock: midnight at
+                                        the end of the party day — an hour past its 23.00 close. */
+
+  /* Amsterdam wall clock as a comparable YYYYMMDDHHMM integer. Intl owns the time zone
+     and the DST rules; we never parse or do arithmetic on a Date, which is where this
+     kind of code usually goes wrong. Refuses to guess: throws unless the result is
+     exactly the shape we expect. */
+  function amsStamp(){
+    var parts = new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Amsterdam',
+      year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false
+    }).formatToParts(new Date());
+    var g={},i;
+    for(i=0;i<parts.length;i++) g[parts[i].type]=parts[i].value;
+    if(g.hour==='24') g.hour='00';                       /* some engines render midnight as 24 */
+    var n = Number(g.year+g.month+g.day+g.hour+g.minute);
+    if(!isFinite(n) || String(n).length!==12) throw new Error('unusable clock');
+    return n;
+  }
+  function openingAhead(){ try{ return amsStamp() < OPENING_ENDS; }catch(e){ return false; } }
+
+  var splash = document.getElementById('openSplash'),
+      ribbon = document.getElementById('openRibbon'),
+      regform= document.querySelector('.res-form[data-service="opening"]');
+  function drop(el){ if(el && el.parentNode) el.parentNode.removeChild(el); }
+
+  if(!openingAhead()){ drop(splash); drop(ribbon); drop(regform); return; }
+  if(ribbon) ribbon.hidden = false;
+  if(!splash) return;
+
+  var xb    = document.getElementById('openX'),
+      skip  = document.getElementById('openSkip'),
+      modal = document.getElementById('resModal'),
+      shown = false, lastFocus = null, fieldOn = 0;
+
+  function modalOpen(){ return !!(modal && modal.classList.contains('open')); }
+  function seen(){ try{ return localStorage.getItem('ok-opening-seen')==='1'; }catch(e){ return false; } }
+  function markSeen(){ try{ localStorage.setItem('ok-opening-seen','1'); }catch(e){} }
+
+  function show(){
+    if(shown) return; shown = true;
+    lastFocus = document.activeElement;
+    splash.hidden = false;
+    if(!fieldOn){ fieldOn=1; goldField(document.getElementById('openField')); }
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(function(){ splash.classList.add('on'); });
+    if(xb){ try{ xb.focus({preventScroll:true}); }catch(e){} }
+  }
+  function hide(){
+    if(!shown) return; shown = false;
+    markSeen();
+    splash.classList.remove('on');
+    var toModal = modalOpen();          /* the registration form has taken the screen */
+    setTimeout(function(){
+      splash.hidden = true;
+      /* the reservation modal owns the scroll lock until it closes — don't yank it */
+      if(!modalOpen()) document.body.style.overflow = '';
+    }, 320);
+    if(lastFocus && !toModal){ try{ lastFocus.focus({preventScroll:true}); }catch(e){} }
+  }
+
+  if(xb)   xb.addEventListener('click', hide);
+  if(skip) skip.addEventListener('click', hide);
+  splash.addEventListener('click', function(e){ if(e.target===splash) hide(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && shown) hide(); });
+
+  /* "Register" carries data-open="opening", so the site's own reservation modal opens it.
+     That handler was bound before this script, so it runs first; we just step aside. */
+  var reg = splash.querySelector('[data-open="opening"]');
+  if(reg) reg.addEventListener('click', hide);
+
+  /* ?opening=1 forces it back up (for review, and for anyone re-sharing the link). */
+  var forced = /[?&]opening=1(&|$)/.test(location.search);
+  if(forced || (!seen() && !location.hash)) show();
+})();
+</script>
+</body>
+</html>

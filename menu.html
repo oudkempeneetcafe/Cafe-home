@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js');</script>
+<title>Menu — Oud-Kempen Eetcafé · Stavenisse, Zeeland</title>
+<meta name="description" content="De kaart van Oud-Kempen Eetcafé: verse gerechten, kaasfondue, verse vis en authentieke Indonesische specialiteiten, met foto's.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23241813'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' fill='%23E7C079' text-anchor='middle'%3EOK%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --field:#F1EADC;--field-2:#EBE2D0;--field-deep:#241813;--field-deep-2:#1B120D;
+  --line:#C6B497;--line-dk:#7A6A57;--accent-1:#E7C079;--accent-2:#C08A3E;--accent-3:#8A5A22;
+  --paper:#FBF7EF;--ink:#2E2016;--ink-dim:#6B5A48;--muted:#75634E;--paper-on-dark:#F3EADB;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:clip;
+  background:linear-gradient(180deg,#FFFFFF 0,#FBF6EC 360px,var(--field) 1250px) no-repeat var(--field);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:var(--serif);font-weight:700;margin:0}
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(251,248,242,.82);backdrop-filter:saturate(1.1) blur(10px);border-bottom:1px solid rgba(122,106,87,.18)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:11px 22px;max-width:1120px;margin:0 auto}
+.brand{display:inline-flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;color:var(--ink);line-height:1}
+.nb-name{font-family:var(--serif);font-weight:700;font-size:clamp(15px,3.4vw,19px);letter-spacing:.01em;text-transform:uppercase;color:#2A1B10;line-height:1}
+.nb-eet{display:flex;align-items:center;gap:6px;font-family:var(--serif);font-weight:600;font-size:8px;letter-spacing:.3em;text-indent:.3em;text-transform:uppercase;color:#3B2A1E;line-height:1}
+.nb-fl{display:inline-block;width:13px;height:1px;background:var(--accent-2)}
+.nav-right{display:flex;align-items:center;gap:13px}
+.nav-back{font-size:12px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--ink-dim)}
+.nav-back:hover{color:var(--ink)}
+.lang{display:inline-flex;border:1px solid rgba(122,106,87,.4);border-radius:2px;overflow:hidden}
+.lang button{font-family:var(--sans);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:7px 8px;min-width:36px;min-height:34px;background:transparent;border:0;cursor:pointer;color:var(--ink-dim);border-right:1px solid rgba(122,106,87,.28)}
+.lang button:last-child{border-right:0}
+.lang button[aria-pressed="true"]{background:var(--accent-2);color:#241300;font-weight:600}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:13px 24px;min-height:46px;border-radius:2px;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:transform .18s,box-shadow .18s,background-position .4s;background-size:200% 100%}
+.btn-gold{color:#28190C;font-weight:650;border-color:#b98a3f;background-image:linear-gradient(120deg,var(--accent-1),var(--accent-2) 55%,var(--accent-1));box-shadow:none}
+.btn-gold:hover,.btn-gold:focus-visible{background-position:100% 0;transform:translateY(-2px)}
+@media(max-width:600px){.nav-back{display:none}}
+@media(max-width:560px){.nav-right .btn-gold{display:none}.nav-in{padding:10px 16px}}
+/* header */
+.mhead{text-align:center;padding:56px 22px 12px;position:relative}
+.mhead .kicker{font-size:12px;letter-spacing:.34em;text-indent:.34em;text-transform:uppercase;color:var(--accent-3)}
+.mhead h1{font-size:clamp(38px,8vw,66px);letter-spacing:.06em;text-indent:.06em;color:#2A1B10;text-transform:uppercase;margin:10px 0 0}
+.mhead .dek{max-width:56ch;margin:16px auto 0;color:var(--ink-dim);font-size:clamp(15px,2.4vw,17px)}
+.hrule{width:130px;height:1px;margin:22px auto 0;background:linear-gradient(90deg,transparent,var(--accent-2),transparent)}
+.menu-resv{margin:12px auto 0;font-size:15px;font-weight:600;color:#7A4E1C}
+a[href^="tel:"]{display:inline-block;min-height:44px;padding:11px 0;line-height:1.45;text-decoration:none}  /* tap-to-call target (law 2) */
+.menu-resv a{text-decoration:none;color:#7A4E1C;display:inline-block;min-height:44px;line-height:44px}
+.allergy{max-width:70ch;margin:0 auto 14px;font-size:12.5px;color:#B3A184;line-height:1.5}
+/* category */
+.menu-body{padding:26px 0 40px}
+.menu-cat{margin-top:46px}
+.cat-head{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:26px}
+.cat-head h2{font-size:clamp(18px,4vw,28px);letter-spacing:.1em;text-indent:.1em;text-transform:uppercase;color:#2A1B10}
+@media(min-width:760px){.cat-head h2{white-space:nowrap;letter-spacing:.14em;text-indent:.14em}}
+.cat-rule{height:1px;flex:1;max-width:140px;background:linear-gradient(90deg,transparent,var(--accent-2))}
+.cat-head .cat-rule:last-child{background:linear-gradient(90deg,var(--accent-2),transparent)}
+/* dish cards */
+.dish-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
+.dish{margin:0 auto;max-width:460px;width:100%;background:var(--paper);border-radius:4px;overflow:clip;
+  box-shadow:0 26px 54px -30px rgba(36,24,19,.5);
+  transition:transform .22s cubic-bezier(.22,.61,.36,1),box-shadow .22s}
+.dish:hover{transform:translateY(-5px);box-shadow:0 34px 60px -28px rgba(36,24,19,.6)}
+.dish-body{padding:16px 18px 18px}
+/* dishes awaiting a real photograph render as a typographic card, never a wrong image */
+.dish.nopic{display:flex;align-items:center;min-height:0;
+  background:linear-gradient(180deg,#FBF7EF,#F6EFE1)}
+.dish.nopic .dish-body{padding:20px 20px 22px;width:100%}
+/* drinks: same card grammar as the food menu, text only and compact */
+.dish.nopic.compact{min-height:0;background:var(--paper)}
+.dish.nopic.compact .dish-body{padding:14px 17px}
+.dish.nopic.compact .dish-body::before{display:none}
+.dish.nopic.compact .dish-top h3{font-size:16.5px}
+.dish-grid.drinks{grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:14px}
+.drinks-note{max-width:70ch;margin:34px auto 0;text-align:center;font-size:12.5px;color:var(--ink-dim)}
+.dish.nopic .dish-body::before{content:"";display:block;width:46px;height:1px;margin:0 0 14px;
+  background:linear-gradient(90deg,var(--accent-2),transparent)}
+.dish-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.dish-top h3{font-size:19px;letter-spacing:.01em;color:#2A1B10;line-height:1.2}
+.price{font-family:var(--serif);font-weight:700;font-size:18px;white-space:nowrap;
+  color:#8A5A22}
+.p-unit{font-family:var(--sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);-webkit-text-fill-color:var(--muted);margin-left:5px}
+.dish-body p{margin:7px 0 0;font-size:13.5px;color:var(--ink-dim)}
+/* drinks */
+/* footer */
+.mfoot{background:linear-gradient(180deg,var(--field-deep),var(--field-deep-2));color:var(--paper-on-dark);text-align:center;padding:44px 22px 30px;margin-top:56px}
+.mfoot .fcta{margin-bottom:18px}
+.mfoot .fine{font-size:12px;color:#B3A184}
+.mfoot .fine a{color:#D8C7AC;text-decoration:none;display:inline-block;min-height:24px}
+.mprov{margin-top:12px;font-size:12px;letter-spacing:.04em;color:#B3A184}
+/* reveal */
+.js .reveal{opacity:0;transform:translateY(40px);transition:opacity .5s ease,transform .55s cubic-bezier(.22,.61,.36,1)}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}}
+
+</style>
+<link rel="canonical" href="https://www.oudkempeneetcafe.nl/menu">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html" aria-label="Oud-Kempen Eetcafé — home">
+      <span class="nb-name">Oud-Kempen</span>
+      <span class="nb-eet" aria-hidden="true"><i class="nb-fl"></i>Eetcafé<i class="nb-fl"></i></span>
+    </a>
+    <div class="nav-right">
+      <a class="nav-back" href="index.html" data-i18n="back.home">← Terug naar home</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="nl" aria-pressed="true">NL</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="de" aria-pressed="false">DE</button>
+      </div>
+      <a class="btn btn-gold" href="index.html#services" data-i18n="nav.reserve">Reserveer</a>
+    </div>
+  </div>
+</nav>
+
+<header class="mhead">
+  <h1 data-i18n="hdr.title">De Kaart</h1>
+  <p class="dek" data-i18n="hdr.dek">Verse gerechten, kaasfondue en authentieke Indonesische specialiteiten, geserveerd in een warme, ontspannen sfeer.</p>
+  <div class="hrule"></div>
+  <p class="menu-resv"><span data-i18n="menu.resv">Reserveringen gewenst</span> · <a href="tel:+31627894034">+31 6 27 89 40 34</a></p>
+</header>
+
+<main class="menu-body">
+  <div class="wrap">
+  <div class="menu-cat">
+    <div class="cat-head reveal"><span class="cat-rule"></span><h2 data-i18n="c.start">Voorgerechten</h2><span class="cat-rule"></span></div>
+    <div class="dish-grid">
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.start.0.n">Soep van de dag</h3><span class="price"><span data-i18n="m.start.0.p">€ 8,50</span></span></div>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.start.1.n">Caesar Salad</h3><span class="price"><span data-i18n="m.start.1.p">€ 10,00</span></span></div>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.start.2.n">Salade met geitenkaas</h3><span class="price"><span data-i18n="m.start.2.p">€ 9,50</span></span></div>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.start.3.n">Kroepoek met huisgemaakte pindasaus</h3><span class="price"><span data-i18n="m.start.3.p">€ 6,50</span></span></div>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.start.4.n">Brood met smeersel</h3><span class="price"><span data-i18n="m.start.4.p">€ 8,95</span></span></div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="menu-cat">
+    <div class="cat-head reveal"><span class="cat-rule"></span><h2 data-i18n="c.main">Hoofdgerechten</h2><span class="cat-rule"></span></div>
+    <div class="dish-grid">
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.main.0.n">Kaasfondue</h3><span class="price"><span data-i18n="m.main.0.p">€ 25,95</span></span></div>
+          <p data-i18n="m.main.0.d">1 dag van tevoren reserveren - minimaal 2 personen.</p>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.main.1.n">Biefstuk</h3><span class="price"><span data-i18n="m.main.1.p">€ 23,95</span></span></div>
+          <p data-i18n="m.main.1.d">Met friet en salade.</p>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.main.2.n">Sliptong - 2 stuks</h3><span class="price"><span data-i18n="m.main.2.p">€ 27,95</span></span></div>
+          <p data-i18n="m.main.2.d">Met friet en salade.</p>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.main.3.n">Varkens schnitzel</h3><span class="price"><span data-i18n="m.main.3.p">€ 13,95</span></span></div>
+          <p data-i18n="m.main.3.d">Met patat, salade, champignon- of pepersaus.</p>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.main.4.n">Spaghetti bolognese</h3><span class="price"><span data-i18n="m.main.4.p">€ 13,95</span></span></div>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.main.5.n">Duitse Braadworst</h3><span class="price"><span data-i18n="m.main.5.p">€ 15,95</span></span></div>
+          <p data-i18n="m.main.5.d">Met friet en salade.</p>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.main.6.n">Kibbeling</h3><span class="price"><span data-i18n="m.main.6.p">€ 17,95</span></span></div>
+          <p data-i18n="m.main.6.d">Met friet en salade.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="menu-cat">
+    <div class="cat-head reveal"><span class="cat-rule"></span><h2 data-i18n="c.lunch">Lunch & frituur</h2><span class="cat-rule"></span></div>
+    <div class="dish-grid">
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.lunch.0.n">Frikandel - 2 stuks</h3><span class="price"><span data-i18n="m.lunch.0.p">€ 9,95</span></span></div>
+          <p data-i18n="m.lunch.0.d">Met patat of brood.</p>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.lunch.1.n">Kroket - 2 stuks</h3><span class="price"><span data-i18n="m.lunch.1.p">€ 9,95</span></span></div>
+          <p data-i18n="m.lunch.1.d">Met patat of brood.</p>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.lunch.2.n">Uitsmijter ham kaas</h3><span class="price"><span data-i18n="m.lunch.2.p">€ 11,00</span></span></div>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.lunch.3.n">Boerenomelet</h3><span class="price"><span data-i18n="m.lunch.3.p">€ 12,50</span></span></div>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.lunch.4.n">Tosti ham kaas</h3><span class="price"><span data-i18n="m.lunch.4.p">€ 8,50</span></span></div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="menu-cat">
+    <div class="cat-head reveal"><span class="cat-rule"></span><h2 data-i18n="c.indo">Authentieke Indonesische specialiteiten</h2><span class="cat-rule"></span></div>
+    <div class="dish-grid">
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.indo.0.n">Soto Ajam</h3><span class="price"><span data-i18n="m.indo.0.p">€ 8,50</span></span></div>
+          <p data-i18n="m.indo.0.d">Traditionele Indonesische kippensoep met kip, ei, taugé, glasnoedels en verse kruiden.</p>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.indo.1.n">Beef Rendang</h3><span class="price"><span data-i18n="m.indo.1.p">€ 20,95</span></span></div>
+          <p data-i18n="m.indo.1.d">Langzaam gegaard rundvlees in een rijke Indonesische saus.</p>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.indo.2.n">Ajam Pedis</h3><span class="price"><span data-i18n="m.indo.2.p">€ 19,95</span></span></div>
+          <p data-i18n="m.indo.2.d">Pittige kip in een kruidige Indonesische saus.</p>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.indo.3.n">Sajoer Lodeh</h3><span class="price"><span data-i18n="m.indo.3.p">€ 16,95</span></span></div>
+          <p data-i18n="m.indo.3.d">Vegetarische Indonesische groenten in een romige kokossaus, met atjar en bami of nasi.</p>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.indo.4.n">Vega Rendang</h3><span class="price"><span data-i18n="m.indo.4.p">€ 16,95</span></span></div>
+          <p data-i18n="m.indo.4.d">Vegetarische Indonesische groente met soyabrokken, atjar en bami of nasi.</p>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.indo.5.n">Kipsaté</h3><span class="price"><span data-i18n="m.indo.5.p">€ 19,95</span></span></div>
+          <p data-i18n="m.indo.5.d">Met huisgemaakte satésaus, kroepoek, atjar en bami of nasi.</p>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.indo.6.n">Nasi Goreng Schotel</h3><span class="price"><span data-i18n="m.indo.6.p">€ 19,95</span></span></div>
+          <p data-i18n="m.indo.6.d">Gebakken nasi met kipsaté, ei, kroepoek en atjar, geserveerd met sambal goreng boontjes óf sajoer lodeh (niet-pittige groenten).</p>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.indo.7.n">Bami Goreng Schotel</h3><span class="price"><span data-i18n="m.indo.7.p">€ 19,95</span></span></div>
+          <p data-i18n="m.indo.7.d">Gebakken bami met kipsaté, ei, kroepoek en atjar, geserveerd met sambal goreng boontjes óf sajoer lodeh (niet-pittige groenten).</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="menu-cat">
+    <div class="cat-head reveal"><span class="cat-rule"></span><h2 data-i18n="c.veg">Vegetarische gerechten</h2><span class="cat-rule"></span></div>
+    <div class="dish-grid">
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.veg.0.n">Pasta met champignons</h3><span class="price"><span data-i18n="m.veg.0.p">€ 17,50</span></span></div>
+          <p data-i18n="m.veg.0.d">Met salade.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="menu-cat">
+    <div class="cat-head reveal"><span class="cat-rule"></span><h2 data-i18n="c.pancake">Pannenkoeken</h2><span class="cat-rule"></span></div>
+    <div class="dish-grid">
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.pancake.0.n">Pannenkoek Naturel</h3><span class="price"><span data-i18n="m.pancake.0.p">€ 9,95</span></span></div>
+          <p data-i18n="m.pancake.0.d">Met stroop, suiker en boter.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="menu-cat">
+    <div class="cat-head reveal"><span class="cat-rule"></span><h2 data-i18n="c.snack">Borrelhapjes</h2><span class="cat-rule"></span></div>
+    <div class="dish-grid">
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.snack.0.n">Bittergarnituur (8 stuks)</h3><span class="price"><span data-i18n="m.snack.0.p">€ 7,50</span></span></div>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.snack.1.n">Bitterballen (8 stuks)</h3><span class="price"><span data-i18n="m.snack.1.p">€ 7,50</span></span></div>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.snack.2.n">Chicken Wings (8 stuks)</h3><span class="price"><span data-i18n="m.snack.2.p">€ 8,50</span></span></div>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.snack.3.n">Kip Nuggets (8 stuks)</h3><span class="price"><span data-i18n="m.snack.3.p">€ 8,50</span></span></div>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.snack.4.n">Kaassoufflés mini (8 stuks)</h3><span class="price"><span data-i18n="m.snack.4.p">€ 7,50</span></span></div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="menu-cat">
+    <div class="cat-head reveal"><span class="cat-rule"></span><h2 data-i18n="c.kids">Kindermenu</h2><span class="cat-rule"></span></div>
+    <div class="dish-grid">
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.kids.0.n">Kindermenu</h3><span class="price"><span data-i18n="m.kids.0.p">€ 8,95</span></span></div>
+          <p data-i18n="m.kids.0.d">Frites met frikandel, kroket of 4 chicken nuggets, of pannenkoek. Inclusief appelmoes &amp; mayonaise, kinderijsje en verrassing.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="menu-cat">
+    <div class="cat-head reveal"><span class="cat-rule"></span><h2 data-i18n="c.dessert">Nagerechten</h2><span class="cat-rule"></span></div>
+    <div class="dish-grid">
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.dessert.0.n">Kaasplankje</h3><span class="price"><span data-i18n="m.dessert.0.p">€ 12,95</span></span></div>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.dessert.1.n">IJs met aardbeien en slagroom</h3><span class="price"><span data-i18n="m.dessert.1.p">€ 8,50</span></span></div>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.dessert.2.n">Vanille-ijs met advocaat</h3><span class="price"><span data-i18n="m.dessert.2.p">€ 8,50</span></span></div>
+        </figcaption>
+      </figure>
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.dessert.3.n">Dame Blanche</h3><span class="price"><span data-i18n="m.dessert.3.p">€ 8,50</span></span></div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="menu-cat">
+    <div class="cat-head reveal"><span class="cat-rule"></span><h2 data-i18n="c.extra">Extra's</h2><span class="cat-rule"></span></div>
+    <div class="dish-grid">
+      <figure class="dish nopic reveal">
+        <figcaption class="dish-body">
+          <div class="dish-top"><h3 data-i18n="m.extra.0.n">Portie friet</h3><span class="price"><span data-i18n="m.extra.0.p">€ 3,50</span></span></div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="menu-cat">
+    <div class="cat-head reveal"><span class="cat-rule"></span><h2 data-i18n="dc.hot">Warme dranken</h2><span class="cat-rule"></span></div>
+    <div class="dish-grid drinks">
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.hot.0.n">Koffie</h3><span class="price" data-i18n="d.hot.0.p">€ 3,00</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.hot.1.n">Thee</h3><span class="price" data-i18n="d.hot.1.p">€ 3,00</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.hot.2.n">Espresso</h3><span class="price" data-i18n="d.hot.2.p">€ 3,00</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.hot.3.n">Dubbele Espresso</h3><span class="price" data-i18n="d.hot.3.p">€ 4,50</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.hot.4.n">Cappuccino</h3><span class="price" data-i18n="d.hot.4.p">€ 3,50</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.hot.5.n">Latte Macchiato</h3><span class="price" data-i18n="d.hot.5.p">€ 3,95</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.hot.6.n">Warme Chocolademelk</h3><span class="price" data-i18n="d.hot.6.p">€ 3,50</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.hot.7.n">IJskoffie</h3><span class="price" data-i18n="d.hot.7.p">€ 3,95</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.hot.8.n">Irish Coffee</h3><span class="price" data-i18n="d.hot.8.p">€ 8,50</span></div></figcaption></figure>
+    </div>
+  </div>
+  <div class="menu-cat">
+    <div class="cat-head reveal"><span class="cat-rule"></span><h2 data-i18n="dc.soft">Frisdranken</h2><span class="cat-rule"></span></div>
+    <div class="dish-grid drinks">
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.soft.0.n">Coca-Cola</h3><span class="price" data-i18n="d.soft.0.p">€ 3,00</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.soft.1.n">Coca-Cola Zero</h3><span class="price" data-i18n="d.soft.1.p">€ 3,00</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.soft.2.n">Fanta</h3><span class="price" data-i18n="d.soft.2.p">€ 3,00</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.soft.3.n">Fanta 0</h3><span class="price" data-i18n="d.soft.3.p">€ 3,00</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.soft.4.n">7UP</h3><span class="price" data-i18n="d.soft.4.p">€ 3,00</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.soft.5.n">7UP Zero</h3><span class="price" data-i18n="d.soft.5.p">€ 3,00</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.soft.6.n">Bitter Lemon</h3><span class="price" data-i18n="d.soft.6.p">€ 3,00</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.soft.7.n">Tonic</h3><span class="price" data-i18n="d.soft.7.p">€ 3,00</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.soft.8.n">Spa Blauw</h3><span class="price" data-i18n="d.soft.8.p">€ 3,00</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.soft.9.n">Spa Rood</h3><span class="price" data-i18n="d.soft.9.p">€ 3,00</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.soft.10.n">Lipton Ice Tea Lemon</h3><span class="price" data-i18n="d.soft.10.p">€ 3,20</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.soft.11.n">Lipton Ice Tea Peach</h3><span class="price" data-i18n="d.soft.11.p">€ 3,20</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.soft.12.n">Lipton Ice Tea Green</h3><span class="price" data-i18n="d.soft.12.p">€ 3,20</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.soft.13.n">Lipton Ice Tea Green Zero</h3><span class="price" data-i18n="d.soft.13.p">€ 3,20</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.soft.14.n">Appelsap</h3><span class="price" data-i18n="d.soft.14.p">€ 3,20</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.soft.15.n">Multivitaminasap</h3><span class="price" data-i18n="d.soft.15.p">€ 3,20</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.soft.16.n">Sinaasappelsap</h3><span class="price" data-i18n="d.soft.16.p">€ 3,20</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.soft.17.n">Fristi</h3><span class="price" data-i18n="d.soft.17.p">€ 3,25</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.soft.18.n">Chocomel</h3><span class="price" data-i18n="d.soft.18.p">€ 3,25</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.soft.19.n">Spezi (Cola/Fanta)</h3><span class="price" data-i18n="d.soft.19.p">€ 3,00</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.soft.20.n">Red Bull</h3><span class="price" data-i18n="d.soft.20.p">€ 6,95</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.soft.21.n">Red Bull Sugar Free</h3><span class="price" data-i18n="d.soft.21.p">€ 6,95</span></div></figcaption></figure>
+    </div>
+  </div>
+  <div class="menu-cat">
+    <div class="cat-head reveal"><span class="cat-rule"></span><h2 data-i18n="dc.cocktail">Cocktails</h2><span class="cat-rule"></span></div>
+    <div class="dish-grid drinks">
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.cocktail.0.n">Aperol Spritz</h3><span class="price" data-i18n="d.cocktail.0.p">€ 8,50</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.cocktail.1.n">Gin Tonic</h3><span class="price" data-i18n="d.cocktail.1.p">€ 8,50</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.cocktail.2.n">Bacardi Cola</h3><span class="price" data-i18n="d.cocktail.2.p">€ 8,50</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.cocktail.3.n">Whisky Cola</h3><span class="price" data-i18n="d.cocktail.3.p">€ 8,50</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.cocktail.4.n">Mojito</h3><span class="price" data-i18n="d.cocktail.4.p">€ 8,20</span></div></figcaption></figure>
+    </div>
+  </div>
+  <div class="menu-cat">
+    <div class="cat-head reveal"><span class="cat-rule"></span><h2 data-i18n="dc.wine">Wijnen</h2><span class="cat-rule"></span></div>
+    <div class="dish-grid drinks">
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.wine.0.n">Chardonnay (glas)</h3><span class="price" data-i18n="d.wine.0.p">€ 4,75</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.wine.1.n">Cabernet Sauvignon (glas)</h3><span class="price" data-i18n="d.wine.1.p">€ 4,75</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.wine.2.n">Merlot (glas)</h3><span class="price" data-i18n="d.wine.2.p">€ 4,75</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.wine.3.n">Rosé (glas)</h3><span class="price" data-i18n="d.wine.3.p">€ 4,75</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.wine.4.n">Zoete Witte Wijn (glas)</h3><span class="price" data-i18n="d.wine.4.p">€ 4,75</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.wine.5.n">Prosecco (glas)</h3><span class="price" data-i18n="d.wine.5.p">€ 5,50</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.wine.6.n">Witte Wijn (fles)</h3><span class="price" data-i18n="d.wine.6.p">€ 19,95</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.wine.7.n">Rode Wijn (fles)</h3><span class="price" data-i18n="d.wine.7.p">€ 19,95</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.wine.8.n">Rosé Wijn (fles)</h3><span class="price" data-i18n="d.wine.8.p">€ 19,95</span></div></figcaption></figure>
+    </div>
+  </div>
+  <div class="menu-cat">
+    <div class="cat-head reveal"><span class="cat-rule"></span><h2 data-i18n="dc.beer">Bieren</h2><span class="cat-rule"></span></div>
+    <div class="dish-grid drinks">
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.beer.0.n">Tap bier</h3><span class="price" data-i18n="d.beer.0.p">€ 3,40</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.beer.1.n">Groot tapbier</h3><span class="price" data-i18n="d.beer.1.p">€ 6,80</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.beer.2.n">Heineken</h3><span class="price" data-i18n="d.beer.2.p">€ 3,40</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.beer.3.n">Hertog Jan Bier</h3><span class="price" data-i18n="d.beer.3.p">€ 3,40</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.beer.4.n">Radler 2.0%</h3><span class="price" data-i18n="d.beer.4.p">€ 4,25</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.beer.5.n">Radler citroen 0.0 Grolsch</h3><span class="price" data-i18n="d.beer.5.p">€ 4,50</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.beer.6.n">Radler citroen 0.0 Amstel</h3><span class="price" data-i18n="d.beer.6.p">€ 4,50</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.beer.7.n">Duvel 8,5%</h3><span class="price" data-i18n="d.beer.7.p">€ 5,75</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.beer.8.n">Duvel Blond 6,66%</h3><span class="price" data-i18n="d.beer.8.p">€ 5,50</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.beer.9.n">Duvel Tripel Hop 9,5%</h3><span class="price" data-i18n="d.beer.9.p">€ 6,25</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.beer.10.n">Desperados</h3><span class="price" data-i18n="d.beer.10.p">€ 5,50</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.beer.11.n">Affligem Blond</h3><span class="price" data-i18n="d.beer.11.p">€ 5,50</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.beer.12.n">La Chouffe Blond</h3><span class="price" data-i18n="d.beer.12.p">€ 5,75</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.beer.13.n">Liefmans Bier 0.0</h3><span class="price" data-i18n="d.beer.13.p">€ 5,50</span></div></figcaption></figure>
+    </div>
+  </div>
+  <div class="menu-cat">
+    <div class="cat-head reveal"><span class="cat-rule"></span><h2 data-i18n="dc.spirit">Likeuren & gedistilleerd</h2><span class="cat-rule"></span></div>
+    <div class="dish-grid drinks">
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.spirit.0.n">Amaretto</h3><span class="price" data-i18n="d.spirit.0.p">€ 4,80</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.spirit.1.n">Limoncello</h3><span class="price" data-i18n="d.spirit.1.p">€ 4,50</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.spirit.2.n">Jonge Jenever</h3><span class="price" data-i18n="d.spirit.2.p">€ 3,95</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.spirit.3.n">Schrobbelèr</h3><span class="price" data-i18n="d.spirit.3.p">€ 4,50</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.spirit.4.n">Gordon Gin</h3><span class="price" data-i18n="d.spirit.4.p">€ 4,50</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.spirit.5.n">Cointreau</h3><span class="price" data-i18n="d.spirit.5.p">€ 4,80</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.spirit.6.n">Kahlua</h3><span class="price" data-i18n="d.spirit.6.p">€ 4,80</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.spirit.7.n">Licor 43</h3><span class="price" data-i18n="d.spirit.7.p">€ 5,00</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.spirit.8.n">Jack Daniel&#x27;s</h3><span class="price" data-i18n="d.spirit.8.p">€ 4,95</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.spirit.9.n">Glen Talloch Whisky</h3><span class="price" data-i18n="d.spirit.9.p">€ 4,80</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.spirit.10.n">Bacardi Spiced</h3><span class="price" data-i18n="d.spirit.10.p">€ 4,90</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.spirit.11.n">Absolut Vodka</h3><span class="price" data-i18n="d.spirit.11.p">€ 4,90</span></div></figcaption></figure>
+      <figure class="dish nopic compact reveal"><figcaption class="dish-body"><div class="dish-top"><h3 data-i18n="d.spirit.12.n">Port Reserve Ruby</h3><span class="price" data-i18n="d.spirit.12.p">€ 4,80</span></div></figcaption></figure>
+    </div>
+  </div>
+  <p class="drinks-note" data-i18n="drinks.note">Prijzen in euro. Allergie of dieetwens? Vraag onze medewerkers om informatie.</p>
+
+  </div>
+</main>
+
+<footer class="mfoot">
+  <a class="btn btn-gold fcta" href="index.html#services" data-i18n="cta.reserve">Reserveer een tafel</a>
+  <div class="fine">Oud-Kempen Eetcafé · Buurtweg 5, 4696 RT Stavenisse · <a href="tel:+31627894034">+31 6 27 89 40 34</a> · <a href="mailto:reservationsoke@gmail.com">reservationsoke@gmail.com</a> · <a href="https://www.instagram.com/oudkempen_zeeland" target="_blank" rel="noopener">@oudkempen_zeeland</a></div>
+  <p class="allergy" data-i18n="menu.allergy">Heeft u een allergie of dieetwens? Laat het ons weten aan onze medewerkers. Allergeneninformatie is beschikbaar op aanvraag.</p>
+  <div class="mprov" data-i18n="prov">Website door Merritt Digital</div>
+</footer>
+<script>
+
+var I18N={"nl": {"nav.home": "Home", "nav.reserve": "Reserveer", "hdr.kicker": "Eetcafé · Stavenisse · Zeeland", "hdr.title": "De Kaart", "hdr.dek": "Verse gerechten, kaasfondue en authentieke Indonesische specialiteiten, geserveerd in een warme, ontspannen sfeer.", "drinks.title": "Dranken", "cta.reserve": "Reserveer een tafel", "back.home": "← Terug naar home", "prov": "Website door Merritt Digital", "cat.main": "Hoofdgerechten", "cat.start": "Voorgerechten", "cat.pancake": "Pannenkoeken", "cat.snack": "Snacks", "cat.veg": "Vegetarisch", "cat.kids": "Kindermenu", "cat.dessert": "Desserts", "foot.call": "Bel ons", "menu.resv": "Reserveringen gewenst", "menu.allergy": "Heeft u een allergie of dieetwens? Laat het ons weten aan onze medewerkers. Allergeneninformatie is beschikbaar op aanvraag.", "drinks.note": "Prijzen in euro. Allergie of dieetwens? Vraag onze medewerkers om informatie.", "c.start": "Voorgerechten", "m.start.0.n": "Soep van de dag", "m.start.0.p": "€ 8,50", "m.start.1.n": "Caesar Salad", "m.start.1.p": "€ 10,00", "m.start.2.n": "Salade met geitenkaas", "m.start.2.p": "€ 9,50", "m.start.3.n": "Kroepoek met huisgemaakte pindasaus", "m.start.3.p": "€ 6,50", "m.start.4.n": "Brood met smeersel", "m.start.4.p": "€ 8,95", "c.main": "Hoofdgerechten", "m.main.0.n": "Kaasfondue", "m.main.0.p": "€ 25,95", "m.main.0.d": "1 dag van tevoren reserveren - minimaal 2 personen.", "m.main.1.n": "Biefstuk", "m.main.1.p": "€ 23,95", "m.main.1.d": "Met friet en salade.", "m.main.2.n": "Sliptong - 2 stuks", "m.main.2.p": "€ 27,95", "m.main.2.d": "Met friet en salade.", "m.main.3.n": "Varkens schnitzel", "m.main.3.p": "€ 13,95", "m.main.3.d": "Met patat, salade, champignon- of pepersaus.", "m.main.4.n": "Spaghetti bolognese", "m.main.4.p": "€ 13,95", "m.main.5.n": "Duitse Braadworst", "m.main.5.p": "€ 15,95", "m.main.5.d": "Met friet en salade.", "m.main.6.n": "Kibbeling", "m.main.6.p": "€ 17,95", "m.main.6.d": "Met friet en salade.", "c.lunch": "Lunch & frituur", "m.lunch.0.n": "Frikandel - 2 stuks", "m.lunch.0.p": "€ 9,95", "m.lunch.0.d": "Met patat of brood.", "m.lunch.1.n": "Kroket - 2 stuks", "m.lunch.1.p": "€ 9,95", "m.lunch.1.d": "Met patat of brood.", "m.lunch.2.n": "Uitsmijter ham kaas", "m.lunch.2.p": "€ 11,00", "m.lunch.3.n": "Boerenomelet", "m.lunch.3.p": "€ 12,50", "m.lunch.4.n": "Tosti ham kaas", "m.lunch.4.p": "€ 8,50", "c.indo": "Authentieke Indonesische specialiteiten", "m.indo.0.n": "Soto Ajam", "m.indo.0.p": "€ 8,50", "m.indo.0.d": "Traditionele Indonesische kippensoep met kip, ei, taugé, glasnoedels en verse kruiden.", "m.indo.1.n": "Beef Rendang", "m.indo.1.p": "€ 20,95", "m.indo.1.d": "Langzaam gegaard rundvlees in een rijke Indonesische saus.", "m.indo.2.n": "Ajam Pedis", "m.indo.2.p": "€ 19,95", "m.indo.2.d": "Pittige kip in een kruidige Indonesische saus.", "m.indo.3.n": "Sajoer Lodeh", "m.indo.3.p": "€ 16,95", "m.indo.3.d": "Vegetarische Indonesische groenten in een romige kokossaus, met atjar en bami of nasi.", "m.indo.4.n": "Vega Rendang", "m.indo.4.p": "€ 16,95", "m.indo.4.d": "Vegetarische Indonesische groente met soyabrokken, atjar en bami of nasi.", "m.indo.5.n": "Kipsaté", "m.indo.5.p": "€ 19,95", "m.indo.5.d": "Met huisgemaakte satésaus, kroepoek, atjar en bami of nasi.", "m.indo.6.n": "Nasi Goreng Schotel", "m.indo.6.p": "€ 19,95", "m.indo.6.d": "Gebakken nasi met kipsaté, ei, kroepoek en atjar, geserveerd met sambal goreng boontjes óf sajoer lodeh (niet-pittige groenten).", "m.indo.7.n": "Bami Goreng Schotel", "m.indo.7.p": "€ 19,95", "m.indo.7.d": "Gebakken bami met kipsaté, ei, kroepoek en atjar, geserveerd met sambal goreng boontjes óf sajoer lodeh (niet-pittige groenten).", "c.veg": "Vegetarische gerechten", "m.veg.0.n": "Pasta met champignons", "m.veg.0.p": "€ 17,50", "m.veg.0.d": "Met salade.", "c.pancake": "Pannenkoeken", "m.pancake.0.n": "Pannenkoek Naturel", "m.pancake.0.p": "€ 9,95", "m.pancake.0.d": "Met stroop, suiker en boter.", "c.snack": "Borrelhapjes", "m.snack.0.n": "Bittergarnituur (8 stuks)", "m.snack.0.p": "€ 7,50", "m.snack.1.n": "Bitterballen (8 stuks)", "m.snack.1.p": "€ 7,50", "m.snack.2.n": "Chicken Wings (8 stuks)", "m.snack.2.p": "€ 8,50", "m.snack.3.n": "Kip Nuggets (8 stuks)", "m.snack.3.p": "€ 8,50", "m.snack.4.n": "Kaassoufflés mini (8 stuks)", "m.snack.4.p": "€ 7,50", "c.kids": "Kindermenu", "m.kids.0.n": "Kindermenu", "m.kids.0.p": "€ 8,95", "m.kids.0.d": "Frites met frikandel, kroket of 4 chicken nuggets, of pannenkoek. Inclusief appelmoes & mayonaise, kinderijsje en verrassing.", "c.dessert": "Nagerechten", "m.dessert.0.n": "Kaasplankje", "m.dessert.0.p": "€ 12,95", "m.dessert.1.n": "IJs met aardbeien en slagroom", "m.dessert.1.p": "€ 8,50", "m.dessert.2.n": "Vanille-ijs met advocaat", "m.dessert.2.p": "€ 8,50", "m.dessert.3.n": "Dame Blanche", "m.dessert.3.p": "€ 8,50", "c.extra": "Extra's", "m.extra.0.n": "Portie friet", "m.extra.0.p": "€ 3,50", "dc.hot": "Warme dranken", "d.hot.0.n": "Koffie", "d.hot.0.p": "€ 3,00", "d.hot.1.n": "Thee", "d.hot.1.p": "€ 3,00", "d.hot.2.n": "Espresso", "d.hot.2.p": "€ 3,00", "d.hot.3.n": "Dubbele Espresso", "d.hot.3.p": "€ 4,50", "d.hot.4.n": "Cappuccino", "d.hot.4.p": "€ 3,50", "d.hot.5.n": "Latte Macchiato", "d.hot.5.p": "€ 3,95", "d.hot.6.n": "Warme Chocolademelk", "d.hot.6.p": "€ 3,50", "d.hot.7.n": "IJskoffie", "d.hot.7.p": "€ 3,95", "d.hot.8.n": "Irish Coffee", "d.hot.8.p": "€ 8,50", "dc.soft": "Frisdranken", "d.soft.0.n": "Coca-Cola", "d.soft.0.p": "€ 3,00", "d.soft.1.n": "Coca-Cola Zero", "d.soft.1.p": "€ 3,00", "d.soft.2.n": "Fanta", "d.soft.2.p": "€ 3,00", "d.soft.3.n": "Fanta 0", "d.soft.3.p": "€ 3,00", "d.soft.4.n": "7UP", "d.soft.4.p": "€ 3,00", "d.soft.5.n": "7UP Zero", "d.soft.5.p": "€ 3,00", "d.soft.6.n": "Bitter Lemon", "d.soft.6.p": "€ 3,00", "d.soft.7.n": "Tonic", "d.soft.7.p": "€ 3,00", "d.soft.8.n": "Spa Blauw", "d.soft.8.p": "€ 3,00", "d.soft.9.n": "Spa Rood", "d.soft.9.p": "€ 3,00", "d.soft.10.n": "Lipton Ice Tea Lemon", "d.soft.10.p": "€ 3,20", "d.soft.11.n": "Lipton Ice Tea Peach", "d.soft.11.p": "€ 3,20", "d.soft.12.n": "Lipton Ice Tea Green", "d.soft.12.p": "€ 3,20", "d.soft.13.n": "Lipton Ice Tea Green Zero", "d.soft.13.p": "€ 3,20", "d.soft.14.n": "Appelsap", "d.soft.14.p": "€ 3,20", "d.soft.15.n": "Multivitaminasap", "d.soft.15.p": "€ 3,20", "d.soft.16.n": "Sinaasappelsap", "d.soft.16.p": "€ 3,20", "d.soft.17.n": "Fristi", "d.soft.17.p": "€ 3,25", "d.soft.18.n": "Chocomel", "d.soft.18.p": "€ 3,25", "d.soft.19.n": "Spezi (Cola/Fanta)", "d.soft.19.p": "€ 3,00", "d.soft.20.n": "Red Bull", "d.soft.20.p": "€ 6,95", "d.soft.21.n": "Red Bull Sugar Free", "d.soft.21.p": "€ 6,95", "dc.cocktail": "Cocktails", "d.cocktail.0.n": "Aperol Spritz", "d.cocktail.0.p": "€ 8,50", "d.cocktail.1.n": "Gin Tonic", "d.cocktail.1.p": "€ 8,50", "d.cocktail.2.n": "Bacardi Cola", "d.cocktail.2.p": "€ 8,50", "d.cocktail.3.n": "Whisky Cola", "d.cocktail.3.p": "€ 8,50", "d.cocktail.4.n": "Mojito", "d.cocktail.4.p": "€ 8,20", "dc.wine": "Wijnen", "d.wine.0.n": "Chardonnay (glas)", "d.wine.0.p": "€ 4,75", "d.wine.1.n": "Cabernet Sauvignon (glas)", "d.wine.1.p": "€ 4,75", "d.wine.2.n": "Merlot (glas)", "d.wine.2.p": "€ 4,75", "d.wine.3.n": "Rosé (glas)", "d.wine.3.p": "€ 4,75", "d.wine.4.n": "Zoete Witte Wijn (glas)", "d.wine.4.p": "€ 4,75", "d.wine.5.n": "Prosecco (glas)", "d.wine.5.p": "€ 5,50", "d.wine.6.n": "Witte Wijn (fles)", "d.wine.6.p": "€ 19,95", "d.wine.7.n": "Rode Wijn (fles)", "d.wine.7.p": "€ 19,95", "d.wine.8.n": "Rosé Wijn (fles)", "d.wine.8.p": "€ 19,95", "dc.beer": "Bieren", "d.beer.0.n": "Tap bier", "d.beer.0.p": "€ 3,40", "d.beer.1.n": "Groot tapbier", "d.beer.1.p": "€ 6,80", "d.beer.2.n": "Heineken", "d.beer.2.p": "€ 3,40", "d.beer.3.n": "Hertog Jan Bier", "d.beer.3.p": "€ 3,40", "d.beer.4.n": "Radler 2.0%", "d.beer.4.p": "€ 4,25", "d.beer.5.n": "Radler citroen 0.0 Grolsch", "d.beer.5.p": "€ 4,50", "d.beer.6.n": "Radler citroen 0.0 Amstel", "d.beer.6.p": "€ 4,50", "d.beer.7.n": "Duvel 8,5%", "d.beer.7.p": "€ 5,75", "d.beer.8.n": "Duvel Blond 6,66%", "d.beer.8.p": "€ 5,50", "d.beer.9.n": "Duvel Tripel Hop 9,5%", "d.beer.9.p": "€ 6,25", "d.beer.10.n": "Desperados", "d.beer.10.p": "€ 5,50", "d.beer.11.n": "Affligem Blond", "d.beer.11.p": "€ 5,50", "d.beer.12.n": "La Chouffe Blond", "d.beer.12.p": "€ 5,75", "d.beer.13.n": "Liefmans Bier 0.0", "d.beer.13.p": "€ 5,50", "dc.spirit": "Likeuren & gedistilleerd", "d.spirit.0.n": "Amaretto", "d.spirit.0.p": "€ 4,80", "d.spirit.1.n": "Limoncello", "d.spirit.1.p": "€ 4,50", "d.spirit.2.n": "Jonge Jenever", "d.spirit.2.p": "€ 3,95", "d.spirit.3.n": "Schrobbelèr", "d.spirit.3.p": "€ 4,50", "d.spirit.4.n": "Gordon Gin", "d.spirit.4.p": "€ 4,50", "d.spirit.5.n": "Cointreau", "d.spirit.5.p": "€ 4,80", "d.spirit.6.n": "Kahlua", "d.spirit.6.p": "€ 4,80", "d.spirit.7.n": "Licor 43", "d.spirit.7.p": "€ 5,00", "d.spirit.8.n": "Jack Daniel's", "d.spirit.8.p": "€ 4,95", "d.spirit.9.n": "Glen Talloch Whisky", "d.spirit.9.p": "€ 4,80", "d.spirit.10.n": "Bacardi Spiced", "d.spirit.10.p": "€ 4,90", "d.spirit.11.n": "Absolut Vodka", "d.spirit.11.p": "€ 4,90", "d.spirit.12.n": "Port Reserve Ruby", "d.spirit.12.p": "€ 4,80"}, "en": {"nav.home": "Home", "nav.reserve": "Reserve", "hdr.kicker": "Eatery · Stavenisse · Zeeland", "hdr.title": "Our Menu", "hdr.dek": "Fresh dishes, cheese fondue and authentic Indonesian specialities, served in a warm, relaxed setting.", "drinks.title": "Drinks", "cta.reserve": "Reserve a table", "back.home": "← Back to home", "prov": "Website by Merritt Digital", "cat.main": "Main Courses", "cat.start": "Starters", "cat.pancake": "Pancakes", "cat.snack": "Snacks", "cat.veg": "Vegetarian", "cat.kids": "Children's Menu", "cat.dessert": "Desserts", "foot.call": "Call us", "menu.resv": "Reservations recommended", "menu.allergy": "Do you have an allergy or special dietary request? Please let our staff know. Allergen information is available on request.", "drinks.note": "Prices in euro. Allergy or dietary request? Please ask our staff for information.", "c.start": "Starters", "m.start.0.n": "Soup of the Day", "m.start.0.p": "€ 8.50", "m.start.1.n": "Caesar Salad", "m.start.1.p": "€ 10.00", "m.start.2.n": "Goat Cheese Salad", "m.start.2.p": "€ 9.50", "m.start.3.n": "Prawn crackers with homemade peanut sauce", "m.start.3.p": "€ 6.50", "m.start.4.n": "Bread with spread", "m.start.4.p": "€ 8.95", "c.main": "Main Courses", "m.main.0.n": "Cheese Fondue", "m.main.0.p": "€ 25.95", "m.main.0.d": "Reservation required 1 day in advance - minimum 2 persons.", "m.main.1.n": "Steak", "m.main.1.p": "€ 23.95", "m.main.1.d": "Served with fries and salad.", "m.main.2.n": "Slip Sole - 2 pieces", "m.main.2.p": "€ 27.95", "m.main.2.d": "Served with fries and salad.", "m.main.3.n": "Pork Schnitzel", "m.main.3.p": "€ 13.95", "m.main.3.d": "With fries, salad, mushroom or pepper sauce.", "m.main.4.n": "Spaghetti Bolognese", "m.main.4.p": "€ 13.95", "m.main.5.n": "German Bratwurst", "m.main.5.p": "€ 15.95", "m.main.5.d": "With fries and salad.", "m.main.6.n": "Kibbeling", "m.main.6.p": "€ 17.95", "m.main.6.d": "With fries and salad.", "c.lunch": "Lunch & Fried Snacks", "m.lunch.0.n": "Frikandel - 2 pieces", "m.lunch.0.p": "€ 9.95", "m.lunch.0.d": "With fries or bread.", "m.lunch.1.n": "Croquette - 2 pieces", "m.lunch.1.p": "€ 9.95", "m.lunch.1.d": "With fries or bread.", "m.lunch.2.n": "Fried eggs with ham & cheese", "m.lunch.2.p": "€ 11.00", "m.lunch.3.n": "Farmer's omelette", "m.lunch.3.p": "€ 12.50", "m.lunch.4.n": "Ham & cheese toastie", "m.lunch.4.p": "€ 8.50", "c.indo": "Authentic Indonesian Specialities", "m.indo.0.n": "Soto Ajam", "m.indo.0.p": "€ 8.50", "m.indo.0.d": "Traditional Indonesian chicken soup with chicken, egg, bean sprouts, glass noodles and fresh herbs.", "m.indo.1.n": "Beef Rendang", "m.indo.1.p": "€ 20.95", "m.indo.1.d": "Slow-cooked beef in a rich Indonesian sauce.", "m.indo.2.n": "Ajam Pedis", "m.indo.2.p": "€ 19.95", "m.indo.2.d": "Spicy chicken in a savoury Indonesian sauce.", "m.indo.3.n": "Sajoer Lodeh", "m.indo.3.p": "€ 16.95", "m.indo.3.d": "Vegetarian Indonesian vegetables in a creamy coconut sauce, served with atjar and bami or nasi.", "m.indo.4.n": "Vega Rendang", "m.indo.4.p": "€ 16.95", "m.indo.4.d": "Vegetarian Indonesian vegetables with soy chunks, atjar and bami or nasi.", "m.indo.5.n": "Chicken Satay", "m.indo.5.p": "€ 19.95", "m.indo.5.d": "Served with homemade satay sauce, prawn crackers, atjar and bami or nasi.", "m.indo.6.n": "Nasi Goreng Platter", "m.indo.6.p": "€ 19.95", "m.indo.6.d": "Fried rice with chicken satay, egg, prawn crackers and atjar, served with sambal goreng green beans or sajoer lodeh (mild vegetables).", "m.indo.7.n": "Bami Goreng Platter", "m.indo.7.p": "€ 19.95", "m.indo.7.d": "Fried noodles with chicken satay, egg, prawn crackers and atjar, served with sambal goreng green beans or sajoer lodeh (mild vegetables).", "c.veg": "Vegetarian Dishes", "m.veg.0.n": "Pasta with Mushrooms", "m.veg.0.p": "€ 17.50", "m.veg.0.d": "With salad.", "c.pancake": "Pancakes", "m.pancake.0.n": "Traditional Pancake", "m.pancake.0.p": "€ 9.95", "m.pancake.0.d": "With syrup, sugar and butter.", "c.snack": "Snacks", "m.snack.0.n": "Mixed Fried Snacks (8 pcs)", "m.snack.0.p": "€ 7.50", "m.snack.1.n": "Bitterballs (8 pcs)", "m.snack.1.p": "€ 7.50", "m.snack.2.n": "Chicken Wings (8 pcs)", "m.snack.2.p": "€ 8.50", "m.snack.3.n": "Chicken Nuggets (8 pcs)", "m.snack.3.p": "€ 8.50", "m.snack.4.n": "Mini Cheese Soufflés (8 pcs)", "m.snack.4.p": "€ 7.50", "c.kids": "Children's Menu", "m.kids.0.n": "Children's menu", "m.kids.0.p": "€ 8.95", "m.kids.0.d": "Fries with frikandel, croquette or 4 chicken nuggets, or pancake. Includes applesauce & mayonnaise, ice cream and surprise.", "c.dessert": "Desserts", "m.dessert.0.n": "Cheese Platter", "m.dessert.0.p": "€ 12.95", "m.dessert.1.n": "Ice Cream with Strawberries & Whipped Cream", "m.dessert.1.p": "€ 8.50", "m.dessert.2.n": "Vanilla Ice Cream with Advocaat", "m.dessert.2.p": "€ 8.50", "m.dessert.3.n": "Dame Blanche", "m.dessert.3.p": "€ 8.50", "c.extra": "Extras", "m.extra.0.n": "Side of Fries", "m.extra.0.p": "€ 3.50", "dc.hot": "Hot Drinks", "d.hot.0.n": "Coffee", "d.hot.0.p": "€ 3.00", "d.hot.1.n": "Tea", "d.hot.1.p": "€ 3.00", "d.hot.2.n": "Espresso", "d.hot.2.p": "€ 3.00", "d.hot.3.n": "Double Espresso", "d.hot.3.p": "€ 4.50", "d.hot.4.n": "Cappuccino", "d.hot.4.p": "€ 3.50", "d.hot.5.n": "Latte Macchiato", "d.hot.5.p": "€ 3.95", "d.hot.6.n": "Hot Chocolate", "d.hot.6.p": "€ 3.50", "d.hot.7.n": "Iced Coffee", "d.hot.7.p": "€ 3.95", "d.hot.8.n": "Irish Coffee", "d.hot.8.p": "€ 8.50", "dc.soft": "Soft Drinks", "d.soft.0.n": "Coca-Cola", "d.soft.0.p": "€ 3.00", "d.soft.1.n": "Coca-Cola Zero", "d.soft.1.p": "€ 3.00", "d.soft.2.n": "Fanta", "d.soft.2.p": "€ 3.00", "d.soft.3.n": "Fanta 0", "d.soft.3.p": "€ 3.00", "d.soft.4.n": "7UP", "d.soft.4.p": "€ 3.00", "d.soft.5.n": "7UP Zero", "d.soft.5.p": "€ 3.00", "d.soft.6.n": "Bitter Lemon", "d.soft.6.p": "€ 3.00", "d.soft.7.n": "Tonic", "d.soft.7.p": "€ 3.00", "d.soft.8.n": "Still Water", "d.soft.8.p": "€ 3.00", "d.soft.9.n": "Sparkling Water", "d.soft.9.p": "€ 3.00", "d.soft.10.n": "Lipton Ice Tea Lemon", "d.soft.10.p": "€ 3.20", "d.soft.11.n": "Lipton Ice Tea Peach", "d.soft.11.p": "€ 3.20", "d.soft.12.n": "Lipton Ice Tea Green", "d.soft.12.p": "€ 3.20", "d.soft.13.n": "Lipton Ice Tea Green Zero", "d.soft.13.p": "€ 3.20", "d.soft.14.n": "Apple Juice", "d.soft.14.p": "€ 3.20", "d.soft.15.n": "Multivitamin Juice", "d.soft.15.p": "€ 3.20", "d.soft.16.n": "Orange Juice", "d.soft.16.p": "€ 3.20", "d.soft.17.n": "Fristi", "d.soft.17.p": "€ 3.25", "d.soft.18.n": "Chocolate Milk", "d.soft.18.p": "€ 3.25", "d.soft.19.n": "Spezi (Cola/Fanta)", "d.soft.19.p": "€ 3.00", "d.soft.20.n": "Red Bull", "d.soft.20.p": "€ 6.95", "d.soft.21.n": "Red Bull Sugar Free", "d.soft.21.p": "€ 6.95", "dc.cocktail": "Cocktails", "d.cocktail.0.n": "Aperol Spritz", "d.cocktail.0.p": "€ 8.50", "d.cocktail.1.n": "Gin Tonic", "d.cocktail.1.p": "€ 8.50", "d.cocktail.2.n": "Bacardi Cola", "d.cocktail.2.p": "€ 8.50", "d.cocktail.3.n": "Whisky Cola", "d.cocktail.3.p": "€ 8.50", "d.cocktail.4.n": "Mojito", "d.cocktail.4.p": "€ 8.20", "dc.wine": "Wines", "d.wine.0.n": "Chardonnay (glass)", "d.wine.0.p": "€ 4.75", "d.wine.1.n": "Cabernet Sauvignon (glass)", "d.wine.1.p": "€ 4.75", "d.wine.2.n": "Merlot (glass)", "d.wine.2.p": "€ 4.75", "d.wine.3.n": "Rosé (glass)", "d.wine.3.p": "€ 4.75", "d.wine.4.n": "Sweet White Wine (glass)", "d.wine.4.p": "€ 4.75", "d.wine.5.n": "Prosecco (glass)", "d.wine.5.p": "€ 5.50", "d.wine.6.n": "White Wine (bottle)", "d.wine.6.p": "€ 19.95", "d.wine.7.n": "Red Wine (bottle)", "d.wine.7.p": "€ 19.95", "d.wine.8.n": "Rosé Wine (bottle)", "d.wine.8.p": "€ 19.95", "dc.beer": "Beers", "d.beer.0.n": "Draught beer", "d.beer.0.p": "€ 3.40", "d.beer.1.n": "Large draught beer", "d.beer.1.p": "€ 6.80", "d.beer.2.n": "Heineken", "d.beer.2.p": "€ 3.40", "d.beer.3.n": "Hertog Jan Bier", "d.beer.3.p": "€ 3.40", "d.beer.4.n": "Radler 2.0%", "d.beer.4.p": "€ 4.25", "d.beer.5.n": "Radler Lemon 0.0 Grolsch", "d.beer.5.p": "€ 4.50", "d.beer.6.n": "Radler Lemon 0.0 Amstel", "d.beer.6.p": "€ 4.50", "d.beer.7.n": "Duvel 8.5%", "d.beer.7.p": "€ 5.75", "d.beer.8.n": "Duvel Blond 6.66%", "d.beer.8.p": "€ 5.50", "d.beer.9.n": "Duvel Tripel Hop 9.5%", "d.beer.9.p": "€ 6.25", "d.beer.10.n": "Desperados", "d.beer.10.p": "€ 5.50", "d.beer.11.n": "Affligem Blond", "d.beer.11.p": "€ 5.50", "d.beer.12.n": "La Chouffe Blond", "d.beer.12.p": "€ 5.75", "d.beer.13.n": "Liefmans Beer 0.0", "d.beer.13.p": "€ 5.50", "dc.spirit": "Liqueurs & Spirits", "d.spirit.0.n": "Amaretto", "d.spirit.0.p": "€ 4.80", "d.spirit.1.n": "Limoncello", "d.spirit.1.p": "€ 4.50", "d.spirit.2.n": "Jonge Jenever", "d.spirit.2.p": "€ 3.95", "d.spirit.3.n": "Schrobbelèr", "d.spirit.3.p": "€ 4.50", "d.spirit.4.n": "Gordon Gin", "d.spirit.4.p": "€ 4.50", "d.spirit.5.n": "Cointreau", "d.spirit.5.p": "€ 4.80", "d.spirit.6.n": "Kahlua", "d.spirit.6.p": "€ 4.80", "d.spirit.7.n": "Licor 43", "d.spirit.7.p": "€ 5.00", "d.spirit.8.n": "Jack Daniel's", "d.spirit.8.p": "€ 4.95", "d.spirit.9.n": "Glen Talloch Whisky", "d.spirit.9.p": "€ 4.80", "d.spirit.10.n": "Bacardi Spiced", "d.spirit.10.p": "€ 4.90", "d.spirit.11.n": "Absolut Vodka", "d.spirit.11.p": "€ 4.90", "d.spirit.12.n": "Port Reserve Ruby", "d.spirit.12.p": "€ 4.80"}, "de": {"nav.home": "Startseite", "nav.reserve": "Reservieren", "hdr.kicker": "Eetcafé · Stavenisse · Zeeland", "hdr.title": "Die Karte", "hdr.dek": "Frische Gerichte, Käsefondue und authentische indonesische Spezialitäten, in warmer, entspannter Atmosphäre serviert.", "drinks.title": "Getränke", "cta.reserve": "Tisch reservieren", "back.home": "← Zurück zur Startseite", "prov": "Website von Merritt Digital", "cat.main": "Hauptgerichte", "cat.start": "Vorspeisen", "cat.pancake": "Pfannkuchen", "cat.snack": "Snacks", "cat.veg": "Vegetarisch", "cat.kids": "Kindermenü", "cat.dessert": "Nachtische", "foot.call": "Rufen Sie uns an", "menu.resv": "Reservierungen erwünscht", "menu.allergy": "Haben Sie eine Allergie oder spezielle Ernährungswünsche? Bitte informieren Sie unsere Mitarbeiter. Allergeninformationen erhalten Sie auf Anfrage.", "drinks.note": "Preise in Euro. Allergie oder besondere Ernährungswünsche? Bitte sprechen Sie unser Personal an.", "c.start": "Vorspeisen", "m.start.0.n": "Tagessuppe", "m.start.0.p": "€ 8,50", "m.start.1.n": "Caesar Salad", "m.start.1.p": "€ 10,00", "m.start.2.n": "Salat mit Ziegenkäse", "m.start.2.p": "€ 9,50", "m.start.3.n": "Krupuk mit hausgemachter Erdnusssauce", "m.start.3.p": "€ 6,50", "m.start.4.n": "Brot mit Aufstrich", "m.start.4.p": "€ 8,95", "c.main": "Hauptgerichte", "m.main.0.n": "Käsefondue", "m.main.0.p": "€ 25,95", "m.main.0.d": "1 Tag im Voraus reservieren - mindestens 2 Personen.", "m.main.1.n": "Rindersteak", "m.main.1.p": "€ 23,95", "m.main.1.d": "Mit Pommes frites und Salat.", "m.main.2.n": "Gebratene Seezunge - 2 Stück", "m.main.2.p": "€ 27,95", "m.main.2.d": "Mit Pommes frites und Salat.", "m.main.3.n": "Schweineschnitzel", "m.main.3.p": "€ 13,95", "m.main.3.d": "Mit Pommes frites, Salat und Champignon- oder Pfeffersoße.", "m.main.4.n": "Spaghetti Bolognese", "m.main.4.p": "€ 13,95", "m.main.5.n": "Deutsche Bratwurst", "m.main.5.p": "€ 15,95", "m.main.5.d": "Mit Pommes frites und Salat.", "m.main.6.n": "Kibbeling", "m.main.6.p": "€ 17,95", "m.main.6.d": "Mit Pommes frites und Salat.", "c.lunch": "Lunch & Frittiertes", "m.lunch.0.n": "Frikadelle - 2 Stück", "m.lunch.0.p": "€ 9,95", "m.lunch.0.d": "Mit Pommes frites oder Brot.", "m.lunch.1.n": "Kroketten - 2 Stück", "m.lunch.1.p": "€ 9,95", "m.lunch.1.d": "Mit Pommes frites oder Brot.", "m.lunch.2.n": "Spiegeleier mit Schinken & Käse", "m.lunch.2.p": "€ 11,00", "m.lunch.3.n": "Bauernomelett", "m.lunch.3.p": "€ 12,50", "m.lunch.4.n": "Toast Schinken & Käse", "m.lunch.4.p": "€ 8,50", "c.indo": "Authentische indonesische Spezialitäten", "m.indo.0.n": "Soto Ajam", "m.indo.0.p": "€ 8,50", "m.indo.0.d": "Traditionelle indonesische Hühnersuppe mit Hähnchen, Ei, Sojasprossen, Glasnudeln und frischen Kräutern.", "m.indo.1.n": "Beef Rendang", "m.indo.1.p": "€ 20,95", "m.indo.1.d": "Langsam geschmortes Rindfleisch in einer reichhaltigen indonesischen Soße.", "m.indo.2.n": "Ajam Pedis", "m.indo.2.p": "€ 19,95", "m.indo.2.d": "Scharfes Hähnchen in einer würzigen indonesischen Soße.", "m.indo.3.n": "Sajoer Lodeh", "m.indo.3.p": "€ 16,95", "m.indo.3.d": "Vegetarisches indonesisches Gemüse in einer cremigen Kokossoße, mit Atjar und Bami oder Nasi.", "m.indo.4.n": "Vega Rendang", "m.indo.4.p": "€ 16,95", "m.indo.4.d": "Vegetarisches indonesisches Gemüse mit Sojastücken, Atjar und Bami oder Nasi.", "m.indo.5.n": "Hühnchen-Saté", "m.indo.5.p": "€ 19,95", "m.indo.5.d": "Mit hausgemachter Saté-Sauce, Krupuk, Atjar und Bami oder Nasi.", "m.indo.6.n": "Nasi-Goreng-Teller", "m.indo.6.p": "€ 19,95", "m.indo.6.d": "Gebratener Reis mit Hähnchen-Saté, Ei, Krupuk und Atjar, serviert mit Sambal-Goreng-Bohnen oder Sajoer Lodeh (nicht scharfes Gemüse).", "m.indo.7.n": "Bami-Goreng-Teller", "m.indo.7.p": "€ 19,95", "m.indo.7.d": "Gebratene Bami mit Hähnchen-Saté, Ei, Krupuk und Atjar, serviert mit Sambal-Goreng-Bohnen oder Sajoer Lodeh (nicht scharfes Gemüse).", "c.veg": "Vegetarische Gerichte", "m.veg.0.n": "Pasta mit Champignons", "m.veg.0.p": "€ 17,50", "m.veg.0.d": "Mit Salat.", "c.pancake": "Pfannkuchen", "m.pancake.0.n": "Natur-Pfannkuchen", "m.pancake.0.p": "€ 9,95", "m.pancake.0.d": "Mit Sirup, Zucker und Butter.", "c.snack": "Snacks", "m.snack.0.n": "Bittergarnitur (8 Stück)", "m.snack.0.p": "€ 7,50", "m.snack.1.n": "Bitterbällchen (8 Stück)", "m.snack.1.p": "€ 7,50", "m.snack.2.n": "Chicken Wings (8 Stück)", "m.snack.2.p": "€ 8,50", "m.snack.3.n": "Chicken Nuggets (8 Stück)", "m.snack.3.p": "€ 8,50", "m.snack.4.n": "Mini-Käsesoufflés (8 Stück)", "m.snack.4.p": "€ 7,50", "c.kids": "Kindermenü", "m.kids.0.n": "Kindermenü", "m.kids.0.p": "€ 8,95", "m.kids.0.d": "Pommes mit Frikadelle, Kroketten oder 4 Chicken Nuggets, oder Pfannkuchen. Inklusive Apfelmus & Mayonnaise, Kindereis und Überraschung.", "c.dessert": "Nachspeisen", "m.dessert.0.n": "Käseplatte", "m.dessert.0.p": "€ 12,95", "m.dessert.1.n": "Eis mit Erdbeeren und Sahne", "m.dessert.1.p": "€ 8,50", "m.dessert.2.n": "Vanilleeis mit Eierlikör", "m.dessert.2.p": "€ 8,50", "m.dessert.3.n": "Dame Blanche", "m.dessert.3.p": "€ 8,50", "c.extra": "Extras", "m.extra.0.n": "Portion Pommes frites", "m.extra.0.p": "€ 3,50", "dc.hot": "Warme Getränke", "d.hot.0.n": "Kaffee", "d.hot.0.p": "€ 3,00", "d.hot.1.n": "Tee", "d.hot.1.p": "€ 3,00", "d.hot.2.n": "Espresso", "d.hot.2.p": "€ 3,00", "d.hot.3.n": "Doppelter Espresso", "d.hot.3.p": "€ 4,50", "d.hot.4.n": "Cappuccino", "d.hot.4.p": "€ 3,50", "d.hot.5.n": "Latte Macchiato", "d.hot.5.p": "€ 3,95", "d.hot.6.n": "Heiße Schokolade", "d.hot.6.p": "€ 3,50", "d.hot.7.n": "Eiskaffee", "d.hot.7.p": "€ 3,95", "d.hot.8.n": "Irish Coffee", "d.hot.8.p": "€ 8,50", "dc.soft": "Erfrischungsgetränke", "d.soft.0.n": "Coca-Cola", "d.soft.0.p": "€ 3,00", "d.soft.1.n": "Coca-Cola Zero", "d.soft.1.p": "€ 3,00", "d.soft.2.n": "Fanta", "d.soft.2.p": "€ 3,00", "d.soft.3.n": "Fanta 0", "d.soft.3.p": "€ 3,00", "d.soft.4.n": "7UP", "d.soft.4.p": "€ 3,00", "d.soft.5.n": "7UP Zero", "d.soft.5.p": "€ 3,00", "d.soft.6.n": "Bitter Lemon", "d.soft.6.p": "€ 3,00", "d.soft.7.n": "Tonic", "d.soft.7.p": "€ 3,00", "d.soft.8.n": "Mineralwasser still", "d.soft.8.p": "€ 3,00", "d.soft.9.n": "Mineralwasser sprudel", "d.soft.9.p": "€ 3,00", "d.soft.10.n": "Lipton Ice Tea Lemon", "d.soft.10.p": "€ 3,20", "d.soft.11.n": "Lipton Ice Tea Peach", "d.soft.11.p": "€ 3,20", "d.soft.12.n": "Lipton Ice Tea Green", "d.soft.12.p": "€ 3,20", "d.soft.13.n": "Lipton Ice Tea Green Zero", "d.soft.13.p": "€ 3,20", "d.soft.14.n": "Apfelsaft", "d.soft.14.p": "€ 3,20", "d.soft.15.n": "Multivitaminsaft", "d.soft.15.p": "€ 3,20", "d.soft.16.n": "Orangensaft", "d.soft.16.p": "€ 3,20", "d.soft.17.n": "Fristi", "d.soft.17.p": "€ 3,25", "d.soft.18.n": "Schokomilch", "d.soft.18.p": "€ 3,25", "d.soft.19.n": "Spezi (Cola/Fanta)", "d.soft.19.p": "€ 3,00", "d.soft.20.n": "Red Bull", "d.soft.20.p": "€ 6,95", "d.soft.21.n": "Red Bull Sugar Free", "d.soft.21.p": "€ 6,95", "dc.cocktail": "Cocktails", "d.cocktail.0.n": "Aperol Spritz", "d.cocktail.0.p": "€ 8,50", "d.cocktail.1.n": "Gin Tonic", "d.cocktail.1.p": "€ 8,50", "d.cocktail.2.n": "Bacardi Cola", "d.cocktail.2.p": "€ 8,50", "d.cocktail.3.n": "Whisky Cola", "d.cocktail.3.p": "€ 8,50", "d.cocktail.4.n": "Mojito", "d.cocktail.4.p": "€ 8,20", "dc.wine": "Weine", "d.wine.0.n": "Chardonnay (Glas)", "d.wine.0.p": "€ 4,75", "d.wine.1.n": "Cabernet Sauvignon (Glas)", "d.wine.1.p": "€ 4,75", "d.wine.2.n": "Merlot (Glas)", "d.wine.2.p": "€ 4,75", "d.wine.3.n": "Rosé (Glas)", "d.wine.3.p": "€ 4,75", "d.wine.4.n": "Süßer Weißwein (Glas)", "d.wine.4.p": "€ 4,75", "d.wine.5.n": "Prosecco (Glas)", "d.wine.5.p": "€ 5,50", "d.wine.6.n": "Weißwein (Flasche)", "d.wine.6.p": "€ 19,95", "d.wine.7.n": "Rotwein (Flasche)", "d.wine.7.p": "€ 19,95", "d.wine.8.n": "Roséwein (Flasche)", "d.wine.8.p": "€ 19,95", "dc.beer": "Biere", "d.beer.0.n": "Bier vom Fass", "d.beer.0.p": "€ 3,40", "d.beer.1.n": "Großes Fassbier", "d.beer.1.p": "€ 6,80", "d.beer.2.n": "Heineken", "d.beer.2.p": "€ 3,40", "d.beer.3.n": "Hertog Jan Bier", "d.beer.3.p": "€ 3,40", "d.beer.4.n": "Radler 2.0%", "d.beer.4.p": "€ 4,25", "d.beer.5.n": "Radler Zitrone 0.0 Grolsch", "d.beer.5.p": "€ 4,50", "d.beer.6.n": "Radler Zitrone 0.0 Amstel", "d.beer.6.p": "€ 4,50", "d.beer.7.n": "Duvel 8,5%", "d.beer.7.p": "€ 5,75", "d.beer.8.n": "Duvel Blond 6,66%", "d.beer.8.p": "€ 5,50", "d.beer.9.n": "Duvel Tripel Hop 9,5%", "d.beer.9.p": "€ 6,25", "d.beer.10.n": "Desperados", "d.beer.10.p": "€ 5,50", "d.beer.11.n": "Affligem Blond", "d.beer.11.p": "€ 5,50", "d.beer.12.n": "La Chouffe Blond", "d.beer.12.p": "€ 5,75", "d.beer.13.n": "Liefmans Bier 0.0", "d.beer.13.p": "€ 5,50", "dc.spirit": "Liköre & Spirituosen", "d.spirit.0.n": "Amaretto", "d.spirit.0.p": "€ 4,80", "d.spirit.1.n": "Limoncello", "d.spirit.1.p": "€ 4,50", "d.spirit.2.n": "Junger Genever", "d.spirit.2.p": "€ 3,95", "d.spirit.3.n": "Schrobbelèr", "d.spirit.3.p": "€ 4,50", "d.spirit.4.n": "Gordon Gin", "d.spirit.4.p": "€ 4,50", "d.spirit.5.n": "Cointreau", "d.spirit.5.p": "€ 4,80", "d.spirit.6.n": "Kahlua", "d.spirit.6.p": "€ 4,80", "d.spirit.7.n": "Licor 43", "d.spirit.7.p": "€ 5,00", "d.spirit.8.n": "Jack Daniel's", "d.spirit.8.p": "€ 4,95", "d.spirit.9.n": "Glen Talloch Whisky", "d.spirit.9.p": "€ 4,80", "d.spirit.10.n": "Bacardi Spiced", "d.spirit.10.p": "€ 4,90", "d.spirit.11.n": "Absolut Vodka", "d.spirit.11.p": "€ 4,90", "d.spirit.12.n": "Port Reserve Ruby", "d.spirit.12.p": "€ 4,80"}};
+function applyLang(l){var d=I18N[l]||I18N.nl;
+  document.querySelectorAll('[data-i18n]').forEach(function(e){var k=e.getAttribute('data-i18n');if(d[k]!=null)e.textContent=d[k];});
+  document.documentElement.lang=l;
+  document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.lang===l));});
+  try{localStorage.setItem('ok-lang',l);}catch(e){}}
+document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){applyLang(b.dataset.lang);});});
+(function(){var s='nl';try{s=localStorage.getItem('ok-lang')||'nl';}catch(e){}if(!I18N[s])s='nl';applyLang(s);})();
+(function(){var els=[].slice.call(document.querySelectorAll('.reveal'));if(!els.length)return;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function all(){els.forEach(function(e){e.classList.add('in');});}
+  if(reduce||!('IntersectionObserver' in window)){all();return;}
+  try{var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(e){io.observe(e);});
+    setTimeout(function(){els.forEach(function(e){if(!e.classList.contains('in')){var r=e.getBoundingClientRect();if(r.top<innerHeight)e.classList.add('in');}});},2500);
+  }catch(e){all();}})();
+
+</script>
+</body>
+</html>
